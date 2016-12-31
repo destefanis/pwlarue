@@ -29,6 +29,11 @@
     height: 85vh;
     min-height: 580px;
   }
+
+  @include min($xlarge) {
+    height: 85vh;
+    min-height: 680px;
+  }
 }
 
 .hero-header {
