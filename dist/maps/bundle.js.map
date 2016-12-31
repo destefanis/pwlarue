@@ -1,0 +1,1 @@
+{"version":3,"file":null,"sources":["/Users/danieldestefanis/Documents/local/pwlarue/src/js/main.js"],"sourcesContent":["const main = () => {\n\n}\n\ndocument.addEventListener('DOMContentLoaded', main)\n"],"names":["main","document","addEventListener"],"mappings":"wBAAA,IAAMA,GAAO,YAIbC,UAASC,iBAAiB,mBAAoBF"}
