@@ -1,0 +1,45 @@
+// FONT
+
+html {
+  // 1rem = 10px
+  font-size: 10px;
+}
+
+body {
+  font-family: $sans;
+  font-weight: 300;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+p {
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 3rem;
+  letter-spacing: 1px;
+
+  @include min($desktop) {
+    font-size: 4rem;
+  }
+}
+
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+// LAYOUT
+
+// .container {
+//   width: 100% - 2 * $site-gutter;
+//   max-width: $site-width;
+//   margin-right: auto;
+//   margin-left: auto;
+// }

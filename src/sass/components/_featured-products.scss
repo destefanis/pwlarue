@@ -1,0 +1,145 @@
+/*
+ *  Define the product styles.
+ */
+
+.featured-products {
+  // padding: 25px 0;
+  // background: $light-grey;
+  // background: $white;
+
+  .grid {
+    padding: 25px 25px;
+  }
+}
+
+.grid {
+  display: flex;
+}
+
+.col {
+  flex: 1;
+}
+
+.section--cta {
+  padding: 75px 50px 10px;
+  background: $white;
+  color: $black;
+}
+
+.cta-header {
+  display: inline-block;
+  vertical-align: top;
+  color: $black;
+  font-family: $mono;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.cta-link {
+  transition: all 250ms ease;
+  transform: translateY(0);
+  float: right;
+  margin-top: -2px;
+  padding: 5px 30px;
+  border: 2px solid $black;
+  font-family: $mono;
+  font-size: 1.8rem;
+  font-weight: 300;
+  box-shadow: 0 0 0 rgba($black, 0.05);
+
+  &:hover,
+  &:active,
+  &:focus {
+    transform: translateY(-1px);
+    background: $black;
+    box-shadow: 0 1px 3px rgba($black, 0.12);
+    color: $white;
+  }
+}
+
+.product-tile-link {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.product-tile {
+  position: relative;
+  margin: 0 25px;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba($black, 0.12);
+
+  &:hover,
+  &:active,
+  &:focus {
+
+    .product-tile__image--alt {
+      transform: translate(0, 0);
+      opacity: 1;
+      z-index: 10;
+    }
+
+    .product-tile__info {
+      transform: translate(-50%, 0);
+      opacity: 1;
+      z-index: 15;
+    }
+  }
+}
+
+.product-tile__info {
+  transition: all 250ms ease;
+  transform: translate(-50%, 15px);
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  opacity: 0;
+  z-index: 1;
+  width: 80%;
+  padding: 10px 15px;
+  backface-visibility: hidden;
+  background: $white;
+  box-shadow: 0 1px 3px rgba($black, 0.16);
+  text-align: left;
+  font-size: 1.4rem;
+  font-family: $mono;
+  color: $black;
+}
+
+.info-product-name {
+  display: inline-block;
+  margin: 0;
+  // font-size: 1.4rem;
+}
+
+.info-product-price {
+  float: right;
+}
+
+.product-tile__image {
+  display: block;
+  transform: translate(-50%, -50%);
+  position: relative;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  max-width: 102%;
+  width: 102%;
+  height: auto;
+  backface-visibility: hidden;
+}
+
+.product-tile__image--alt {
+  transition: all 250ms ease;
+  transform: translate(0, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}

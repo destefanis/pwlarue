@@ -1,0 +1,19 @@
+/*
+ *  Define the footer styles.
+ */
+
+.footer {
+  padding: 50px;
+  text-align: center;
+  font-weight: 400;
+  font-family: $mono;
+}
+
+.footer__link {
+  padding-bottom: 5px;
+  border-bottom: 2px solid $black;
+}
+
+.social-link {
+  margin-left: 25px;
+}

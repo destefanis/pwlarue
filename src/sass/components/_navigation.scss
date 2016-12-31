@@ -1,0 +1,59 @@
+/*
+ *  Define the navigation styles.
+ */
+
+
+.navigation {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: auto;
+  padding: 20px 50px 20px;
+  text-align: center;
+}
+
+.logo {
+  display: inline-block;
+  z-index: 100;
+  text-align: center;
+
+  svg {
+    width: 250px;
+    fill: $black;
+    stroke: $black;
+
+    * {
+      fill: $black;
+      stroke: $black;
+    }
+  }
+}
+
+.nav-list {
+  float: right;
+  padding-top: 34px;
+}
+
+.nav-list__item {
+  display: inline-block;
+  vertical-align: top;
+  list-style: none;
+}
+
+.nav-link {
+  margin-top: 29px;
+  color: $black;
+  font-family: $mono;
+  font-weight: 300;
+  font-size: 1.8rem;
+
+  &.nav-link--first {
+    float: left;
+  }
+
+  &.nav-link--last {
+    float: right;
+  }
+}

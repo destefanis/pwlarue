@@ -1,0 +1,74 @@
+/*
+ *  Define the about section styles.
+ */
+
+.section {
+  position: relative;
+}
+
+.section--about {
+  padding: 50px 50px 100px;
+  overflow: hidden;
+  text-align: left;
+  background: #fcfcfc;
+  margin-top: 25px;
+}
+
+.about-image {
+  display: inline-block;
+  max-width: 60%;
+}
+
+.section-content {
+  position: absolute;
+  padding: 25px 28px 28px;
+  background: $white;
+  backface-visibility: hidden;
+
+  .cta-link {
+    margin-top: 25px;
+    float: none;
+    display: inline-block;
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    color: $black;
+    line-height: 1.8;
+    letter-spacing: 1px;
+    font-size: 2.4rem;
+    font-family: $sans;
+    font-weight: 400;
+  }
+}
+
+.section--instagram {
+  padding: 50px;
+  position: relative;
+  background: #fcfcfc;
+  text-align: center;
+
+  video {
+    width: 50%;
+  }
+}
+
+.section-content--about {
+  right: 8%;
+  bottom: 25%;
+  width: 38%;
+
+  .cta-link {
+    margin-top: 50px;
+  }
+
+}
+
+.section-content--instagram {
+  transform: translate(-50%, -50%);
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  z-index: 100;
+  padding: 30px 35px 35px;
+}
