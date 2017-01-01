@@ -20,7 +20,7 @@
 
 .section-content {
   position: absolute;
-  padding: 25px 28px 28px;
+  padding: 25px 28px 30px;
   background: $white;
   backface-visibility: hidden;
 
@@ -30,15 +30,15 @@
     display: inline-block;
     font-size: 1.6rem;
   }
+}
 
-  h2 {
-    color: $black;
-    line-height: 1.8;
-    letter-spacing: 1px;
-    font-size: 2.4rem;
-    font-family: $sans;
-    font-weight: 400;
-  }
+.section-header {
+  color: $black;
+  line-height: 1.8;
+  letter-spacing: 1px;
+  font-size: 2.4rem;
+  font-family: $sans;
+  font-weight: 400;
 }
 
 .section--instagram {
@@ -60,7 +60,6 @@
   .cta-link {
     margin-top: 50px;
   }
-
 }
 
 .section-content--instagram {

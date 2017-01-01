@@ -6,16 +6,25 @@
   padding-bottom: 75px;
 
   .grid {
-    padding: 25px 25px;
+    padding: 0 25px;
   }
 }
 
 .grid {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .col {
-  flex: 1;
+  flex: 1 0 90%;
+
+  @include min($tablet) {
+    flex: 1 0 40%;
+  }
+
+  @include min($desktop) {
+    flex: 1 0 28%;
+  }
 }
 
 .section--cta {
@@ -64,7 +73,7 @@
 
 .product-tile {
   position: relative;
-  margin: 0 25px;
+  margin: 25px;
   text-align: center;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba($black, 0.12);
@@ -88,7 +97,7 @@
 }
 
 .product-tile__info {
-  transition: all 250ms ease;
+  transition: all 450ms ease;
   transform: translate(-50%, 15px);
   position: absolute;
   bottom: 25px;
@@ -104,12 +113,15 @@
   font-size: 1.4rem;
   font-family: $mono;
   color: $black;
+
+  @include min($large) {
+    font-size: 1.6rem;
+  }
 }
 
 .info-product-name {
   display: inline-block;
   margin: 0;
-  // font-size: 1.4rem;
 }
 
 .info-product-price {
@@ -118,19 +130,20 @@
 
 .product-tile__image {
   display: block;
-  transform: translate(-50%, -50%);
+  transform: translatex(-50%);
+  -webkit-transform: translatex(-50%);
   position: relative;
-  top: 50%;
+  top: 0;
   left: 50%;
   z-index: 5;
-  max-width: 102%;
-  width: 102%;
+  max-width: 103%;
+  width: 103%;
   height: auto;
   backface-visibility: hidden;
 }
 
 .product-tile__image--alt {
-  transition: all 250ms ease;
+  transition: all 450ms ease;
   transform: translate(0, 0);
   position: absolute;
   top: 0;
