@@ -1,0 +1,76 @@
+/*
+ *  Define the product page styles.
+ */
+
+.product-page {
+  background: $light-grey;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 25px;
+
+  .col {
+    padding: 50px 25px;
+  }
+
+  .col--product-image {
+    padding: 50px 25px;
+    flex: 1 0 42%;
+  }
+}
+
+.button {
+  transition: all 250ms ease;
+  transform: translateY(0);
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 30px;
+  border: 2px solid $black;
+  font-family: $mono;
+  font-size: 1.4rem;
+  font-weight: 300;
+  box-shadow: 0 0 0 rgba($black, 0.05);
+
+  @include min($tablet) {
+    font-size: 1.8rem;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    transform: translateY(-1px);
+    background: $black;
+    box-shadow: 0 1px 3px rgba($black, 0.12);
+    color: $white;
+  }
+}
+
+.buy-section {
+  padding: 50px 50px 50px;
+  background: $white;
+
+  h1 {
+    display: inline-block;
+  }
+}
+
+.product-name {
+  font-weight: 300;
+  font-size: 3.4rem;
+  margin-bottom: 20px;
+}
+
+.product-price {
+  margin-bottom: 25px;
+  display: block;
+  font-weight: 400;
+  font-size: 2rem;
+  color: $black;
+}
+
+.product-description {
+  margin-bottom: 25px;
+  color: #777;
+  line-height: 1.8;
+  font-size: 1.8rem;
+  font-weight: 400;
+}

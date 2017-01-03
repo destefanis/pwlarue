@@ -1,5 +1,5 @@
 /*
- *  Define the hero styles.
+ *  Define the product page styles.
  */
 
 .hero {
@@ -9,7 +9,7 @@
   margin: 0 10px;
   background-image: url('images/studio-image-alt.jpg');
   background-size: cover;
-  background-position: top;
+  background-position: center -80px;
   background-repeat: no-repeat;
   transition: height 300ms ease;
 
@@ -39,7 +39,7 @@
   position: relative;
   display: inline-block;
   width: 90%;
-  margin-top: -2em;
+  margin-top: -3em;
   text-align: left;
   padding: 25px 15px 50px;
   background: $white;

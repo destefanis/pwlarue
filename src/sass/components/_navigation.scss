@@ -10,11 +10,11 @@
   z-index: 999;
   width: 100%;
   height: auto;
-  padding: 20px 15px 20px;
+  padding: 15px;
   text-align: center;
   
   @include min($tablet) {
-    padding: 20px 50px 20px;
+    padding: 25px 50px;
   }
 }
 
@@ -29,7 +29,7 @@
     stroke: $black;
 
     @include min($tablet) {
-      width: 250px;
+      width: 220px;
     }
 
     * {
@@ -58,8 +58,8 @@
   font-size: 1.4rem;
 
   @include min($tablet) {
-    margin-top: 29px;
-    font-size: 1.8rem;
+    margin-top: 24px;
+    font-size: 1.6rem;
   }
 
   &.nav-link--first {
