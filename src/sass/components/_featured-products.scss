@@ -6,7 +6,11 @@
   padding-bottom: 75px;
 
   .grid {
-    padding: 0 25px;
+    padding: 0;
+
+    @include min($tablet) {
+      padding: 0 25px;
+    }
   }
 }
 
@@ -16,7 +20,7 @@
 }
 
 .col {
-  flex: 1 0 90%;
+  flex: 1 0 80%;
 
   @include min($tablet) {
     flex: 1 0 40%;
@@ -28,9 +32,13 @@
 }
 
 .section--cta {
-  padding: 75px 50px 10px;
+  padding: 75px 15px 10px;
   background: $white;
   color: $black;
+
+  @include min($tablet) {
+    padding: 75px 50px 10px;
+  }
 }
 
 .cta-header {
@@ -45,14 +53,24 @@
 .cta-link {
   transition: all 250ms ease;
   transform: translateY(0);
-  float: right;
-  margin-top: -2px;
+  display: inline-block;
+  margin-top: 10px;
   padding: 5px 30px;
   border: 2px solid $black;
   font-family: $mono;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: 300;
   box-shadow: 0 0 0 rgba($black, 0.05);
+
+  @include min(400px) {
+    float: right;
+    margin-top: -2px;
+  }
+
+  @include min($tablet) {
+    float: right;
+    font-size: 1.8rem;
+  }
 
   &:hover,
   &:active,
@@ -73,10 +91,14 @@
 
 .product-tile {
   position: relative;
-  margin: 25px;
+  margin: 15px;
   text-align: center;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba($black, 0.12);
+
+  @include min($tablet) {
+    margin: 25px;
+  }
 
   &:hover,
   &:active,

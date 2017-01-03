@@ -32,7 +32,11 @@ h1 {
 }
 
 .text-right {
-  text-align: right;
+  text-align: left;
+
+  @include min($tablet) {
+    text-align: right;
+  }
 }
 
 // LAYOUT

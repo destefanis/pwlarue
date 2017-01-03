@@ -7,15 +7,28 @@
 }
 
 .section--about {
-  padding: 100px 50px 100px;
+  padding: 50px 15px 25px;
   overflow: hidden;
   text-align: left;
-  background: #fcfcfc;
+  background: $light-grey;
+
+  @include min($tablet) {
+    padding: 100px 50px 100px;
+  }
 }
 
 .about-image {
   display: inline-block;
-  max-width: 60%;
+  max-width: 100%;
+
+  @include min($tablet) {
+    display: inline-block;
+    max-width: 60%;
+  }
+
+  @include min($xxlarge) {
+    max-width: 70%;
+  }
 }
 
 .section-content {
@@ -36,26 +49,50 @@
   color: $black;
   line-height: 1.8;
   letter-spacing: 1px;
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-family: $sans;
   font-weight: 400;
+
+  @include min($tablet) {
+    font-size: 2.4rem;
+  }
 }
 
 .section--instagram {
-  padding: 50px 50px 100px;
+  padding: 25px 15px 50px;
   position: relative;
-  background: #fcfcfc;
+  background: $light-grey;
   text-align: center;
 
+  @include min($tablet) {
+    padding: 50px 50px 100px;
+  }
+
   video {
-    width: 50%;
+    width: 100%;
+
+    @include min($tablet) {
+      width: 50%;
+    }
   }
 }
 
 .section-content--about {
-  right: 8%;
-  bottom: 25%;
-  width: 38%;
+  position: relative;
+  bottom: 50px;
+  width: 90%;
+
+  @include min($tablet) {
+    position: absolute;
+    top: auto;
+    right: 8%;
+    bottom: 25%;
+    width: 38%;
+  }
+
+  @include min($xxlarge) {
+    width: 34%;
+  }
 
   .cta-link {
     margin-top: 50px;

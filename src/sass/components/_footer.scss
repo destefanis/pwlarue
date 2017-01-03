@@ -3,10 +3,23 @@
  */
 
 .footer {
-  padding: 50px;
-  text-align: center;
+  padding: 50px 15px 25px;
+  text-align: left;
   font-weight: 400;
   font-family: $mono;
+
+  @include min($tablet) {
+    padding: 50px;
+    text-align: center;
+  }
+
+  .col {
+    margin-bottom: 35px;
+
+    @include min($tablet) {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .footer__link {

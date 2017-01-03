@@ -10,8 +10,12 @@
   z-index: 999;
   width: 100%;
   height: auto;
-  padding: 20px 50px 20px;
+  padding: 20px 15px 20px;
   text-align: center;
+  
+  @include min($tablet) {
+    padding: 20px 50px 20px;
+  }
 }
 
 .logo {
@@ -20,9 +24,13 @@
   text-align: center;
 
   svg {
-    width: 250px;
+    width: 180px;
     fill: $black;
     stroke: $black;
+
+    @include min($tablet) {
+      width: 250px;
+    }
 
     * {
       fill: $black;
@@ -43,11 +51,16 @@
 }
 
 .nav-link {
-  margin-top: 29px;
+  margin-top: 17px;
   color: $black;
   font-family: $mono;
   font-weight: 300;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
+
+  @include min($tablet) {
+    margin-top: 29px;
+    font-size: 1.8rem;
+  }
 
   &.nav-link--first {
     float: left;
