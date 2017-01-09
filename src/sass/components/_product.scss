@@ -3,18 +3,18 @@
  */
 
 .product-page {
-  background: $light-grey;
+  border-top: 2px solid $light-grey;
   display: flex;
   flex-wrap: wrap;
-  padding: 0 25px;
+  padding: 0;
+  align-items: center;
 
   .col {
-    padding: 50px 25px;
+    padding: 50px;
   }
 
   .col--product-image {
-    padding: 50px 25px;
-    flex: 1 0 42%;
+    flex: 1 0 35%;
   }
 }
 
@@ -22,8 +22,8 @@
   transition: all 250ms ease;
   transform: translateY(0);
   display: inline-block;
-  margin-top: 10px;
-  padding: 5px 30px;
+  margin-top: 40px;
+  padding: 8px 30px;
   border: 2px solid $black;
   font-family: $mono;
   font-size: 1.4rem;
@@ -31,7 +31,7 @@
   box-shadow: 0 0 0 rgba($black, 0.05);
 
   @include min($tablet) {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   &:hover,
@@ -45,8 +45,8 @@
 }
 
 .buy-section {
-  padding: 50px 50px 50px;
-  background: $white;
+  // padding: 50px 50px 50px;
+  // background: $white;
 
   h1 {
     display: inline-block;
@@ -54,23 +54,217 @@
 }
 
 .product-name {
-  font-weight: 300;
-  font-size: 3.4rem;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+  font-size: 3.2rem;
+  font-weight: 700;
 }
 
 .product-price {
   margin-bottom: 25px;
   display: block;
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: $black;
 }
 
 .product-description {
-  margin-bottom: 25px;
-  color: #777;
+  margin-bottom: 15px;
+  width: 80%;
+  color: $grey;
   line-height: 1.8;
   font-size: 1.8rem;
   font-weight: 400;
 }
+
+.product-page-details {
+  padding: 50px;
+  background: $light-grey;
+}
+
+.product-image--alt {
+  padding: 25px;
+  width: 50%;
+}
+
+.details {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  padding: 25px 25px 75px;
+  color: $black;
+
+  h2 {
+    font-size: 2.4rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 2;
+
+    span {
+      font-size: 1.6rem;
+      font-family: $mono;
+    }
+  }
+
+  h5 {
+    font-size: 1.8rem;
+    font-family: $mono;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+  }
+
+  ul {
+    list-style: none;
+    font-size: 2.4rem;
+  }
+}
+
+// Radio Buttons
+.control-group {
+  margin-bottom: 15px;
+}
+
+.control-group-wrapper {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 30px;
+}
+
+.control-group__header {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: $grey;
+}
+
+.control {
+  font-size: 1.4rem;
+  position: relative;
+  display: inline-block;
+  padding-left: 8px;
+  padding-right: 8px;
+  cursor: pointer;
+
+  &:hover {
+    .control__text {
+      transform: translate(-50%, -38px);
+      opacity: 1;
+    }
+  }
+}
+
+.control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.control__text {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  opacity: 0;
+  padding: 2px 8px;
+  transform: translate(-50%, -28px);
+  background: $white;
+  color: $black;
+  letter-spacing: 1px;
+  transition: all 350ms ease;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.control__indicator {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  background: #ccc;
+  transition: transform 200ms ease;
+
+  &.control__indicator--black {
+    background: $black;
+  }
+
+  &.control__indicator--tan {
+    background: #d58061;
+  }
+}
+
+/* Radio button inner circle */
+.control--radio .control__indicator:after {
+  content: '';
+  top: -4px;
+  left: -4px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid $black;
+  transition: transform 200ms ease;
+}
+
+/* Disabled circle colour */
+.control--radio input:disabled ~ .control__indicator:after {
+  background: #7b7b7b;
+}
+
+.control--radio .control__indicator {
+  border-radius: 50%;
+}
+
+/* Hover and focus states */
+.control:hover input ~ .control__indicator,
+.control input:focus ~ .control__indicator {
+  transform: scale(0.95);
+}
+
+/* Checked state */
+.control input:checked ~ .control__indicator {
+  // background: #2aa1c0;
+}
+
+/* Hover state whilst checked */
+.control:hover input:not([disabled]):checked ~ .control__indicator,
+.control input:checked:focus ~ .control__indicator {
+  &:after {
+    transform: scale(1.05);
+  }
+}
+
+/* Disabled state */
+.control input:disabled ~ .control__indicator {
+  pointer-events: none;
+  opacity: .6;
+  background: #e6e6e6;
+}
+
+/* Check mark */
+.control__indicator:after {
+  position: absolute;
+  display: none;
+  content: '';
+}
+
+/* Show check mark */
+.control input:checked ~ .control__indicator:after {
+  display: block;
+}
+
+/* Checkbox tick */
+.control--checkbox .control__indicator:after {
+  top: 4px;
+  left: 8px;
+  width: 3px;
+  height: 8px;
+  transform: rotate(45deg);
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+}
+
+/* Disabled tick colour */
+.control--checkbox input:disabled ~ .control__indicator:after {
+  border-color: #7b7b7b;
+}
+
+
