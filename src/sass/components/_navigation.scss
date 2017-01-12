@@ -53,9 +53,11 @@
 .nav-link {
   margin-top: 17px;
   color: $black;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   font-family: $mono;
   font-weight: 300;
-  font-size: 1.4rem;
+  font-size: 1.4rem;  
 
   @include min($tablet) {
     margin-top: 24px;

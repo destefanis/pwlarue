@@ -15,14 +15,58 @@
 
   .col--product-image {
     flex: 1 0 35%;
+    align-self: flex-start;
+    padding-left: 25px;
   }
+
+  .col--product-thumbnails {
+    flex: 1 0 5%;
+    align-self: flex-start;
+    padding-right: 0;
+  }
+
+  .col--purchase {
+    padding-top: 25px;
+  }
+}
+
+.product-thumbnail {
+  margin-bottom: 15px;
+}
+
+.breadcrumbs {
+  border-top: 2px solid $light-grey;
+  padding: 10px 50px;
+}
+
+.breadcrumbs-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumbs-list__item {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: $mono;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.breadcrumbs-list__item-link {
+  margin-right: 10px;
+}
+
+.breadcrumb-divider {
+  display: inline-block;
+  margin-right: 15px;
 }
 
 .button {
   transition: all 250ms ease;
   transform: translateY(0);
   display: inline-block;
-  margin-top: 40px;
   padding: 8px 30px;
   border: 2px solid $black;
   font-family: $mono;
@@ -54,14 +98,14 @@
 }
 
 .product-name {
-  margin-bottom: 5px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   font-size: 3.2rem;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .product-price {
-  margin-bottom: 25px;
+  margin-top: -5px;
+  margin-bottom: 15px;
   display: block;
   font-weight: 400;
   font-size: 1.8rem;
@@ -69,11 +113,11 @@
 }
 
 .product-description {
-  margin-bottom: 15px;
+  margin-bottom: 35px;
   width: 80%;
   color: $grey;
   line-height: 1.8;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 400;
 }
 
@@ -82,46 +126,69 @@
   background: $light-grey;
 }
 
+.product-page-materials {
+  padding: 50px;
+  background: $white;
+}
+
 .product-image--alt {
   padding: 25px;
   width: 50%;
 }
 
 .details {
-  display: block;
+  display: inline-block;
+  vertical-align: top;
   width: 50%;
   margin: 0 auto;
-  padding: 25px 25px 75px;
+  padding: 25px 50px 75px;
   color: $black;
 
-  h2 {
-    font-size: 2.4rem;
-    font-weight: 400;
-    letter-spacing: 1px;
-    line-height: 2;
-
-    span {
-      font-size: 1.6rem;
-      font-family: $mono;
-    }
-  }
-
   h5 {
-    font-size: 1.8rem;
-    font-family: $mono;
-    letter-spacing: 1px;
     margin-bottom: 15px;
+    letter-spacing: 1px;
+    color: $grey;
+    font-size: 1.6rem;
+    font-family: $mono;
   }
+}
 
-  ul {
-    list-style: none;
-    font-size: 2.4rem;
+.details--large {
+  display: block;
+  width: 60%;
+}
+
+.materials,
+.construction-details {
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 2;
+
+  span {
+    font-size: 1.6rem;
+    font-family: $mono;
   }
+}
+
+.construction-details {
+  list-style: none;
+}
+
+.product-full-description {
+  font-size: 2.4rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 2;
 }
 
 // Radio Buttons
 .control-group {
   margin-bottom: 15px;
+
+  &.control-group--last {
+    margin-bottom: 35px;
+  }
 }
 
 .control-group-wrapper {
@@ -132,8 +199,9 @@
 
 .control-group__header {
   display: inline-block;
+  margin-top: 1px;
   font-weight: 400;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: $grey;
 }
 
@@ -178,8 +246,8 @@
   position: relative;
   top: 0;
   left: 0;
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   background: #ccc;
   transition: transform 200ms ease;
 
@@ -197,8 +265,8 @@
   content: '';
   top: -4px;
   left: -4px;
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   border: 2px solid $black;
   transition: transform 200ms ease;
