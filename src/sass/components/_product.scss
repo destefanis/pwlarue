@@ -36,7 +36,7 @@
 
 .breadcrumbs {
   border-top: 2px solid $light-grey;
-  padding: 10px 50px;
+  padding: 15px 50px;
 }
 
 .breadcrumbs-list {
@@ -122,7 +122,7 @@
 }
 
 .product-page-details {
-  padding: 50px;
+  padding: 100px 0 50px;
   background: $light-grey;
 }
 
@@ -141,7 +141,7 @@
   vertical-align: top;
   width: 50%;
   margin: 0 auto;
-  padding: 25px 50px 75px;
+  padding: 25px 25px 75px;
   color: $black;
 
   h5 {
@@ -155,7 +155,8 @@
 
 .details--large {
   display: block;
-  width: 60%;
+  width: 57%;
+  margin-left: 15%;
 }
 
 .materials,
@@ -176,10 +177,38 @@
 }
 
 .product-full-description {
-  font-size: 2.4rem;
+  padding-top: 15px;
+  padding-bottom: 50px;
+  font-size: 2.2rem;
   font-weight: 400;
   letter-spacing: 1px;
-  line-height: 2;
+  line-height: 1.8;
+}
+
+.product-spec {
+  padding: 0 0 45px;
+}
+
+.product-spec-header {
+  display: inline-block;
+  width: 120px;
+  vertical-align: top;
+  margin-bottom: 15px;
+  margin-right: 100px;
+  letter-spacing: 1px;
+  color: $grey;
+  font-size: 1.6rem;
+  line-height: 34px;
+  font-family: $mono;
+}
+
+.product-spec-detail {
+  display: inline-block;
+  vertical-align: top;
+  letter-spacing: 1px;
+  line-height: 1.8;
+  font-size: 2rem;
+  font-weight: 400;
 }
 
 // Radio Buttons
@@ -215,7 +244,7 @@
 
   &:hover {
     .control__text {
-      transform: translate(-50%, -38px);
+      transform: translate(-50%, -32px);
       opacity: 1;
     }
   }
