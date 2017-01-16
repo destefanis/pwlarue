@@ -6,12 +6,22 @@
   position: relative;
   height: 75vh;
   max-height: 310px;
-  margin: 0 10px;
-  background-image: url('images/studio-image-alt.jpg');
+  background-image: url('images/shop-sewing-machines.jpg');
   background-size: cover;
-  background-position: center -80px;
+  background-position: center;
   background-repeat: no-repeat;
   transition: height 300ms ease;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(rgba($white, 0), rgba(#e2c9b5, 0.4));
+  }
 
   @include min($iphone) {
     height: 50vh;
@@ -21,12 +31,11 @@
   @include min($tablet) {
     height: 85vh;
     min-height: 520px;
-    margin: 0 50px;
   }
 
   @include min($desktop) {
     height: 85vh;
-    min-height: 580px;
+    min-height: 680px;
   }
 
   @include min($xxlarge) {
@@ -35,26 +44,44 @@
   }
 }
 
+// .hero-header {
+//   position: relative;
+//   display: inline-block;
+//   width: 90%;
+//   margin-top: -3em;
+//   text-align: left;
+//   padding: 25px 15px 50px;
+//   background: $white;
+//   color: $black;
+//   line-height: 1.8;
+//   font-weight: 400;
+//   font-size: 2.4rem;
+
+//   @include min($tablet) {
+//     width: 50%;
+//     padding: 25px 50px 50px;
+//   }
+
+//   @include min($xxlarge) {
+//     width: 48%;
+//     font-size: 3.4rem;
+//   }
+// }
+
 .hero-header {
-  position: relative;
+  position: absolute;
   display: inline-block;
-  width: 90%;
-  margin-top: -3em;
+  bottom: 50px;
+  background: none;
   text-align: left;
-  padding: 25px 15px 50px;
-  background: $white;
-  color: $black;
-  line-height: 1.8;
-  font-weight: 400;
-  font-size: 2.4rem;
-
-  @include min($tablet) {
-    width: 50%;
-    padding: 25px 50px 50px;
-  }
-
-  @include min($xxlarge) {
-    width: 48%;
-    font-size: 3.4rem;
-  }
+  line-height: 1.6;
+  font-weight: 500;
+  font-size: 3rem;
+  z-index: 100;
+  width: 46%;
+  padding: 35px;
+  color: #fff;
+  border-top: 2px solid #fff;
+  border: 2px solid #fff;
+  margin: 0 50px;
 }

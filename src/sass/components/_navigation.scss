@@ -54,14 +54,15 @@
   margin-top: 17px;
   color: $black;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   font-family: $mono;
-  font-weight: 300;
-  font-size: 1.4rem;  
+  font-weight: 700;
+  font-size: 1.4rem;
+  webkit-font-smoothing: auto;  
 
   @include min($tablet) {
     margin-top: 24px;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   &.nav-link--first {
