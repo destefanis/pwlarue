@@ -1,1 +1,1 @@
-!function(){"use strict";var n=function(){};document.addEventListener("DOMContentLoaded",n)}();
+!function(){"use strict";!function(o){console.log("loaded");var l=document.querySelectorAll(".parallax"),n=.025;window.onscroll=function(){[].slice.call(l).forEach(function(o,l){var e=window.pageYOffset,t=e*n;o.style.transform="translate(0px, -"+t+"%)"})}}(jQuery)}();

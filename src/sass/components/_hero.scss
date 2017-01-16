@@ -6,22 +6,12 @@
   position: relative;
   height: 75vh;
   max-height: 310px;
-  background-image: url('images/shop-sewing-machines.jpg');
-  background-size: cover;
+  background-image: url('images/carry-all.png');
+  background-size: 65%;
+  background-color: #e9ccb9;
   background-position: center;
   background-repeat: no-repeat;
   transition: height 300ms ease;
-
-  &::after {
-    content: '';
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(rgba($white, 0), rgba(#e2c9b5, 0.4));
-  }
 
   @include min($iphone) {
     height: 50vh;
@@ -35,53 +25,76 @@
 
   @include min($desktop) {
     height: 85vh;
-    min-height: 680px;
+    min-height: 720px;
   }
 
   @include min($xxlarge) {
     height: 85vh;
-    min-height: 680px;
   }
 }
 
-// .hero-header {
-//   position: relative;
-//   display: inline-block;
-//   width: 90%;
-//   margin-top: -3em;
-//   text-align: left;
-//   padding: 25px 15px 50px;
-//   background: $white;
-//   color: $black;
-//   line-height: 1.8;
-//   font-weight: 400;
-//   font-size: 2.4rem;
+.hero__product-info {
+  position: absolute;
+  bottom: 25%;
+  right: 8%;
+  color: $white;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 3rem;
 
-//   @include min($tablet) {
-//     width: 50%;
-//     padding: 25px 50px 50px;
-//   }
+  &:before {
+    content: '';
+    width: 120px;
+    background: #fff;
+    height: 2px;
+    display: inline-block;
+    position: absolute;
+    left: -145px;
+    top: 22px;
+  }
+}
 
-//   @include min($xxlarge) {
-//     width: 48%;
-//     font-size: 3.4rem;
-//   }
-// }
+.hero-header__label {
+  font-family: $mono;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-bottom: 2px solid $white;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+.header-text {
+  display: block;
+}
+
+.see-details {
+  display: inline-block;
+  padding-bottom: 4px;
+  border-bottom: 2px solid $white;
+  letter-spacing: 1px;
+  font-family: $mono;
+  font-size: 1.8rem;
+}
 
 .hero-header {
   position: absolute;
   display: inline-block;
-  bottom: 50px;
-  background: none;
+  top: 40px;
+  left: 16%;
+  z-index: 100;
+  width: 37%;
+  padding: 35px;
+  color: $white;
   text-align: left;
   line-height: 1.6;
+  font-size: 4rem;
   font-weight: 500;
-  font-size: 3rem;
-  z-index: 100;
-  width: 46%;
-  padding: 35px;
-  color: #fff;
-  border-top: 2px solid #fff;
-  border: 2px solid #fff;
-  margin: 0 50px;
+  transition: transform 100ms ease;
+  text-shadow: 0 1px 1px rgba($black, 0.05);
+
+  .hero-header__text {
+    display: block;
+    margin-top: 12px;
+  }
 }
