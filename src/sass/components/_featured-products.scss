@@ -3,7 +3,7 @@
  */
 
 .featured-products {
-  padding-bottom: 75px;
+  font-size: 0;
 
   .grid {
     padding: 0;
@@ -12,6 +12,80 @@
       padding: 0 25px;
     }
   }
+}
+
+.featured-product {
+  position: relative;
+  display: inline-block;
+  width: 33.3%;
+  margin-bottom: -1px;
+  vertical-align: top;
+  transition: background-color 300ms ease;
+
+  &:hover,
+  &:active,
+  &:focus {
+    .product-info {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  &.background-grey {
+    background-color: rgba($light-grey, 0.99);
+  }
+
+  &.background-tan {
+    background-color: rgba($tan, 0.99);
+
+    .product-info {
+      color: $white;
+    }
+
+    .price {
+      color: $light-grey;
+    }
+  }
+
+  &.background-blue {
+    background-color: rgba($blue, 0.25);
+  }
+}
+
+.product-info {
+  position: absolute;
+  top: 35px;
+  left: 10%;
+  color: $black;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 3rem;
+  transition: all 300ms ease;
+  transform: translateY(15px);
+  opacity: 0;
+  line-height: 1.2;
+
+  em {
+    font-style: normal;
+    font-family: $mono;
+    font-size: 1.8rem;
+  }
+
+  .price {
+    display: inline-block;
+    vertical-align: top;
+    padding-bottom: 4px;
+    letter-spacing: 1px;
+    font-family: $mono;
+    font-size: 1.8rem;
+    font-weight: bold;
+    webkit-font-smoothing: auto;
+    color: $grey;
+  }
+}
+
+.product-text {
+  display: block;
 }
 
 .grid {
@@ -37,17 +111,21 @@
   color: $black;
 
   @include min($tablet) {
-    padding: 75px 50px 10px;
+    padding: 50px 50px 50px;
+    margin: 0 50px;
   }
 }
 
 .cta-header {
+  position: relative;
   display: inline-block;
+  margin-right: 50px;
   vertical-align: top;
   color: $black;
-  font-family: $mono;
-  font-size: 2rem;
-  font-weight: 300;
+  font-family: $sans;
+  font-size: 3rem;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
 .cta-link {
@@ -55,20 +133,15 @@
   transform: translateY(0);
   display: inline-block;
   margin-top: 10px;
-  padding: 5px 30px;
-  border: 2px solid $black;
+  padding: 0 0 4px;
+  border-bottom: 2px solid $black;
+  letter-spacing: 1px;
   font-family: $mono;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 300;
   box-shadow: 0 0 0 rgba($black, 0.05);
 
-  @include min(400px) {
-    float: right;
-    margin-top: -2px;
-  }
-
   @include min($tablet) {
-    float: right;
     font-size: 1.8rem;
   }
 
@@ -76,9 +149,8 @@
   &:active,
   &:focus {
     transform: translateY(-1px);
-    background: $black;
-    box-shadow: 0 1px 3px rgba($black, 0.12);
-    color: $white;
+    color: $grey;
+    border-color: $grey;
   }
 }
 

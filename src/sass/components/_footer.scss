@@ -4,12 +4,14 @@
 
 .footer {
   padding: 50px 15px 25px;
+  background: $white;
+  color: $black;
   text-align: left;
   font-weight: 400;
   font-family: $mono;
 
   @include min($tablet) {
-    padding: 50px;
+    padding: 50px 100px;
     text-align: center;
   }
 
