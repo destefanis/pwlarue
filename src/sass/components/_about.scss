@@ -28,9 +28,9 @@
     max-width: 100%;
   }
 
-  @include min($xxlarge) {
-    max-width: 70%;
-  }
+  // @include min($xxlarge) {
+  //   max-width: 70%;
+  // }
 }
 
 .section-content {
