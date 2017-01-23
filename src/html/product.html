@@ -29,43 +29,38 @@
     </nav>
 
     <div class="breadcrumbs">
+      <a class="breadcrumb-link breadcrumb-link--previous" href="#">Previous Product</a>
       <ul class="breadcrumbs-list">
         <li class="breadcrumbs-list__item">
           <a href="/shop" class="breadcrumbs-list__item-link">
             Products
           </a>
           <span class="breadcrumb-divider">
-            -
+            >
           </span>
         </li>
         <li class="breadcrumbs-list__item">
           <a href="/shop/wallets" class="breadcrumbs-list__item-link">
             Wallets
           </a>
-          <span class="breadcrumb-divider">
-            —
-          </span>
         </li>
-        <li class="breadcrumbs-list__item">Bi-Fold Wallet</li>
+        <li class="breadcrumbs-list__item"><span class="breadcrumb-divider">> </span>Bi-Fold Wallet</li>
       </ul>
+      <a class="breadcrumb-link breadcrumb-link--next" href="#">Next Product</a>
     </div>
 
     <section class="product-page-wrapper">
       <div class="product-page">
-        <div class="col col--product-thumbnails">
-          <img class="product-thumbnail" src="images/bi-fold-wallet-black-front.jpg">
-          <img class="product-thumbnail" src="images/bi-fold-wallet-black-open.jpg">
-          <img class="product-thumbnail" src="images/bi-fold-wallet-black-side.jpg">
+        <div class="product-image-wrapper">
+          <img class="product-image" src="images/products/bi-fold-wallet-black-front.png">
+          <div class="product-thumbnails">
+            <img class="product-thumbnail" src="images/products/bi-fold-wallet-black-front.png">
+            <img class="product-thumbnail" src="images/products/bi-fold-wallet-black-open.png">
+            <img class="product-thumbnail" src="images/products/bi-fold-wallet-black-side.png">
+          </div>
         </div>
-        <div class="col col--product-image">
-          <img class="product-image" src="images/bi-fold-wallet-black-front.jpg">
-        </div>
-        <div class="col col--purchase">
-          <div class="buy-section">
+        <div class="buy-section">
             <h1 class="product-name">Bi-Fold Wallet</h1>
-            <span class="product-price">
-              $99.99
-            </span>
             <p class="product-description">
               A small open format wallet with plenty of space for your essential cards and folded cash.
             </p>
@@ -92,11 +87,12 @@
                 </label> -->
               </div>
             </div>
-
+            <span class="product-price">
+              $99.99
+            </span>
             <a href="#" class="button button--buy">
               Add To Cart
             </a>
-          </div>
         </div>
       </div>
       <div class="product-page-details">
@@ -144,14 +140,48 @@
           </div>
         </div>
       </div>
-      <div class="page-navigation">
+      <!-- <div class="page-navigation">
         <a href="/shop">
           Back To Products
         </a>
         <a href="/shop">
           Next Product
         </a>
-      </div>
+      </div> -->
+      <section class="section section--featured text-center">
+        <h3 class="subheader text-center">
+          Related Products
+        </h3>
+        <div class="featured-products">
+          <div class="featured-product background-grey">
+            <a href="product.html">
+              <img class="featured-product__image" src="images/products/accordian-wallet-tan-front.png" />
+              <img class="featured-product__image-alt" src="images/products/accordian-wallet-tan-open.png">
+              <h3 class="product-info">
+                <span class="product-text">
+                  Snap Wallet
+                </span>
+                <span class="price">
+                  $99.00
+                </span>
+              </h3>
+            </a>
+          </div>
+          <div class="featured-product background-grey">
+            <a href="product.html">
+              <img class="featured-product__image" src="images/products/bi-fold-wallet-tan-front.png" />
+              <h3 class="product-info">
+                <span class="product-text">
+                  Bi-Fold Wallet
+                </span>
+                <span class="price">
+                  $99.00
+                </span>
+              </h3>
+            </a>
+          </div>
+        </div>
+      </section>
       <div class="product-page-materials">
         <!-- <img src="images/shop-machines-dark.jpg">
         <img src="images/shop-machines.jpg"> -->

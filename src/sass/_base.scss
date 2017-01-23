@@ -26,6 +26,12 @@ h1 {
   }
 }
 
+.subheader {
+  margin: 0 0 50px;
+  letter-spacing: 1px;
+  font-size: 3rem;
+  font-weight: 400;
+}
 
 .text-left {
   text-align: left;
@@ -37,6 +43,10 @@ h1 {
   @include min($tablet) {
     text-align: right;
   }
+}
+
+.text-center {
+  text-align: center;
 }
 
 // LAYOUT
