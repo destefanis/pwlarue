@@ -19,9 +19,13 @@
 
 .product-image-wrapper {
   display: inline-block;
-  width: 54%;
+  width: 50%;
   padding: 0 25px;
   vertical-align: top;
+
+  @include min($xlarge) {
+    width: 54%;
+  }
 }
 
 .product-image {
