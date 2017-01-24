@@ -9,23 +9,39 @@
   background: $light-grey;
 
   @include min($tablet) {
-    padding: 0 50px 25px;
+    padding: 0 15px 25px;
   }
 
   @include min($desktop) {
+    padding: 0 50px 50px;
+  }
+
+  @include min($xlarge) {
     padding: 0 100px 50px;
   }
 }
 
+.product-page--tan {
+  background: $tan;
+}
+
+.product-page--blue {
+  background: rgba($blue, 0.7);
+}
+
 .product-image-wrapper {
   display: inline-block;
-  width: 50%;
-  padding: 0 25px;
+  width: 100%;
   vertical-align: top;
 
-  @include min($xlarge) {
-    width: 54%;
+  @include min($desktop) {
+    width: 56%;
+    padding: 0 25px;
   }
+
+  // @include min($xlarge) {
+  //   width: 54%;
+  // }
 }
 
 .product-image {
@@ -35,30 +51,64 @@
 
 .buy-section {
   display: inline-block;
-  width: 32%;
-  padding: 120px 25px 0;
+  width: 100%;
+  padding: 0 25px 25px;
+  text-align: center;
   vertical-align: top;
-  text-align: left;
+  text-align: center;
+
+  @include min($desktop) {
+    width: 44%;
+    padding: 80px 25px 0;
+    text-align: left; 
+  }
+
+  @include min($large) {
+    padding: 120px 25px 0;
+    width: 32%;
+  }
 }
 
 .product-thumbnails {
   display: block;
-  margin: -50px auto 50px;
+  margin: -30px auto 25px;
+  width: 80%;
   text-align: center;
+
+  @include min($tablet) {
+    margin-top: -75px;
+  }
+
+  @include min($desktop) {
+    width: 100%;
+    margin: -50px auto 50px;
+  }
 }
 
 .product-thumbnail {
   display: inline-block;
-  width: 160px;
+  width: 31%;
   margin: 0 2px;
   background: $white;
   box-shadow: 0 1px 3px rgba($black, 0.05);
+
+  @include min($tablet) {
+    max-width: 160px;
+  }
 }
 
 .breadcrumbs {
-  padding: 15px 100px;
+  padding: 15px 10px;
   border-top: 2px solid $light-grey;
   text-align: center;
+
+  @include min($tablet) {
+    padding: 15px 50px;
+  }
+
+  @include min($desktop) {
+    padding: 15px 100px;
+  }
 }
 
 .breadcrumbs-list {
@@ -92,11 +142,21 @@
 }
 
 .breadcrumb-link--next {
+  display: none;
   float: right;
+
+  @include min($tablet) {
+    display: inline-block;
+  }
 }
 
 .breadcrumb-link--previous {
+  display: none;
   float: left;
+
+  @include min($tablet) {
+    display: inline-block;
+  }
 }
 
 .breadcrumb-divider {
@@ -159,12 +219,16 @@
 
 .product-description {
   margin-bottom: 35px;
-  width: 90%;
+  width: 100%;
   color: $grey;
   line-height: 1.8;
   font-size: 1.8rem;
   font-weight: 400;
   font-family: $sans;
+
+  @include min($large) {
+    width: 90%;
+  }
 }
 
 .product-page-details {
@@ -179,9 +243,13 @@
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
-  padding: 70px 75px 50px;
+  padding: 25px 25px 50px;
   text-align: left;
   color: $black;
+
+  @include min($tablet) {
+    padding: 70px 75px 50px;
+  }
 
   h5 {
     margin-bottom: 15px;

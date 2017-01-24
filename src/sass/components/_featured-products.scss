@@ -17,10 +17,18 @@
 .featured-product {
   position: relative;
   display: inline-block;
-  width: 33%;
+  width: 100%;
   margin: 0 2px 4px;
   vertical-align: top;
   transition: background-color 300ms ease;
+
+  @include min($tablet) {
+    width: 50%;
+  }
+
+  @include min($large) {
+    width: 33%;
+  }
 
   &:hover,
   &:active,
@@ -83,8 +91,7 @@
   bottom: 0;
   left: 0;
   transition: all 350ms ease;
-  transform: translateY(15px);
-  opacity: 0;
+  opacity: 1;
   z-index: 100;
   padding: 15px 25px 10px;
   background: $white;
@@ -94,6 +101,11 @@
   letter-spacing: 2px;
   font-size: 2.8rem;
   font-weight: 500;
+
+  @include min($desktop) {
+    transform: translateY(15px);
+    opacity: 0;
+  }
 
   em {
     letter-spacing: 0;
