@@ -72,10 +72,11 @@
 .product-thumbnails {
   display: block;
   margin: -30px auto 25px;
-  width: 80%;
+  width: 90%;
   text-align: center;
 
   @include min($tablet) {
+    width: 80%;
     margin-top: -75px;
   }
 
@@ -215,10 +216,14 @@
   display: inline-block;
   margin-top: -5px;
   margin-bottom: 15px;
-  margin-right: 50px;
+  margin-right: 25px;
   font-weight: 500;
   font-size: 2rem;
   color: $black;
+
+  @include min($tablet) {
+    margin-right: 50px;
+  }
 }
 
 .product-description {
