@@ -52,10 +52,14 @@
 .buy-section {
   display: inline-block;
   width: 100%;
-  padding: 0 25px 25px;
+  padding: 0 0 25px;
   text-align: center;
   vertical-align: top;
   text-align: center;
+
+  @include min($tablet) {
+    padding: 0 25px 25px;
+  }
 
   @include min($desktop) {
     width: 44%;
@@ -72,7 +76,7 @@
 .product-thumbnails {
   display: block;
   margin: -30px auto 25px;
-  width: 90%;
+  width: 100%;
   text-align: center;
 
   @include min($tablet) {
@@ -88,12 +92,13 @@
 
 .product-thumbnail {
   display: inline-block;
-  width: 31%;
+  width: 30%;
   margin: 0 2px;
   background: $white;
   box-shadow: 0 1px 3px rgba($black, 0.05);
 
   @include min($tablet) {
+    width: 31%;
     max-width: 160px;
   }
 }
