@@ -14,6 +14,25 @@
   }
 }
 
+.shop-page {
+  padding-top: 0;
+
+  .featured-product {
+    padding: 0px 0 50px;
+  }
+
+  .product-info {
+    width: 100%;
+    padding-bottom: 35px;
+    text-align: center;
+    font-size: 2.4rem;
+    letter-spacing: 1px;
+    background: none;
+    transform: translateY(0);
+    opacity: 1; 
+  }
+}
+
 .featured-product {
   position: relative;
   display: inline-block;
@@ -78,7 +97,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
+  height: auto;
   width: 100%;
   opacity: 0;
   z-index: 10;

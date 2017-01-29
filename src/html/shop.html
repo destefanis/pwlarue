@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+  <head>
+    <title>P.W. LaRue Co. | Authentic Leather Makers</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    
+    <nav class="navigation">
+      <a href="/shop" class="nav-link nav-link--first">
+        Shop  
+      </a>
+      <div class="logo">
+        <a href="/">
+          @include("svg/logo.svg")
+        </a>
+      </div>
+      <a href="/cart" class="nav-link nav-link--last">
+        Cart 
+      </a>
+    </nav>
+
+    <div class="filters">
+      <span class="filter-label">Shopping:</span>
+      <ul class="filter-list">
+        <li class="filter-list-item filter-list-item--active">
+          All Products
+        </li>
+        <li class="filter-list-item">
+          Bags
+        </li>
+        <li class="filter-list-item">
+          Wallets
+        </li>
+        <li class="filter-list-item">
+          Pouches
+        </li>
+        <li class="filter-list-item">
+          Accessories
+        </li>
+      </ul>
+      <div class="filter-sort">
+        <span class="filter-label">Sort By:</span>
+        <span class="filter-sort__list">
+          <span class="filter-sort__list-item">
+            Price
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <section class="section section--featured shop-page">
+      <div class="featured-products">
+        
+        <div class="featured-product background-grey">
+          <a href="product.html">
+            <img class="featured-product__image" src="images/products/bi-fold-wallet-black-front.png" />
+            <img class="featured-product__image-alt" src="images/products/bi-fold-wallet-black-open.png">
+            <h3 class="product-info">
+              <span class="product-text">
+                Bi-Fold Wallet
+              </span>
+              <span class="price">
+                $99.00
+              </span>
+            </h3>
+          </a>
+        </div>
+        <div class="featured-product background-grey">
+          <a href="product.html">
+            <img class="featured-product__image" src="images/products/accordian-wallet-tan-front.png" />
+            <img class="featured-product__image-alt" src="images/products/accordian-wallet-tan-open.png">
+            <h3 class="product-info">
+              <span class="product-text">
+                Snap Wallet
+              </span>
+              <span class="price">
+                $99.00
+              </span>
+            </h3>
+          </a>
+        </div>
+        <div class="featured-product background-grey">
+          <a href="product.html">
+            <img class="featured-product__image" src="images/products/bi-fold-wallet-tan-front.png" />
+            <h3 class="product-info">
+              <span class="product-text">
+                Bi-Fold Wallet
+              </span>
+              <span class="price">
+                $99.00
+              </span>
+            </h3>
+          </a>
+        </div>
+        <div class="featured-product background-grey">
+          <a href="product.html">
+            <img class="featured-product__image" src="images/products/carry-all-navy-front.png" />
+            <h3 class="product-info">
+              <span class="product-text">
+                Carry All Bag
+              </span>
+              <span class="price">
+                $299.00
+              </span>
+            </h3>
+          </a>
+        </div>
+
+        <div class="featured-product background-grey">
+          <a href="product.html">
+            <img class="featured-product__image" src="images/black-roll-top-bag.png" />
+            <h3 class="product-info">
+              <span class="product-text">
+                Roll Top Bag
+              </span>
+              <span class="price">
+                $299.00
+              </span>
+            </h3>
+          </a>
+        </div>
+
+        <div class="featured-product background-grey">
+          <a href="product.html">
+            <img class="featured-product__image" src="images/products/keyholder-tan-front.png" />
+            <h3 class="product-info">
+              <span class="product-text">
+                Keyholder
+              </span>
+              <span class="price">
+                $39.00
+              </span>
+            </h3>
+          </a>
+        </div>
+
+        <!-- <div class="grid">
+          <div class="product-tile col">
+            <a href="product.html" class="product-tile-link">
+              <img class="product-tile__image" src="images/bi-fold-wallet-tan-front.jpg">
+              <img class="product-tile__image--alt" src="images/bi-fold-wallet-black-open.jpg">
+              <div class="product-tile__info">
+                <h3 class="info-product-name">Bi-Fold Wallet (Tan)</h3>
+                <span class="info-product-price">
+                  $99.00
+                </span>
+              </div>
+            </a>
+          </div>
+          <div class="product-tile col">
+            <a href="product.html" class="product-tile-link">
+              <img class="product-tile__image" src="images/bi-fold-wallet-black-front.jpg">
+              <img class="product-tile__image--alt" src="images/bi-fold-wallet-black-open.jpg">
+              <div class="product-tile__info">
+                <h3 class="info-product-name">Bi-Fold Wallet (Black)</h3>
+                <span class="info-product-price">
+                  $99
+                </span>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-tile col">
+            <a href="#" class="product-tile-link">
+              <img class="product-tile__image" src="images/accordian-wallet-tan-front.jpg">
+              <img class="product-tile__image--alt" src="images/accordian-wallet-tan-open.jpg">
+              <div class="product-tile__info">
+                <h3 class="info-product-name">Accordian Wallet (Tan)</h3>
+                <span class="info-product-price">
+                  $99
+                </span>
+              </div>
+            </a>
+          </div>
+          <div class="product-tile col">
+            <a href="#" class="product-tile-link">
+              <img class="product-tile__image" src="images/accordian-wallet-black-front.jpg">
+              <img class="product-tile__image--alt" src="images/accordian-wallet-black-open.jpg">
+              <div class="product-tile__info">
+                <h3 class="info-product-name">Accordian Wallet (Black)</h3>
+                <span class="info-product-price">
+                  $99
+                </span>
+              </div>
+            </a>
+          </div>
+          <div class="product-tile col">
+            <a href="#" class="product-tile-link">
+              <img class="product-tile__image" src="images/keyholder-black-front.jpg">
+              <img class="product-tile__image--alt" src="images/keyholder-black-open.jpg">
+              <div class="product-tile__info">
+                <h3 class="info-product-name">Keyholder (Black)</h3>
+                <span class="info-product-price">
+                  $29
+                </span>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-tile col">
+            <a href="#" class="product-tile-link">
+              <img class="product-tile__image" src="images/snap-card-wallet-black-front.jpg">
+              <img class="product-tile__image--alt" src="images/snap-card-wallet-black-open.jpg">
+              <div class="product-tile__info">
+                <h3 class="info-product-name">Snap Card Wallet (Black)</h3>
+                <span class="info-product-price">
+                  $110
+                </span>
+              </div>
+            </a>
+          </div>
+          <div class="product-tile col">
+            <a href="#" class="product-tile-link">
+              <img class="product-tile__image" src="images/snap-card-wallet-tan-front.jpg">
+              <div class="product-tile__info">
+                <h3 class="info-product-name">Snap Card Wallet (Tan)</h3>
+                <span class="info-product-price">
+                  $110
+                </span>
+              </div>
+            </a>
+          </div>
+          <div class="product-tile col">
+            <a href="#" class="product-tile-link">
+              <img class="product-tile__image" src="images/carry-all-olive-front.jpg">
+              <div class="product-tile__info">
+                <h3 class="info-product-name">Carry All Bag (Olive)</h3>
+                <span class="info-product-price">
+                  $299
+                </span>
+              </div>
+            </a>
+          </div>
+        </div> -->
+
+      </div>
+    </section>
+
+    <section class="section section--instagram">
+      <div class="section-content section-content--instagram">
+        <h2 class="section-header">
+          Follow our shop on Instagram
+        </h2>
+        <a href="#" target="_blank" class="cta-link">Follow @p.w.larue</a>
+      </div>
+      <video src="https://instagram.ford1-1.fna.fbcdn.net/t50.2886-16/14586328_1108032359273149_3779834119723155456_n.mp4" loop autoplay muted></video>
+      <video src="https://instagram.ford1-1.fna.fbcdn.net/t50.2886-16/14576856_1215374158483583_8744518565291360256_n.mp4" loop autoplay muted></video>
+      <!-- <img class="about-image" src="images/shop-machines-dark.jpg"> -->
+    </section>
+
+    <footer class="footer">
+      <div class="grid">
+        <div class="col text-left">
+          <span class="footer__label">
+            © 2016 P.W. LaRue Co.
+          </span>
+        </div>
+        <div class="col">
+          <div class="footer__email">
+            <a class="footer__link" href="mailto:info@pwlarue.com">info@pwlarue.com</a>
+          </div>
+        </div>
+        <div class="col text-right">
+          <div class="footer__social">
+            <span class="footer__label">Follow Us:</span>
+            <a class="footer__link social-link" href="https://www.facebook.com/PWLaRueCo/">Facebook</a>
+            <a class="footer__link social-link" href="https://www.instagram.com/p.w.larue/">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-80883953-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+    <script src="bundle.js"></script>
+
+  </body>
+</html>

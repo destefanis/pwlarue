@@ -3,7 +3,7 @@
  */
 
 .product-page {
-  border-top: 2px solid $light-grey;
+  border-top: 1px solid $light-grey;
   padding: 0 15px 15px;
   text-align: center;
   background: $light-grey;
@@ -38,10 +38,6 @@
     width: 56%;
     padding: 0 25px;
   }
-
-  // @include min($xlarge) {
-  //   width: 54%;
-  // }
 }
 
 .product-image {
@@ -105,7 +101,7 @@
 
 .breadcrumbs {
   padding: 15px 10px;
-  border-top: 2px solid $light-grey;
+  border-top: 1px solid $light-grey;
   text-align: center;
 
   @include min($tablet) {
