@@ -1,0 +1,68 @@
+button,
+input,
+select,
+textarea {
+  font-size: 100%; /* Corrects font size not being inherited in all browsers */
+  margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+  vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+  *vertical-align: middle; /* Improves appearance and consistency in all browsers */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea,
+.input-text {
+  padding: ms(-2);
+  background-color: darken($body-background,5%);
+  color: $color_body;
+  outline: none;
+  border: 0;
+  -webkit-appearance: none;
+  border-radius: 2px;
+  box-sizing: border-box;
+  font-weight: normal;
+  box-shadow:
+    inset 0 1px 1px rgba(0,0,0,0.125);
+
+  &:focus {
+    background-color: darken( $body-background,10% );
+    color: darken( $color_body, 10% );
+  }
+}
+
+textarea {
+  overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+  padding-left: ms(-1);
+  vertical-align: top; /* Improves readability and alignment in all browsers */
+  width: 100%;
+}
+
+label {
+  font-weight: 600;
+}
+
+label.inline {
+  input {
+    width: auto;
+  }
+}
+
+fieldset {
+  padding: 0;
+  border: 0;
+  margin-bottom: ms(3);
+
+  legend {
+    font-weight: 700;
+  }
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+  -webkit-transition: opacity 0.5s 0.5s ease;
+  -moz-transition: opacity 0.5s 0.5s ease;
+  transition: opacity 0.5s 0.5s ease;
+  opacity: 0;
+}
