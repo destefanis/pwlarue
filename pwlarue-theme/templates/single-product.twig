@@ -1,0 +1,107 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    <section class="product-page-wrapper">
+    
+      {% do action('woocommerce_before_single_product') %}
+
+      <div class="product-page">
+        <div class="product-image-wrapper">
+          <img class="product-image" src="{{ post.thumbnail.src('shop_single') }}" />
+          <div class="product-thumbnails">
+            <img class="product-thumbnail" src="{{ post.thumbnail.src('shop_single') }}">
+            <!-- <img class="product-thumbnail" src="images/products/bi-fold-wallet-black-open.png">
+            <img class="product-thumbnail" src="images/products/bi-fold-wallet-black-side.png"> -->
+          </div>
+        </div>
+        <article itemscope itemtype="http://schema.org/Product" class="buy-section" single-product-details>
+            <h1 class="product-name">{{ post.title }}</h1>
+            <p class="product-description">
+              {{ post.short_description }}
+            </p>
+            <div class="control-group control-group--last">
+              <h5 class="control-group__header">Color Options</h5>
+              <div class="control-group-wrapper">
+                <label class="control control--radio">
+                  <span class="control__text">Black</span>
+                  <input type="radio" name="radio" checked="checked"/>
+                  <div class="control__indicator control__indicator--black"></div>
+                </label>
+                <label class="control control--radio">
+                  <span class="control__text">Tan</span>
+                  <input type="radio" name="radio"/>
+                  <div class="control__indicator control__indicator--tan"></div>
+                </label>
+              </div>
+            </div>
+<!--             <span class="product-price">
+              $19.99
+            </span>
+            <a href="#" class="button button--buy">
+              Add To Cart
+            </a> -->
+            {% do action('woocommerce_single_product_summary') %}
+            <meta itemprop="url" content="{{ post.link }}" />
+        </article>
+      </div>
+      <div class="product-page-details">
+        <div class="details details--large">
+          <h5>About The Product</h5>
+          <p class="product-full-description">
+            {{ post.content|striptags }}
+          </p>
+          <div class="product-spec">
+            <h5 class="product-spec-header">
+              Dimensions
+            </h5>
+            <p class="product-spec-detail">
+              {{ post.dimensions }}
+            </p>
+          </div>
+          <div class="product-spec">
+            <h5 class="product-spec-header">
+              Materials
+            </h5>
+            <p class="product-spec-detail">
+              {{ post.materials }}
+            </p>
+          </div>
+          <div class="product-spec">
+            <h5 class="product-spec-header">
+              Construction
+            </h5>
+            <p class="product-spec-detail">
+              {{ post.construction }}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- <section class="section section--featured text-center">
+        <h3 class="subheader text-center">
+          Related Products
+        </h3>
+      </section> -->
+    </section>
+    {#
+    <article itemscope itemtype="http://schema.org/Product" class="custom-class single-product-details {{post.class}}">
+
+        <div class="entry-images">
+            {% do action('woocommerce_before_single_product_summary') %}
+        </div>
+
+        <div class="summary entry-summary">
+            {% do action('woocommerce_single_product_summary') %}
+        </div>
+
+        {% do action('woocommerce_after_single_product_summary') %}
+
+
+
+    </article>
+
+    {% do action('woocommerce_after_single_product') %}
+    #}
+
+{% endblock  %}

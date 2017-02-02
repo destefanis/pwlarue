@@ -60,6 +60,7 @@ gulp.task('sass', () => {
     .pipe(postcss(processors))
     .pipe(maps.write('./maps', { addComment: false }))
     .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('pwlarue-theme/assets'))
 })
 
 // js
@@ -89,6 +90,7 @@ gulp.task('js', () => {
 
       // write the files to dist
       fs.writeFileSync('dist/bundle.js', files.code)
+      fs.writeFileSync('pwlarue-theme/assets/bundle.js', files.code)
       fs.writeFileSync('dist/maps/bundle.js.map', files.map.toString())
     })
 })
