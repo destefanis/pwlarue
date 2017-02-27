@@ -23,8 +23,9 @@
           @include("svg/logo.svg")
         </a>
       </div>
-      <a href="/cart" class="nav-link nav-link--last">
-        Cart 
+      <a href="/cart" class="nav-link nav-link--last cart-contents">
+        Cart
+        <span>1</span>
       </a>
     </nav>
     <section class="hero">
@@ -52,13 +53,13 @@
     <section class="section section--featured">
       <div class="featured-products">
         
-        <div class="featured-product background-grey">
+        <div class="featured-product background-grey product--has-hover">
           <a href="product.html">
             <img class="featured-product__image" src="images/products/bi-fold-wallet-black-front.png" />
             <img class="featured-product__image-alt" src="images/products/bi-fold-wallet-black-open.png">
             <h3 class="product-info">
               <span class="product-text">
-                Bi-Fold Wallet
+                Bi-Fold Wallet - 
               </span>
               <span class="price">
                 $99.00
@@ -66,13 +67,13 @@
             </h3>
           </a>
         </div>
-        <div class="featured-product background-grey">
+        <div class="featured-product background-grey product--has-hover">
           <a href="product.html">
             <img class="featured-product__image" src="images/products/accordian-wallet-tan-front.png" />
             <img class="featured-product__image-alt" src="images/products/accordian-wallet-tan-open.png">
             <h3 class="product-info">
               <span class="product-text">
-                Snap Wallet
+                Snap Wallet - 
               </span>
               <span class="price">
                 $99.00
@@ -85,7 +86,7 @@
             <img class="featured-product__image" src="images/products/bi-fold-wallet-tan-front.png" />
             <h3 class="product-info">
               <span class="product-text">
-                Bi-Fold Wallet
+                Bi-Fold Wallet - 
               </span>
               <span class="price">
                 $99.00
@@ -98,7 +99,7 @@
             <img class="featured-product__image" src="images/products/carry-all-navy-front.png" />
             <h3 class="product-info">
               <span class="product-text">
-                Carry All Bag
+                Carry All Bag - 
               </span>
               <span class="price">
                 $299.00
@@ -112,7 +113,7 @@
             <img class="featured-product__image" src="images/black-roll-top-bag.png" />
             <h3 class="product-info">
               <span class="product-text">
-                Roll Top Bag
+                Roll Top Bag - 
               </span>
               <span class="price">
                 $299.00
@@ -126,7 +127,7 @@
             <img class="featured-product__image" src="images/products/keyholder-tan-front.png" />
             <h3 class="product-info">
               <span class="product-text">
-                Keyholder
+                Keyholder - 
               </span>
               <span class="price">
                 $39.00
@@ -134,105 +135,6 @@
             </h3>
           </a>
         </div>
-
-        <!-- <div class="grid">
-          <div class="product-tile col">
-            <a href="product.html" class="product-tile-link">
-              <img class="product-tile__image" src="images/bi-fold-wallet-tan-front.jpg">
-              <img class="product-tile__image--alt" src="images/bi-fold-wallet-black-open.jpg">
-              <div class="product-tile__info">
-                <h3 class="info-product-name">Bi-Fold Wallet (Tan)</h3>
-                <span class="info-product-price">
-                  $99.00
-                </span>
-              </div>
-            </a>
-          </div>
-          <div class="product-tile col">
-            <a href="product.html" class="product-tile-link">
-              <img class="product-tile__image" src="images/bi-fold-wallet-black-front.jpg">
-              <img class="product-tile__image--alt" src="images/bi-fold-wallet-black-open.jpg">
-              <div class="product-tile__info">
-                <h3 class="info-product-name">Bi-Fold Wallet (Black)</h3>
-                <span class="info-product-price">
-                  $99
-                </span>
-              </div>
-            </a>
-          </div>
-
-          <div class="product-tile col">
-            <a href="#" class="product-tile-link">
-              <img class="product-tile__image" src="images/accordian-wallet-tan-front.jpg">
-              <img class="product-tile__image--alt" src="images/accordian-wallet-tan-open.jpg">
-              <div class="product-tile__info">
-                <h3 class="info-product-name">Accordian Wallet (Tan)</h3>
-                <span class="info-product-price">
-                  $99
-                </span>
-              </div>
-            </a>
-          </div>
-          <div class="product-tile col">
-            <a href="#" class="product-tile-link">
-              <img class="product-tile__image" src="images/accordian-wallet-black-front.jpg">
-              <img class="product-tile__image--alt" src="images/accordian-wallet-black-open.jpg">
-              <div class="product-tile__info">
-                <h3 class="info-product-name">Accordian Wallet (Black)</h3>
-                <span class="info-product-price">
-                  $99
-                </span>
-              </div>
-            </a>
-          </div>
-          <div class="product-tile col">
-            <a href="#" class="product-tile-link">
-              <img class="product-tile__image" src="images/keyholder-black-front.jpg">
-              <img class="product-tile__image--alt" src="images/keyholder-black-open.jpg">
-              <div class="product-tile__info">
-                <h3 class="info-product-name">Keyholder (Black)</h3>
-                <span class="info-product-price">
-                  $29
-                </span>
-              </div>
-            </a>
-          </div>
-
-          <div class="product-tile col">
-            <a href="#" class="product-tile-link">
-              <img class="product-tile__image" src="images/snap-card-wallet-black-front.jpg">
-              <img class="product-tile__image--alt" src="images/snap-card-wallet-black-open.jpg">
-              <div class="product-tile__info">
-                <h3 class="info-product-name">Snap Card Wallet (Black)</h3>
-                <span class="info-product-price">
-                  $110
-                </span>
-              </div>
-            </a>
-          </div>
-          <div class="product-tile col">
-            <a href="#" class="product-tile-link">
-              <img class="product-tile__image" src="images/snap-card-wallet-tan-front.jpg">
-              <div class="product-tile__info">
-                <h3 class="info-product-name">Snap Card Wallet (Tan)</h3>
-                <span class="info-product-price">
-                  $110
-                </span>
-              </div>
-            </a>
-          </div>
-          <div class="product-tile col">
-            <a href="#" class="product-tile-link">
-              <img class="product-tile__image" src="images/carry-all-olive-front.jpg">
-              <div class="product-tile__info">
-                <h3 class="info-product-name">Carry All Bag (Olive)</h3>
-                <span class="info-product-price">
-                  $299
-                </span>
-              </div>
-            </a>
-          </div>
-        </div> -->
 
       </div>
     </section>
@@ -316,6 +218,7 @@
 
     </script>  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.min.js"></script>
     <script src="bundle.js"></script>
 
   </body>

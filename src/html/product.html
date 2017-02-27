@@ -23,8 +23,9 @@
           @include("svg/logo.svg")
         </a>
       </div>
-      <a href="/cart" class="nav-link nav-link--last">
-        Cart 
+      <a href="/cart" class="nav-link nav-link--last cart-contents">
+        Cart
+        <span>1</span>
       </a>
     </nav>
 
@@ -52,11 +53,20 @@
     <section class="product-page-wrapper">
       <div class="product-page">
         <div class="product-image-wrapper">
-          <img class="product-image" src="images/products/bi-fold-wallet-black-front.png">
-          <div class="product-thumbnails">
-            <img class="product-thumbnail" src="images/products/bi-fold-wallet-black-front.png">
-            <img class="product-thumbnail" src="images/products/bi-fold-wallet-black-open.png">
-            <img class="product-thumbnail" src="images/products/bi-fold-wallet-black-side.png">
+          <a href="#" class="product-image-link is-active" data-id="black">
+            <img class="product-image" data-id="black" src="images/products/bi-fold-wallet-black-front.png">
+          </a>
+          <a href="#" class="product-image-link is-hidden" data-id="tan">
+            <img class="product-image" data-id="tan" src="images/products/bi-fold-wallet-tan-front.png">
+          </a>
+          <div class="product-thumbnails" data-id="black">
+            <img class="product-thumbnail" data-id="black" src="images/products/bi-fold-wallet-black-front.png">
+            <img class="product-thumbnail" data-id="black" src="images/products/bi-fold-wallet-black-open.png">
+            <img class="product-thumbnail" data-id="black" src="images/products/bi-fold-wallet-black-side.png">
+          </div>
+          <div class="product-thumbnails is-hidden" data-id="tan">
+            <img class="product-thumbnail" src="images/products/bi-fold-wallet-tan-front.png">
+            <img class="product-thumbnail" src="images/products/bi-fold-wallet-tan-front.png">
           </div>
         </div>
         <div class="buy-section">
@@ -67,12 +77,12 @@
             <div class="control-group control-group--last">
               <h5 class="control-group__header">Color Options</h5>
               <div class="control-group-wrapper">
-                <label class="control control--radio">
+                <label class="control control--radio" data-id="black" data-value="1">
                   <span class="control__text">Black</span>
                   <input type="radio" name="radio" checked="checked"/>
                   <div class="control__indicator control__indicator--black"></div>
                 </label>
-                <label class="control control--radio">
+                <label class="control control--radio" data-id="tan" data-value="65">
                   <span class="control__text">Tan</span>
                   <input type="radio" name="radio"/>
                   <div class="control__indicator control__indicator--tan"></div>
@@ -87,12 +97,29 @@
                 </label> -->
               </div>
             </div>
-            <span class="product-price">
-              $99.99
-            </span>
-            <a href="#" class="button button--buy">
-              Add To Cart
-            </a>
+            <div class="product-status">
+              <span class="product-price">
+                $99.99
+              </span>
+              <a href="#" class="button button--buy">
+                Add To Cart
+              </a>
+              <form class="cart form--cart" style="display: none;" method="post" enctype="multipart/form-data">
+                  <input type="hidden" name="add-to-cart" value="65">
+                  <button type="submit" class="single_add_to_cart_button button alt button--buy">Add to cart</button>
+              </form>
+            </div>
+            <div class="product-share">
+              <span class="share-label">
+                Share
+              </span>
+              <a class="share-link" href="https://www.facebook.com/sharer/sharer.php?u=#url" target="_blank">
+                @include("svg/facebook.svg")
+              </a>
+              <a class="share-link" target="_blank" href="https://twitter.com/share?url=http://pwlarue.com&text=Product Name">
+                @include("svg/twitter.svg")
+              </a>
+            </div>
         </div>
       </div>
       <div class="product-page-details">
@@ -140,14 +167,6 @@
           </div>
         </div>
       </div>
-      <!-- <div class="page-navigation">
-        <a href="/shop">
-          Back To Products
-        </a>
-        <a href="/shop">
-          Next Product
-        </a>
-      </div> -->
       <section class="section section--featured text-center">
         <h3 class="subheader text-center">
           Related Products
@@ -188,6 +207,21 @@
       </div>
     </section>
 
+    <div class="content-wrapper">
+      <div class="woocommerce-message global-message">
+        Item Added To Cart
+        <span id="message-close" class="global-message-close">
+          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   width="612px" height="612px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
+            <g>
+              <polygon points="612,36.004 576.521,0.603 306,270.608 35.478,0.603 0,36.004 270.522,306.011 0,575.997 35.478,611.397 
+                306,341.411 576.521,611.397 612,575.997 341.459,306.011"/>
+            </g>
+          </svg>
+        </span>
+      </div>
+    </div>
+
     <footer class="footer">
       <div class="grid">
         <div class="col text-left">
@@ -209,7 +243,10 @@
         </div>
       </div>
     </footer>
-
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.18/jquery.zoom.min.js"></script>
     <script src="bundle.js"></script>
   </body>
 </html>

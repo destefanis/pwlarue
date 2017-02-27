@@ -6,13 +6,19 @@
 @import "base";
 @import "z-index";
 
+// Third Party
+@import "components/selectize";
+
 // COMPONENTS
 @import "components/about";
 @import "components/featured-products";
 @import "components/footer";
 @import "components/hero";
 @import "components/navigation";
+@import "components/notice";
 @import "components/product";
-@import "components/shop"
+@import "components/shop";
+@import "components/woocommerce";
+@import "components/woocommerce_cart";
 
 // SECTIONS

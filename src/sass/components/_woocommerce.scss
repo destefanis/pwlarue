@@ -1,3 +1,19 @@
+/*
+ *  Override various woocommerce styles that they hardcoded.
+ */
+
+// Order received message.
+.woocommerce-thankyou-order-received {
+  margin-top: 2em;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 2rem;
+
+  @include min($tablet) {
+    font-size: 2.2rem;
+  }
+}
+
 button,
 input,
 select,
@@ -15,21 +31,22 @@ input[type="password"],
 input[type="search"],
 textarea,
 .input-text {
-  padding: ms(-2);
-  background-color: darken($body-background,5%);
-  color: $color_body;
+  background-color: $white;
+  color: $black;
+  padding: 12px 15px;
   outline: none;
   border: 0;
   -webkit-appearance: none;
-  border-radius: 2px;
+  border-radius: 1px;
   box-sizing: border-box;
   font-weight: normal;
-  box-shadow:
-    inset 0 1px 1px rgba(0,0,0,0.125);
+  font-size: 1.6rem;
+  // box-shadow: 0 1px 3px rgba(0,0,0, 0.16);
+  border: 1px solid $grey;
 
   &:focus {
-    background-color: darken( $body-background,10% );
-    color: darken( $color_body, 10% );
+    background-color: darken( $white,10% );
+    color: darken( $black, 10% );
   }
 }
 
@@ -41,7 +58,10 @@ textarea {
 }
 
 label {
-  font-weight: 600;
+  padding: 15px 0 10px;
+  font-size: 1.6rem;
+  font-family: $mono;
+  font-weight: 400;
 }
 
 label.inline {

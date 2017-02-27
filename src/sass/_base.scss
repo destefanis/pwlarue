@@ -34,19 +34,26 @@ h1 {
 }
 
 .text-left {
-  text-align: left;
+
+  @include min($desktop) {
+    text-align: left;
+  }
 }
 
 .text-right {
-  text-align: left;
 
-  @include min($tablet) {
+  @include min($desktop) {
     text-align: right;
   }
 }
 
 .text-center {
   text-align: center;
+}
+
+.element-invisible {
+  visibility: hidden;
+  display: none;
 }
 
 // LAYOUT

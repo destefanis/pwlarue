@@ -1,0 +1,142 @@
+/**
+ * Global notice styling for messages and states.
+ */
+
+.content-wrapper {
+
+  // Why did they have to use important :(
+  .woocommerce-message {
+    position: fixed;
+    // position: absolute;
+    right: 50px;
+    bottom: 30px;
+    z-index: 100;
+    margin: 0 !important;
+    padding: 10px 80px 10px 25px !important;
+    border: 0;
+    border-left: 4px solid $tan;
+    background: $white;
+    color: $black;
+    line-height: 2.8;
+    letter-spacing: 1px;
+    font-family: $sans;
+    font-weight: 400;
+    webkit-font-smoothing: auto;
+    animation: fadeIn 400ms 1;
+
+    a {
+      text-decoration: underline;
+    }
+
+    .button {
+      margin-left: 2em;
+      line-height: 1.6;
+      text-decoration: none;
+
+      a {
+        text-decoration: none;
+      }
+    }
+
+    &::before {
+      content: '';
+    }
+  }
+
+  .woocommerce-error {
+    width: 70%;
+    margin: 0 auto 1em !important;
+    border-color: $red;
+    color: $black;
+    background: $white;
+    font-size: 1.8rem;
+
+    &:before {
+      color: $red;
+    }
+  }
+
+  .woocommerce-info {
+    width: 70%;
+    margin: 0 auto 1em !important;
+    border-color: $blue;
+    color: $black;
+    background: $white;
+    font-size: 1.8rem;
+
+    &:before {
+      color: $blue;
+    }
+  }
+}
+
+.global-message {
+  bottom: 30px;
+  right: 30px;
+  box-shadow: 0 1px 6px rgba($black, 0.16);
+
+  &.is-closing {
+    animation: fadeOut 400ms 1;
+    animation-fill-mode: forwards;
+  }
+}
+
+.global-message-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 55px;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover,
+  &:active,
+  &:focus {
+    svg {
+      fill: $tan;
+    }
+  }
+
+  svg {
+    transition: fill 300ms ease;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: auto;
+    fill: $black;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  90% {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+
+  100% {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    display: none;
+  }
+}

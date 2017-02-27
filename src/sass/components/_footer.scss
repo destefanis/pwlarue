@@ -4,23 +4,30 @@
 
 .footer {
   padding: 50px 25px 25px;
-  border-top: 2px solid $light-grey;
+  border-top: 1px solid $light-grey;
   background: $white;
   color: $black;
   text-align: left;
-  font-weight: 400;
   font-family: $mono;
+  font-weight: 400;
+  font-size: 1.6rem;
 
   @include min($tablet) {
+    text-align: center;
+  }
+
+  @include min($desktop) {
     padding: 50px 100px;
     text-align: center;
   }
 
   .col {
     margin-bottom: 35px;
+    flex: 1 0 100%;
 
-    @include min($tablet) {
+    @include min($desktop) {
       margin-bottom: 0;
+      flex: 1 0 33%;
     }
   }
 }
@@ -34,8 +41,17 @@
 }
 
 .footer__link {
+  transition: all 200ms ease;
+  transition-property: color, border-color;
   padding-bottom: 5px;
   border-bottom: 2px solid $black;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $tan;
+    border-color: $tan;
+  }
 }
 
 .social-link {

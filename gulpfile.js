@@ -45,6 +45,13 @@ gulp.task('html', ['images'], () => {
     .pipe(gulp.dest('dist'))
 })
 
+gulp.task('woocommerce', () => {
+  return gulp.src('src/woocommerce/woocommerce.css')
+    .pipe(plumber({ errorHandler: onError }))
+    .pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
+    .pipe(gulp.dest('dist'))
+})
+
 // sass
 
 const processors = [
@@ -60,7 +67,7 @@ gulp.task('sass', () => {
     .pipe(postcss(processors))
     .pipe(maps.write('./maps', { addComment: false }))
     .pipe(gulp.dest('dist'))
-    .pipe(gulp.dest('pwlarue-theme/assets'))
+    .pipe(gulp.dest('pwlarue-theme/assets', { overwrite: true }))
 })
 
 // js
@@ -178,7 +185,7 @@ gulp.task('build', ['clean'], () => {
   fs.mkdirSync('dist/maps')
 
   // run the tasks
-  gulp.start('html', 'sass', 'js', 'images', 'fonts', 'videos', 'favicon')
+  gulp.start('html', 'sass', 'js', 'images', 'fonts', 'videos', 'favicon', 'woocommerce')
 })
 
 gulp.task('default', ['build', 'server', 'watch'])
