@@ -1,32 +1,54 @@
-<article {{ fn('post_class', ['$classes', 'entry'] ) }}>
 
-    {{ fn('timber_set_product', post)}}
 
-    <div class="Media">
+  {{ fn('timber_set_product', post)}}
 
-        {% if showthumb %}
-            <div class="Media-figure {% if not post.thumbnail %}placeholder{% endif %}">
-                <a href="{{post.link}}">
-                    {% if post.thumbnail %}
-                        <img src="{{ post.thumbnail.src|resize(post_thumb_size[0], post_thumb_size[1]) }}" />
-                    {% else %}
-                        <span class="thumb-placeholder"><i class="icon-camera"></i></span>
-                    {% endif %}
-                </a>
-            </div>
+  {#
+  <div class="Media">
+    {% if showthumb %}
+    <div class="Media-figure {% if not post.thumbnail %}placeholder{% endif %}">
+      <a href="{{post.link}}">
+        {% if post.thumbnail %}
+        <img src="{{ post.thumbnail.src|resize(post_thumb_size[0], post_thumb_size[1]) }}" />
+        {% else %}
+        <span class="thumb-placeholder"><i class="icon-camera"></i></span>
         {% endif %}
-
-        <div class="Media-content">
-            {% do action('woocommerce_before_shop_loop_item_title') %}
-            {% if post.title %}
-                <h3 class="entry-title"><a href="{{post.link}}">{{ post.title }}</a></h3>
-            {% else %}
-                <h3 class="entry-title"><a href="{{post.link}}">{{ fn('the_title') }}</a></h3>
-            {% endif %}
-            {% do action( 'woocommerce_after_shop_loop_item_title' ) %}
-            {% do action( 'woocommerce_after_shop_loop_item' ) %}
-        </div>
-
+      </a>
     </div>
+    {% endif %}
 
-</article>
+    <div class="Media-content">
+      {% do action('woocommerce_before_shop_loop_item_title') %}
+      {% if post.title %}
+        <h3 class="entry-title"><a href="{{post.link}}">{{ post.title }}</a></h3>
+      {% else %}
+        <h3 class="entry-title"><a href="{{post.link}}">{{ fn('the_title') }}</a></h3>
+      {% endif %}
+      {% do action( 'woocommerce_after_shop_loop_item_title' ) %}
+      {% do action( 'woocommerce_after_shop_loop_item' ) %}
+    </div>
+  </div>
+  #}
+      <div class="featured-product background-grey {% if not post.thumbnail %}placeholder{% endif %} {% if post.tile_hover_image %} product--has-hover {% endif %}">
+        <a href="{{ post.link }}">
+
+          {% if post.thumbnail %}
+            <img class="featured-product__image" src="{{ post.thumbnail.src('shop_single') }}" alt="{{ post.thumbnail.alt }}" />
+          {% else %}
+            <span class="thumb-placeholder"><i class="icon-camera"></i></span>
+          {% endif %}
+
+          {% if post.tile_hover_image %}
+            {% set image = TimberImage(post.tile_hover_image) %}
+            <img class="featured-product__image-alt" src="{{ image.src('shop_single') }}" alt="{{ image.alt }}">
+          {% else %}
+            <img class="featured-product__image-alt" src="{{ post.thumbnail.src('shop_single') }}" alt="{{ post.thumbnail.alt }}">
+          {% endif %}
+
+          <h3 class="product-info">
+            <span class="product-text">
+              {{ post.title }} -
+            </span>
+            {% do action( 'woocommerce_after_shop_loop_item_title' ) %}
+          </h3>
+        </a>
+      </div>

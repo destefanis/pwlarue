@@ -5,10 +5,12 @@
 		<div class="post-type-{{ post.post_type }} post-{{ post.post_name }}" id="post-{{ post.ID }}">
 			<div class="article-content">
 				<h1 class="article-title">
-					{{ post.title }}
+					My Shopping Cart
 				</h1>
 				<div class="article-body">
-					{{ post.content }}
+					{% filter shortcodes %}
+						[woocommerce_cart]
+					{% endfilter %}
 				</div>
 			</div>
 		</div>

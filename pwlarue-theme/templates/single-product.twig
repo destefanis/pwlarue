@@ -1,107 +1,248 @@
 {% extends "base.twig" %}
 
 {% block content %}
+  
+<div class="breadcrumbs">
+  {% if previous_product %}
+    <a class="breadcrumb-link breadcrumb-link--previous" href="{{ previous_product.guid }}">
+      Previous Product
+    </a>
+  {% else %}
+    <a class="breadcrumb-link breadcrumb-link--previous" href="/shop">
+      Back to Products
+    </a>
+  {% endif %}
+  <ul class="breadcrumbs-list">
+    <li class="breadcrumbs-list__item">
+      <a href="/shop" class="breadcrumbs-list__item-link">
+        Products
+      </a>
+      <span class="breadcrumb-divider">
+        >
+      </span>
+    </li>
+    <li class="breadcrumbs-list__item">
+      {% for category in product_categorys %}
+        <a href="/shop/{{ category.slug }}" class="breadcrumbs-list__item-link">
+          {{ category.name }}
+        </a>
+      {% endfor %}
+    </li>
+    <li class="breadcrumbs-list__item breadcrumb-link--current">
+    <span class="breadcrumb-divider">> </span>
+      {{ post.title }}
+    </li>
+  </ul>
+  {% if next_product %}
+    <a class="breadcrumb-link breadcrumb-link--next" href="{{ next_product.guid }}">
+      Next Product
+    </a>
+  {% else %}
+    <a class="breadcrumb-link breadcrumb-link--next" href="{{ next_product.guid }}">
+      <span class="element-invisible">No More Products</span>
+    </a>
+  {% endif %}
+</div>
 
-    <section class="product-page-wrapper">
-    
-      {% do action('woocommerce_before_single_product') %}
+<div class="clear"></div>
 
-      <div class="product-page">
-        <div class="product-image-wrapper">
-          <img class="product-image" src="{{ post.thumbnail.src('shop_single') }}" />
-          <div class="product-thumbnails">
-            <img class="product-thumbnail" src="{{ post.thumbnail.src('shop_single') }}">
-            <!-- <img class="product-thumbnail" src="images/products/bi-fold-wallet-black-open.png">
-            <img class="product-thumbnail" src="images/products/bi-fold-wallet-black-side.png"> -->
+<div class="product type-product product-page-wrapper">
+  {% do action('woocommerce_before_single_product') %}
+
+  <section class="product-page">
+    <div class="product-image-wrapper">
+
+      {# Display the main product image #}
+      <a href="{{ post.thumbnail.src('shop_single') }}" class="first product-image-link is-active" title=""data-id="{{ post.color }}">
+        <img class="product-image woocommerce-main-image" src="{{ post.thumbnail.src('shop_single') }}" alt="{{ post.thumbnail.alt }}" itemprop="image"/>
+      </a>
+      
+      {# Loop through color variants for a main image and hide it intially #}
+      {% for variant in product_variant_collection %}
+        {% set variant_post = TimberPost(variant) %}
+
+        <a href="{{ variant_post.thumbnail.src('shop_single') }}" class="first product-image-link is-hidden" title="" data-id="{{ variant.color }}">
+          <img class="product-image woocommerce-main-image zoom" src="{{ variant_post.thumbnail.src('shop_single') }}" alt="{{ variant_post.thumbnail.alt }}" itemprop="image"/>
+        </a>
+      {% endfor %}
+      
+      {# Display the Thumbnail Images #}
+      {% if post.get_field('additional_images') %}
+        <div class="product-thumbnails" data-id="{{ post.color }}">
+          {% for image in post.get_field('additional_images') %}
+            {% set image = TimberImage(image.id) %}
+              <img itemprop="image" data-id="{{ post.color }}" class="product-thumbnail zoom" src="{{ image.src }}" alt="{{ image.alt }}">
+          {% endfor %}
+        </div>
+      {% endif %}
+      
+      {# Loop through color variants if the exist #}
+      {% for variant in product_variant_collection %}
+        <div class="product-thumbnails is-hidden" data-id="{{ variant.color }}">
+          {# Color Variation Images for Gallery #}
+          {% for variant_image in variant.additional_images %}
+            {% set variant_image = TimberImage(variant_image) %}
+              <img itemprop="image" class="product-thumbnail zoom" src="{{ variant_image.src }}" alt="{{ variant_image.alt }}" data-id="{{ variant.color }}">
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <article itemscope itemtype="http://schema.org/Product" class="buy-section parallax" single-product-details>
+      <h1 class="product-name">
+        {{ post.title }}
+      </h1>
+      
+      <p class="product-description">
+        {{ post.short_description }}
+      </p>
+      
+      {% if post.color_variants %}
+        <div class="control-group control-group--last">
+          <h5 class="control-group__header">Color Options</h5>
+          <div class="control-group-wrapper">
+            <label class="control control--radio" data-id="{{ post.color }}" data-value="{{ post.ID }}">
+              <span class="control__text">{{ post.color }}</span>
+              <input type="radio" name="radio" checked="checked"/>
+              <div class="control__indicator control__indicator--{{ post.color }}"></div>
+            </label>
+
+            {% for variant in product_variant_collection %}
+              <label class="control control--radio" data-id="{{ variant.color }}" data-value="{{ variant.ID }}">
+                <span class="control__text">
+                  {{ variant.color }}
+                </span>
+                <input type="radio" name="radio"/>
+                <div class="control__indicator control__indicator--{{ variant.color }}"></div>
+              </label>
+            {% endfor %}
+
           </div>
         </div>
-        <article itemscope itemtype="http://schema.org/Product" class="buy-section" single-product-details>
-            <h1 class="product-name">{{ post.title }}</h1>
-            <p class="product-description">
-              {{ post.short_description }}
-            </p>
-            <div class="control-group control-group--last">
-              <h5 class="control-group__header">Color Options</h5>
-              <div class="control-group-wrapper">
-                <label class="control control--radio">
-                  <span class="control__text">Black</span>
-                  <input type="radio" name="radio" checked="checked"/>
-                  <div class="control__indicator control__indicator--black"></div>
-                </label>
-                <label class="control control--radio">
-                  <span class="control__text">Tan</span>
-                  <input type="radio" name="radio"/>
-                  <div class="control__indicator control__indicator--tan"></div>
-                </label>
-              </div>
-            </div>
-<!--             <span class="product-price">
-              $19.99
-            </span>
-            <a href="#" class="button button--buy">
-              Add To Cart
-            </a> -->
-            {% do action('woocommerce_single_product_summary') %}
-            <meta itemprop="url" content="{{ post.link }}" />
-        </article>
+      {% endif %}
+      
+      {# Set the product back to the intial product post #}
+      {{ fn('timber_set_product', post)}}
+
+      {# Use the WooCommerce action to pull in the add to cart form #}
+      {% do action('woocommerce_single_product_summary') %}
+
+      {% if post._stock_status == "outofstock" %}
+        <span class="button out-of-stock">
+          Out Of Stock
+        </span>
+      {% endif %}
+      
+      {# Product Share #}
+      <div class="product-share">
+        <span class="share-label">
+          Share
+        </span>
+        <a class="share-link" href="https://www.facebook.com/sharer/sharer.php?u={{ post.link }}" target="_blank">
+
+          {# Facebook Logo #}
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 96.124 96.123" style="enable-background:new 0 0 96.124 96.123;" xml:space="preserve">
+            <g>
+              <path d="M72.089,0.02L59.624,0C45.62,0,36.57,9.285,36.57,23.656v10.907H24.037c-1.083,0-1.96,0.878-1.96,1.961v15.803   c0,1.083,0.878,1.96,1.96,1.96h12.533v39.876c0,1.083,0.877,1.96,1.96,1.96h16.352c1.083,0,1.96-0.878,1.96-1.96V54.287h14.654   c1.083,0,1.96-0.877,1.96-1.96l0.006-15.803c0-0.52-0.207-1.018-0.574-1.386c-0.367-0.368-0.867-0.575-1.387-0.575H56.842v-9.246   c0-4.444,1.059-6.7,6.848-6.7l8.397-0.003c1.082,0,1.959-0.878,1.959-1.96V1.98C74.046,0.899,73.17,0.022,72.089,0.02z"/>
+            </g>
+          </svg>
+
+        </a>
+        <a class="share-link" target="_blank" href="https://twitter.com/share?url={{ post.link }}&text={{ post.title }}">
+
+          {# Twitter Logo #}
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 612" xml:space="preserve">
+            <g>
+                <path d="M612,116.258c-22.525,9.981-46.694,16.75-72.088,19.772c25.929-15.527,45.777-40.155,55.184-69.411
+                    c-24.322,14.379-51.169,24.82-79.775,30.48c-22.907-24.437-55.49-39.658-91.63-39.658c-69.334,0-125.551,56.217-125.551,125.513
+                    c0,9.828,1.109,19.427,3.251,28.606C197.065,206.32,104.556,156.337,42.641,80.386c-10.823,18.51-16.98,40.078-16.98,63.101
+                    c0,43.559,22.181,81.993,55.835,104.479c-20.575-0.688-39.926-6.348-56.867-15.756v1.568c0,60.806,43.291,111.554,100.693,123.104
+                    c-10.517,2.83-21.607,4.398-33.08,4.398c-8.107,0-15.947-0.803-23.634-2.333c15.985,49.907,62.336,86.199,117.253,87.194
+                    c-42.947,33.654-97.099,53.655-155.916,53.655c-10.134,0-20.116-0.612-29.944-1.721c55.567,35.681,121.536,56.485,192.438,56.485
+                    c230.948,0,357.188-191.291,357.188-357.188l-0.421-16.253C573.872,163.526,595.211,141.422,612,116.258z"/>
+            </g>
+          </svg>
+
+        </a>
       </div>
-      <div class="product-page-details">
-        <div class="details details--large">
-          <h5>About The Product</h5>
-          <p class="product-full-description">
-            {{ post.content|striptags }}
-          </p>
-          <div class="product-spec">
-            <h5 class="product-spec-header">
-              Dimensions
-            </h5>
-            <p class="product-spec-detail">
-              {{ post.dimensions }}
-            </p>
-          </div>
-          <div class="product-spec">
-            <h5 class="product-spec-header">
-              Materials
-            </h5>
-            <p class="product-spec-detail">
-              {{ post.materials }}
-            </p>
-          </div>
-          <div class="product-spec">
-            <h5 class="product-spec-header">
-              Construction
-            </h5>
-            <p class="product-spec-detail">
-              {{ post.construction }}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- <section class="section section--featured text-center">
-        <h3 class="subheader text-center">
-          Related Products
-        </h3>
-      </section> -->
-    </section>
-    {#
-    <article itemscope itemtype="http://schema.org/Product" class="custom-class single-product-details {{post.class}}">
-
-        <div class="entry-images">
-            {% do action('woocommerce_before_single_product_summary') %}
-        </div>
-
-        <div class="summary entry-summary">
-            {% do action('woocommerce_single_product_summary') %}
-        </div>
-
-        {% do action('woocommerce_after_single_product_summary') %}
-
-
-
+      <meta itemprop="url" content="{{ post.link }}" />
     </article>
+  </section>
 
-    {% do action('woocommerce_after_single_product') %}
-    #}
+  <section class="product-page-details">
+    <div class="details details--large">
+      <h5>About The Product</h5>
+      <p class="product-full-description">
+        {{ post.content|striptags }}
+      </p>
+
+      {% if post.dimensions %}
+        <div class="product-spec">
+          <h5 class="product-spec-header">
+            Dimensions
+          </h5>
+          <p class="product-spec-detail">
+            {{ post.dimensions }}
+          </p>
+        </div>
+      {% endif %}
+
+      {% if post.materials %}
+        <div class="product-spec">
+          <h5 class="product-spec-header">
+            Materials
+          </h5>
+          <p class="product-spec-detail">
+            {{ post.materials|striptags('<em>,<a>,<span>,<br>')|raw }}
+          </p>
+        </div>
+      {% endif %}
+      
+      {% if post.construction %}
+        <div class="product-spec">
+          <h5 class="product-spec-header">
+            Construction
+          </h5>
+          <p class="product-spec-detail">
+            {{ post.construction|nl2br }}
+          </p>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+
+  {% if post.related_products %}
+    <section class="section section--featured text-center">
+      <h3 class="subheader text-center">
+        Related Products
+      </h3>
+      <div class="featured-products">
+        {% for related_product in TimberPost(post.get_field('related_products')) %}
+          <div class="featured-product background-grey {% if related_product.tile_hover_image %} product--has-hover {% endif %}">
+            <a href="{{ related_product.link }}">
+
+              <img class="featured-product__image" src="{{ related_product.thumbnail.src('shop_single') }}" alt="{{ related_product.thumbnail.alt }}" />
+              {% if related_product.tile_hover_image %}
+                {% set related_product_image = TimberImage(related_product.tile_hover_image) %}
+                <img class="featured-product__image-alt" src="{{ related_product_image.src('shop_single') }}" alt="{{ related_product_image.alt }}">
+              {% else %}
+                <img class="featured-product__image-alt" src="{{ related_product.thumbnail.src('shop_single') }}" alt="{{ related_product.thumbnail.alt }}">
+              {% endif %}
+
+              <h3 class="product-info">
+                <span class="product-text">
+                  {{ related_product.title }}
+                </span>
+                <span class="price">
+                  ${{ related_product.custom._price }}
+                </span>
+              </h3>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+</div>
 
 {% endblock  %}

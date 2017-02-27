@@ -14,12 +14,47 @@ if (is_singular('product')) {
     $product            = wc_get_product( $context['post']->ID );
     $context['product'] = $product;
 
+    $context['currency'] = get_woocommerce_currency();
+    $context['currency_format'] = get_woocommerce_price_format();
+
+    $product_cats = wp_get_post_terms( get_the_ID(), 'product_cat' );
+    $context['product_categorys'] = $product_cats;
+
+    // $variant_products = get_field( 'related_products' );
+    // $context['related_products'] = $variant_products;
+
+    $variant_products = get_field( 'color_variants' );
+    $context['product_variant_collection'] = $variant_products;
+
+    // Previous and next post for our product navigation.
+    $prev_post = get_previous_post();
+    $context['previous_product'] = $prev_post;
+
+    $next_post = get_next_post();
+    $context['next_product'] = $next_post;
+
+    // $args = array(
+    //    'numberposts' => -1,
+    //    'post_type'   => 'products',
+    //    'post_status' => 'publish',
+    //    'order'       => 'ASC',
+    //    'orderby'     => 'menu_order'
+    // );
+    // $context['all_products'] = Timber::get_posts( $args );
+
     Timber::render('single-product.twig', $context);
 
 } else {
 
     $posts = Timber::get_posts();
     $context['products'] = $posts;
+
+    $product_cats = get_terms( array(
+        'taxonomy' => 'product_cat',
+        'hide_empty' => false,
+    ) );
+
+    $context['product_categorys'] = $product_cats;
 
     if ( is_product_category() ) {
         $queried_object = get_queried_object();
@@ -28,6 +63,6 @@ if (is_singular('product')) {
         $context['title'] = single_term_title('', false);
     }
 
-    Timber::render('archive.twig', $context);
+    Timber::render('product-archive.twig', $context);
 
 }
