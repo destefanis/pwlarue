@@ -47,10 +47,15 @@
 .buy-section {
   display: inline-block;
   width: 100%;
-  padding: 25px 0 25px;
+  padding: 0;
   text-align: center;
   vertical-align: top;
   text-align: center;
+  max-width: 600px;
+
+  h1 {
+    display: inline-block;
+  }
 
   @include min($tablet) {
     width: 44%;
@@ -283,16 +288,6 @@
   text-transform: capitalize;
 }
 
-.buy-section {
-  // padding: 50px 50px 50px;
-  // background: $white;
-  max-width: 600px;
-
-  h1 {
-    display: inline-block;
-  }
-}
-
 .product-name {
   margin-bottom: 0.25em;
   letter-spacing: 1px;
@@ -359,12 +354,16 @@
 
 .product-share {
   margin-top: 40px;
-  padding-top: 40px;
+  padding-top: 20px;
   border-top: 2px solid #e4e4e4;
   font-size: 1.6rem;
   font-weight: 400;
   letter-spacing: 1px;
   color: $grey;
+
+  @include min($tablet) {
+    padding-top: 40px;
+  }
 }
 
 .share-label {
