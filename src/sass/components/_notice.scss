@@ -7,8 +7,7 @@
   // Why did they have to use important :(
   .woocommerce-message {
     position: fixed;
-    // position: absolute;
-    right: 50px;
+    right: 15px;
     bottom: 30px;
     z-index: 100;
     margin: 0 !important;
@@ -17,12 +16,18 @@
     border-left: 4px solid $tan;
     background: $white;
     color: $black;
-    line-height: 2.8;
+    line-height: 1.8;
     letter-spacing: 1px;
     font-family: $sans;
     font-weight: 400;
     webkit-font-smoothing: auto;
     animation: fadeIn 400ms 1;
+
+    @include min($tablet) {
+      right: 50px;
+      bottom: 30px;
+      line-height: 2.8;
+    }
 
     a {
       text-decoration: underline;

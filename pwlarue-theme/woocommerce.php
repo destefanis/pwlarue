@@ -15,6 +15,7 @@ if (is_singular('product')) {
     $context['product'] = $product;
 
     $context['currency'] = get_woocommerce_currency();
+    $context['product_price'] = $product->get_price();
     $context['currency_format'] = get_woocommerce_price_format();
 
     $product_cats = wp_get_post_terms( get_the_ID(), 'product_cat' );

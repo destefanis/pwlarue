@@ -89,7 +89,7 @@
     </div>
 
     <article itemscope itemtype="http://schema.org/Product" class="buy-section parallax" single-product-details>
-      <h1 class="product-name">
+      <h1 id="product-name" class="product-name">
         {{ post.title }}
       </h1>
       
@@ -101,14 +101,14 @@
         <div class="control-group control-group--last">
           <h5 class="control-group__header">Color Options</h5>
           <div class="control-group-wrapper">
-            <label class="control control--radio" data-id="{{ post.color }}" data-value="{{ post.ID }}">
+            <label class="control control--radio" data-price="{{ product_price }}" data-title="{{ post.title }}" data-id="{{ post.color }}" data-value="{{ post.ID }}">
               <span class="control__text">{{ post.color }}</span>
               <input type="radio" name="radio" checked="checked"/>
               <div class="control__indicator control__indicator--{{ post.color }}"></div>
             </label>
 
             {% for variant in product_variant_collection %}
-              <label class="control control--radio" data-id="{{ variant.color }}" data-value="{{ variant.ID }}">
+              <label class="control control--radio" data-price="{{ variant._price }}" data-title="{{ variant.post_title }}" data-id="{{ variant.color }}" data-value="{{ variant.ID }}">
                 <span class="control__text">
                   {{ variant.color }}
                 </span>

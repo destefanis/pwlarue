@@ -30,6 +30,8 @@
   // Enable zoom on product images
   // $('.product-image-link').zoom();
 
+
+  // Product variant and gallery fuctionality
   var $ctx = $('.product-page');
   var $buyFormInput;
   var $mainImages;
@@ -39,6 +41,11 @@
   var $dataId;
   var src;
   var $dataValue;
+  var $productName;
+  var $dataName;
+  var $productPrice;
+  var $dataPrice;
+  var $currencySymbol;
 
   if (($ctx).length) {
     $colorButton = $ctx.find('.control--radio');
@@ -46,6 +53,9 @@
     $singleThumbnail = $ctx.find('.product-thumbnail');
     $mainImages = $ctx.find('.product-image-link');
     $buyFormInput = $ctx.find('.form--cart > input');
+    $productName = $ctx.find('#product-name');
+    $productPrice = $ctx.find('#product-price > .amount');
+    $currencySymbol = $ctx.find('#product-price .woocommerce-Price-currencySymbol').html();
 
     $mainImages.click(function(e) {
       e.preventDefault();
@@ -65,10 +75,20 @@
     });
 
     // Swap images and color options when color variant is selected.
+    // Also update product information with data attribute values.
     $colorButton.on('click', function(e) {
       $dataId = $(this).data('id');
       $dataValue = $(this).data('value');
       $buyFormInput.attr('value', $dataValue);
+      $dataName = $(this).data('title');
+      $dataPrice = $(this).data('price');
+
+      // Swap Product Names
+      $productName.text($dataName);
+
+      // Swap Product Prices
+      $productPrice.text($dataPrice);
+      $productPrice.prepend($currencySymbol);
 
       $thumbnails.each(function() {
         var $this = $(this);

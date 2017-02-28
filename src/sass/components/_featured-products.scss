@@ -27,12 +27,13 @@
   position: relative;
   display: inline-block;
   width: 100%;
-  margin: 0 2px 4px;
+  margin: 0 0 4px;
   vertical-align: top;
   overflow: hidden;
 
   @include min($tablet) {
     width: 49.5%;
+    margin: 0 2px 4px;
   }
 
   @include min($large) {

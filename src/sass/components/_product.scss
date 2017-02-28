@@ -116,7 +116,7 @@
 .product-thumbnail {
   transform: translateY(0);
   display: inline-block;
-  width: 29%;
+  width: 28%;
   margin: 0 6px;
   background: $white;
   transition: background 100ms ease, box-shadow 300ms ease, transform 300ms ease;
@@ -128,6 +128,10 @@
     transform: translateY(-4px);
     box-shadow: 0 2px 8px rgba($black, 0.16);
     background: $tan;
+  }
+
+  @include min($tablet) {
+    width: 29%;
   }
 
   @include min($desktop) {
@@ -240,7 +244,11 @@
 
 .breadcrumb-divider {
   display: inline-block;
-  padding: 0 15px;
+  padding: 0 5px;
+
+  @include min($desktop) {
+    padding: 0 15px;
+  }
 }
 
 .button {
@@ -432,10 +440,14 @@
 .product-full-description {
   padding-top: 15px;
   padding-bottom: 50px;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 400;
   letter-spacing: 1px;
   line-height: 1.8;
+
+  @include min($tablet) {
+    font-size: 2.2rem;
+  }
 }
 
 .product-spec {
@@ -463,8 +475,12 @@
   vertical-align: top;
   letter-spacing: 1px;
   line-height: 1.8;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 400;
+
+  @include min($tablet) {
+    font-size: 2rem;
+  }
 
   span {
     font-size: 1.4rem;

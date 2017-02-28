@@ -187,6 +187,30 @@
     }
   }
 
+  .woocommerce table.cart td.actions .coupon .input-text {
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 0;
+    padding: 9px 15px;
+    border: 2px solid $light-grey;
+
+    @include min($tablet) {
+      width: 240px;
+      margin-top: 25px;
+      margin-left: 40px;
+    }
+  }
+
+  .woocommerce-remove-coupon {
+    color: $grey;
+    letter-spacing: 1px;
+    font-size: 1.4rem;
+
+    &:hover {
+      color: $black;
+    }
+  }
+
   .woocommerce a.button {
     float: none;
   }
@@ -253,6 +277,7 @@
   }
 
   .cart-subtotal,
+  .cart-discount,
   .shipping,
   .tax-rate {
     box-shadow: 0 1px 0 #e8e8e8;
