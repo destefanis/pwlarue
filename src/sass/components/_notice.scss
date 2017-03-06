@@ -8,12 +8,13 @@
   .woocommerce-message {
     position: fixed;
     right: 15px;
-    bottom: 30px;
+    bottom: 15px;
     z-index: 100;
+    max-width: 90%;
     margin: 0 !important;
-    padding: 10px 80px 10px 25px !important;
+    padding: 10px 80px 60px 25px !important;
     border: 0;
-    border-left: 4px solid $tan;
+    border-left: 6px solid $tan;
     background: $white;
     color: $black;
     line-height: 1.8;
@@ -26,6 +27,7 @@
     @include min($tablet) {
       right: 50px;
       bottom: 30px;
+      padding: 10px 80px 10px 25px !important;
       line-height: 2.8;
     }
 
@@ -34,9 +36,36 @@
     }
 
     .button {
-      margin-left: 2em;
-      line-height: 1.6;
+      position: absolute;
+      bottom: 15px;
+      float: none;
+      padding: 0;
+      border: 0;
+      border-bottom: 2px solid $black;
+      box-shadow: none;
       text-decoration: none;
+      font-size: 1.4rem;
+
+      @include min($tablet) {
+        position: static;
+        float: right;
+        margin-left: 2em;
+        line-height: 1.6;
+        text-decoration: none;
+        padding: 8px 30px;
+        background: $white;
+        border: 2px solid $black;
+        box-shadow: 0 0 0 rgba($black, 0.05);
+        font-size: 1.6rem;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        background: $black;
+        box-shadow: 0 1px 3px rgba($black, 0.12);
+        color: $white;
+      }
 
       a {
         text-decoration: none;
@@ -78,7 +107,7 @@
 .global-message {
   bottom: 30px;
   right: 30px;
-  box-shadow: 0 1px 6px rgba($black, 0.16);
+  box-shadow: 2px 1px 6px rgba($black, 0.16);
 
   &.is-closing {
     animation: fadeOut 400ms 1;

@@ -45,7 +45,9 @@
             Wallets
           </a>
         </li>
-        <li class="breadcrumbs-list__item"><span class="breadcrumb-divider">> </span>Bi-Fold Wallet</li>
+        <li class="breadcrumbs-list__item breadcrumb-link--current">
+          <span class="breadcrumb-divider">> </span>Bi-Fold Wallet
+        </li>
       </ul>
       <a class="breadcrumb-link breadcrumb-link--next" href="#">Next Product</a>
     </div>
@@ -113,7 +115,7 @@
               <span class="share-label">
                 Share
               </span>
-              <a class="share-link" href="https://www.facebook.com/sharer/sharer.php?u=#url" target="_blank">
+              <a class="share-link share-link--facebook" href="https://www.facebook.com/sharer/sharer.php?u=#url" target="_blank">
                 @include("svg/facebook.svg")
               </a>
               <a class="share-link" target="_blank" href="https://twitter.com/share?url=http://pwlarue.com&text=Product Name">
@@ -225,20 +227,24 @@
     <footer class="footer">
       <div class="grid">
         <div class="col text-left">
-          <span class="footer__label">
-            © 2016 P.W. LaRue Co.
-          </span>
+          <a class="footer__link" href="terms.html">Terms &amp; Conditions</a>
         </div>
         <div class="col">
-          <div class="footer__email">
-            <a class="footer__link" href="mailto:info@pwlarue.com">info@pwlarue.com</a>
+          <div class="footer__social">
+            <!-- <span class="footer__label">Follow Us:</span> -->
+            <a class="footer__link social-link social-link--facebook" href="https://www.facebook.com/PWLaRueCo/">
+              @include("svg/facebook.svg")
+              Facebook
+            </a>
+            <a class="footer__link social-link" href="https://www.instagram.com/p.w.larue/">
+              @include("svg/instagram.svg")
+              Instagram
+            </a>
           </div>
         </div>
         <div class="col text-right">
-          <div class="footer__social">
-            <span class="footer__label">Follow Us:</span>
-            <a class="footer__link social-link" href="https://www.facebook.com/PWLaRueCo/">Facebook</a>
-            <a class="footer__link social-link" href="https://www.instagram.com/p.w.larue/">Instagram</a>
+          <div class="footer__email">
+            <a class="footer__link" href="mailto:info@pwlarue.com">info@pwlarue.com</a>
           </div>
         </div>
       </div>

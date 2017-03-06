@@ -14,7 +14,7 @@
   </head>
   <body>
     
-  <nav class="navigation">
+    <nav class="navigation">
       <a href="/shop" class="nav-link nav-link--first">
         Shop  
       </a>
@@ -28,29 +28,23 @@
         <span>1</span>
       </a>
     </nav>
+
     <section class="hero">
       <h1 class="hero-header parallax">
-        <span class="hero-header__label">2017 Collection</span>
         <span class="hero-header__text">
-          Leather and canvas goods made from the highest quality materials.
+          Leather and canvas goods made from the highest quality materials. <a href="/shop" class="link">All
+          of our products</a> are made here in our studio located in the southwest
+          industrial side of Chicago.
         </span>
       </h1>
-      <h3 class="hero__product-info">
-        <span class="header-text">
-          Navy Carry All Bag
-        </span>
-        <span class="see-details">
-          See Details
-        </span>
-      </h3>
+      <a href="/product.html" class="hero-image-wrapper">
+        <span>Carry All Navy Bag</span>
+        <img src="images/products/carry-all-navy-front.png">
+      </a>
+      <img class="hero-second-image" src="images/shop-machines.jpg">
     </section>
 
-    <section class="section section--cta">
-      <h2 class="cta-header">Featured Products</h2>
-      <a href="/shop" class="cta-link">Shop All Products</a>
-    </section>
-
-    <section class="section section--featured">
+    <section class="section section--featured shop-page">
       <div class="featured-products">
         
         <div class="featured-product background-grey product--has-hover">
@@ -139,85 +133,47 @@
       </div>
     </section>
 
-    <section class="section section--about">
-      <img class="about-image about-image--first" src="images/studio-image-alt.jpg">
-      <div class="section-content section-content--about parallax">
-        <h2 class="section-header">
-          <span class="hero-header__label">About P.W. LaRue Co.</span>
-          We’re dedicated to being meticulous in our craft by providing 
-          long lasting products.
-        </h2>
-        <a href="/shop" class="cta-link">Learn More</a>
-      </div>
-    </section>
-
     <section class="section section--instagram">
+      <a href="https://www.instagram.com/p/BRM4RJXjABt/?taken-by=pwlarueco">
+        <img class="instagram-photo instagram-photo--first" src="images/pwlarueco-instagram-1.jpg" alt="Hand stitching reinforcements on the accordion card wallet image">
+      </a>
+      <a href="https://www.instagram.com/p/BREzWgkjo7G/?taken-by=pwlarueco">
+        <img class="instagram-photo instagram-photo--second" src="images/pwlarueco-instagram-2.jpg" alt="Sewing up leather goods in our Chicago shop for the 2017 collection image">
+      </a>
       <div class="section-content section-content--instagram">
         <h2 class="section-header">
-          Follow our shop on Instagram
+          <a class="link" target="_blank" href="https://instagram.com/pwlarueco">Follow our shop on Instagram</a> to learn about our process and be
+          the first to hear about promotions.
         </h2>
-        <a href="#" target="_blank" class="cta-link">Follow @p.w.larue</a>
       </div>
-      <video src="https://instagram.ford1-1.fna.fbcdn.net/t50.2886-16/14586328_1108032359273149_3779834119723155456_n.mp4" loop autoplay muted></video>
-      <video src="https://instagram.ford1-1.fna.fbcdn.net/t50.2886-16/14576856_1215374158483583_8744518565291360256_n.mp4" loop autoplay muted></video>
-      <!-- <img class="about-image" src="images/shop-machines-dark.jpg"> -->
     </section>
-
-
-   <!--  <section class="notify-me">
-      <div class="container">
-
-        <div id="mc_embed_signup">
-          <form action="//pwlarue.us13.list-manage.com/subscribe/post?u=97bb7956ddd6e8c4ba53b6ea3&amp;id=560d436540" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-            <div id="mc_embed_signup_scroll">
-              <div class="col col-sm-offset-2 col-sm-6">
-                <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-                 real people should not fill this in and expect good things - do not remove this or risk form bot signups
-                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_97bb7956ddd6e8c4ba53b6ea3_560d436540" tabindex="-1" value=""></div>
-              </div>
-              <div class="col col-xs-6 col-sm-2">
-                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="submit-button">
-              </div>
-            </div>
-          </form>
-        </div>
-
-      </div>
-    </section> -->
 
     <footer class="footer">
       <div class="grid">
         <div class="col text-left">
-          <span class="footer__label">
-            © P.W. LaRue Co.
-          </span>
           <a class="footer__link" href="terms.html">Terms &amp; Conditions</a>
         </div>
         <div class="col">
-          <div class="footer__email">
-            <a class="footer__link" href="mailto:info@pwlarue.com">info@pwlarue.com</a>
+          <div class="footer__social">
+            <!-- <span class="footer__label">Follow Us:</span> -->
+            <a class="footer__link social-link social-link--facebook" target="_blank" href="https://www.facebook.com/PWLaRueCo/">
+              @include("svg/facebook.svg")
+              Facebook
+            </a>
+            <a class="footer__link social-link" target="_blank" href="https://www.instagram.com/pwlarueco/">
+              @include("svg/instagram.svg")
+              Instagram
+            </a>
           </div>
         </div>
         <div class="col text-right">
-          <div class="footer__social">
-            <!-- <span class="footer__label">Follow Us:</span> -->
-            <a class="footer__link social-link" href="https://www.facebook.com/PWLaRueCo/">Facebook</a>
-            <a class="footer__link social-link" href="https://www.instagram.com/p.w.larue/">Instagram</a>
+          <div class="footer__email">
+            <a class="footer__link" href="mailto:info@pwlarue.com">info@pwlarue.com</a>
           </div>
         </div>
       </div>
     </footer>
 
-    <!-- <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-80883953-1', 'auto');
-      ga('send', 'pageview');
-
-    </script>  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.min.js"></script>
     <script src="bundle.js"></script>

@@ -14,22 +14,76 @@ body {
 }
 
 p {
-  line-height: 1.5;
+  margin-bottom: 2em;
+  line-height: 1.8;
+  letter-spacing: 1px;
+  font-size: 1.4rem;
+  font-weight: 400;
+
+  @include min($tablet) {
+    font-size: 1.8rem;
+  }
 }
 
 h1 {
-  font-size: 3.4rem;
   letter-spacing: 1px;
+  font-size: 3.4rem;
+  font-weight: 400;
 
   @include min($desktop) {
     font-size: 4rem;
   }
 }
 
+h2 {
+  font-size: 2.8rem;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+
+.terms-wrapper {
+  padding: 10px;
+  background: $light-grey;
+
+  @include min($tablet) {
+    padding: 50px;
+  }
+}
+
+.terms {
+  margin: auto;
+  padding: 15px;
+  background: $white;
+  max-width: 780px;
+
+  @include min($desktop) {
+    padding: 50px;
+  }
+
+  h1 {
+    margin-bottom: 1em;
+  }
+
+  h2 {
+    margin-top: 3.5em;
+    margin-bottom: 1em;
+    padding-bottom: 15px;
+    border-bottom: 2px solid $grey;
+    font-size: 1.8rem;
+    font-family: $mono;
+    color: $grey;
+  }
+
+  p {
+    font-size: 1.6rem;
+  }
+}
+
 .subheader {
   margin: 0 0 50px;
   letter-spacing: 1px;
-  font-size: 3rem;
+  font-family: $mono;
+  font-size: 2rem;
   font-weight: 400;
 }
 

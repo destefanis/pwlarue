@@ -2,99 +2,152 @@
  *  Define the product page styles.
  */
 
+// .hero {
+//   position: relative;
+//   height: 75vh;
+//   max-height: 310px;
+//   background-image: url('images/carry-all.png');
+//   background-size: 65%;
+//   background-color: #e9ccb9;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   transition: height 300ms ease;
+
+//   @include min($iphone) {
+//     height: 50vh;
+//     min-height: 310px;
+//   }
+
+//   @include min($tablet) {
+//     height: 85vh;
+//     min-height: 520px;
+//   }
+
+//   @include min($desktop) {
+//     height: 85vh;
+//     min-height: 720px;
+//   }
+
+//   @include min($xxlarge) {
+//     height: 85vh;
+//   }
+// }
+
+// .hero__product-info {
+//   position: absolute;
+//   bottom: 25%;
+//   right: 8%;
+//   color: $white;
+//   font-weight: 500;
+//   letter-spacing: 2px;
+//   font-size: 3rem;
+
+//   &:before {
+//     content: '';
+//     width: 120px;
+//     background: #fff;
+//     height: 2px;
+//     display: inline-block;
+//     position: absolute;
+//     left: -145px;
+//     top: 22px;
+//   }
+// }
+
+// .hero-header__label {
+//   font-family: $mono;
+//   font-size: 2rem;
+//   font-weight: bold;
+//   letter-spacing: 1px;
+//   border-bottom: 2px solid $white;
+//   display: inline-block;
+//   padding-bottom: 6px;
+// }
+
+// .header-text {
+//   display: block;
+// }
+
+// .see-details {
+//   display: inline-block;
+//   padding-bottom: 4px;
+//   border-bottom: 2px solid $white;
+//   letter-spacing: 1px;
+//   font-family: $mono;
+//   font-size: 1.8rem;
+// }
+
+// .hero-header {
+//   position: absolute;
+//   display: inline-block;
+//   top: 40px;
+//   left: 16%;
+//   z-index: 100;
+//   width: 37%;
+//   padding: 35px;
+//   color: $white;
+//   text-align: left;
+//   line-height: 1.6;
+//   font-size: 4rem;
+//   font-weight: 500;
+//   transition: transform 100ms ease;
+//   text-shadow: 0 1px 1px rgba($black, 0.05);
+
+//   .hero-header__text {
+//     display: block;
+//     margin-top: 12px;
+//   }
+// }
+
 .hero {
   position: relative;
-  height: 75vh;
-  max-height: 310px;
-  background-image: url('images/carry-all.png');
-  background-size: 65%;
-  background-color: #e9ccb9;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: height 300ms ease;
+  margin-bottom: 4px;
+  padding: 0 100px 225px;
+  text-align: center;
+  background-color: $white;
+  // border-top: 2px solid $grey-border;
 
-  @include min($iphone) {
-    height: 50vh;
-    min-height: 310px;
-  }
-
-  @include min($tablet) {
-    height: 85vh;
-    min-height: 520px;
-  }
-
-  @include min($desktop) {
-    height: 85vh;
-    min-height: 720px;
-  }
-
-  @include min($xxlarge) {
-    height: 85vh;
-  }
-}
-
-.hero__product-info {
-  position: absolute;
-  bottom: 25%;
-  right: 8%;
-  color: $white;
-  font-weight: 500;
-  letter-spacing: 2px;
-  font-size: 3rem;
-
-  &:before {
-    content: '';
-    width: 120px;
-    background: #fff;
-    height: 2px;
-    display: inline-block;
+  h1 {
     position: absolute;
-    left: -145px;
-    top: 22px;
+    bottom: 90px;
+    left: 125px;
+    width: 40%;
+    color: $black;
+    text-align: left;
+    letter-spacing: 1px;
+    font-size: 2.4rem;
+    font-weight: 400;
+  }
+
+  img {
+    padding: 0;
+    width: 100%;
+  }
+
+  .hero-second-image {
+    position: relative;
+    top: 100px;
+    right: 20px;
+    width: 40%;
   }
 }
 
-.hero-header__label {
-  font-family: $mono;
-  font-size: 2rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-  border-bottom: 2px solid $white;
+.hero-image-wrapper {
+  position: relative;
   display: inline-block;
-  padding-bottom: 6px;
-}
+  height: 400px;
+  width: 60%;
+  margin: 1;
+  background-color: #e9ccb9;
 
-.header-text {
-  display: block;
-}
-
-.see-details {
-  display: inline-block;
-  padding-bottom: 4px;
-  border-bottom: 2px solid $white;
-  letter-spacing: 1px;
-  font-family: $mono;
-  font-size: 1.8rem;
-}
-
-.hero-header {
-  position: absolute;
-  display: inline-block;
-  top: 40px;
-  left: 16%;
-  z-index: 100;
-  width: 37%;
-  padding: 35px;
-  color: $white;
-  text-align: left;
-  line-height: 1.6;
-  font-size: 4rem;
-  font-weight: 500;
-  transition: transform 100ms ease;
-  text-shadow: 0 1px 1px rgba($black, 0.05);
-
-  .hero-header__text {
-    display: block;
-    margin-top: 12px;
+  span {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    display: inline-block;
+    letter-spacing: 1px;
+    font-size: 2rem;
+    font-weight: 400;
+    color: $white;
   }
 }

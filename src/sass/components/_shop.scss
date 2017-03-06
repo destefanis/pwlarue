@@ -3,7 +3,7 @@
  */
 
 .filters {
-  padding: 0 15px;
+  padding: 0 0 0 15px;
   border-top: 1px solid $light-grey;
   letter-spacing: 1px;
   font-weight: 400;
@@ -101,9 +101,13 @@
     position: relative;
     display: inline-block;
     vertical-align: top;
-    margin-top: -8px;
+    margin-top: 0;
     border: 1px solid $light-grey;
     transition: border-color 300ms ease;
+
+    @include min($tablet) {
+      margin-top: -8px;
+    }
 
     &:hover,
     &:active {

@@ -3,10 +3,9 @@
  */
 
 .product-page {
-  border-top: 1px solid $light-grey;
   padding: 0 15px 15px;
-  text-align: center;
   background: $light-grey;
+  text-align: center;
 
   @include min($tablet) {
     padding: 0 15px 25px;
@@ -17,16 +16,8 @@
   }
 
   @include min($xlarge) {
-    padding: 0 100px 50px;
+    padding: 0 100px 100px;
   }
-}
-
-.product-page--tan {
-  background: $tan;
-}
-
-.product-page--blue {
-  background: rgba($blue, 0.7);
 }
 
 .product-image-wrapper {
@@ -94,7 +85,7 @@
 
 .product-thumbnails {
   display: block;
-  margin: -30px auto 60px;
+  margin: -30px auto 30px;
   width: 100%;
   text-align: center;
 
@@ -149,20 +140,21 @@
 }
 
 .breadcrumbs {
-  padding: 15px 10px;
-  border-top: 1px solid $light-grey;
+  padding: 30px 10px 0;
+  background: $light-grey;
+  color: $grey;
   text-align: center;
 
   @include min($tablet) {
-    padding: 15px 25px;
+    padding: 30px 25px 0;
   }
 
   @include min($desktop) {
-    padding: 15px 50px;
+    padding: 30px 50px 0;
   }
 
   @include min($large) {
-    padding: 15px 100px;
+    padding: 30px 100px 0;
   }
 }
 
@@ -175,19 +167,20 @@
 
 .breadcrumbs-list__item {
   display: inline-block;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   font-family: $sans;
   font-size: 1.4rem;
   font-weight: 400;
   -webkit-font-smoothing: auto;
 
   @include min($desktop) {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 }
 
 .breadcrumbs-list__item-link {
   transition: all 200ms ease;
+  color: $grey;
 
   &:hover,
   &:active,
@@ -198,7 +191,8 @@
 
 .breadcrumb-link {
   display: inline-block;
-  letter-spacing: 1px;
+  color: $grey;
+  letter-spacing: 2px;
   font-family: $sans;
   font-size: 1.4rem;
   font-weight: 400;
@@ -206,7 +200,7 @@
   transition: all 200ms ease;
 
   @include min($desktop) {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   &:hover,
@@ -239,7 +233,13 @@
 }
 
 .breadcrumb-link--current {
+  display: none;
+  opacity: 0.5;
   color: $grey;
+
+  @include min($tablet) {
+    display: inline-block;
+  }
 }
 
 .breadcrumb-divider {
@@ -255,26 +255,30 @@
   transition: all 250ms ease;
   transform: translateY(0);
   display: inline-block;
-  padding: 8px 30px;
-  background: $white;
+  padding: 10px 32px 13px;
+  border-radius: 30px;
+  background: $black;
+  color: $white;
   border: 2px solid $black;
-  font-family: $sans;
-  font-size: 1.6rem;
+  font-family: $mono;
+  font-size: 1.5rem;
   font-weight: 400;
   letter-spacing: 2px;
-  box-shadow: 0 0 0 rgba($black, 0.05);
+  box-shadow: 0 1px 5px rgba($black, 0.16);
   cursor: pointer;
 
   @include min($tablet) {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   &:hover,
   &:active,
   &:focus {
-    background: $black;
-    box-shadow: 0 1px 3px rgba($black, 0.12);
-    color: $white;
+    transform: translateY(-4px);
+    background: $white;
+    border-color: $black;
+    box-shadow: 0 2px 8px rgba($black, 0.26);
+    color: $black;
   }
 
   &.out-of-stock {
@@ -292,8 +296,7 @@
 }
 
 .button--buy {
-  padding: 12px 30px;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 .product-name {
@@ -306,9 +309,9 @@
     font-size: 3.2rem;
   }
 
-  @include min($large) {
-    font-size: 3.6rem;
-  }
+  // @include min($large) {
+  //   font-size: 3.6rem;
+  // }
 }
 
 // .product-status {
@@ -316,9 +319,10 @@
 
 .product-price {
   position: relative;
-  top: 2px;
+  top: 3px;
   display: inline-block;
   margin-right: 25px;
+  letter-spacing: 1px;
   font-weight: 400;
   font-size: 2.4rem;
   color: $black;
@@ -346,16 +350,17 @@
   color: $grey;
   line-height: 1.8;
   letter-spacing: 0.5px;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 400;
 
-  // @include min($large) {
-  //   width: 100%;
-  // }
+  @include min($tablet) {
+    width: 100%;
+    font-size: 1.8rem;
+  }
 }
 
 .product-page-details {
-  padding: 50px 0 0;
+  padding: 70px 0 0;
   // background: #AFC5C9;
   text-align: center;
 }
@@ -363,7 +368,7 @@
 .product-share {
   margin-top: 40px;
   padding-top: 20px;
-  border-top: 2px solid #e4e4e4;
+  border-top: 2px solid $grey-border;
   font-size: 1.6rem;
   font-weight: 400;
   letter-spacing: 1px;
@@ -382,7 +387,7 @@
 
 .share-link {
   display: inline-block;
-  margin-left: 25px;
+  margin-left: 20px;
 
   &:hover,
   &:active,
@@ -390,6 +395,12 @@
     svg {
       fill: $tan;
     }
+  }
+
+  &.share-link--facebook {
+    position: relative;
+    top: -1px;
+    margin-left: 30px;
   }
 
   svg {
@@ -421,7 +432,7 @@
     font-size: 1.6rem;
     font-weight: 400;
     font-family: $mono;
-    -webkit-font-smoothing: auto;
+    -webkit-font-smoothing: antialiased;
   }
 }
 
@@ -505,12 +516,16 @@
 
 .control-group__header {
   display: inline-block;
-  margin-top: 15px;
+  margin-top: 14px;
   letter-spacing: 0.5px;
   color: $grey;
   font-weight: 400;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-family: $sans;
+
+  @include min($tablet) {
+    font-size: 1.8rem;
+  }
 }
 
 .control {

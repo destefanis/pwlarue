@@ -30,6 +30,7 @@
   margin: 0 0 4px;
   vertical-align: top;
   overflow: hidden;
+  transition: all 400ms ease;
 
   @include min($tablet) {
     width: 49.5%;
@@ -59,6 +60,9 @@
   &:hover,
   &:active,
   &:focus {
+
+    // transform: translateY(-5px);
+    // box-shadow: 0 1px 4px rgba($black, 0.26);
 
     &::after {
       opacity: 1;

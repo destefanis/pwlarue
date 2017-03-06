@@ -1,22 +1,29 @@
-
 <footer class="footer">
   <div class="grid">
     <div class="col text-left">
-      <span class="footer__label">
-        © Copyright {{"now"|date('Y')}} P.W. LaRue Co.
-      </span>
+      <a class="footer__link" href="/terms">
+        Terms &amp; Conditions
+      </a>
     </div>
     <div class="col">
+      <div class="footer__social">
+        <!-- <span class="footer__label">Follow Us:</span> -->
+        <a class="footer__link social-link social-link--facebook" target="_blank" href="https://www.facebook.com/PWLaRueCo/">
+          {% include ["svg/facebook.svg"] %}
+          Facebook
+        </a>
+        <a class="footer__link social-link" target="_blank" href="https://www.instagram.com/pwlarueco/">
+          {% include ["svg/instagram.svg"] %}
+          Instagram
+        </a>
+      </div>
+    </div>
+    <div class="col text-right">
       <div class="footer__email">
         <a class="footer__link" href="mailto:info@pwlarue.com">info@pwlarue.com</a>
       </div>
     </div>
-    <div class="col text-right">
-      <div class="footer__social">
-        <span class="footer__label">Follow Us:</span>
-        <a class="footer__link social-link" target="_blank" href="https://www.facebook.com/PWLaRueCo/">Facebook</a>
-        <a class="footer__link social-link" target="_blank" href="https://www.instagram.com/pwlarueco/">Instagram</a>
-      </div>
-    </div>
   </div>
 </footer>
+
+

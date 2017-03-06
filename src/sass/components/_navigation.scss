@@ -38,7 +38,7 @@
     stroke: $black;
 
     @include min($tablet) {
-      width: 220px;
+      width: 200px;
     }
 
     &:hover,
@@ -71,7 +71,7 @@
 
 .nav-link {
   width: 19%;
-  margin-top: 17px;
+  margin-top: 15px;
   color: $black;
   letter-spacing: 1px;
   font-family: $sans;
@@ -81,7 +81,7 @@
   transition: color 250ms ease;
 
   @include min($tablet) {
-    margin-top: 24px;
+    margin-top: 18px;
     font-size: 1.7rem;
   }
 
