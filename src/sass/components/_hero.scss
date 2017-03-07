@@ -2,152 +2,84 @@
  *  Define the product page styles.
  */
 
-// .hero {
-//   position: relative;
-//   height: 75vh;
-//   max-height: 310px;
-//   background-image: url('images/carry-all.png');
-//   background-size: 65%;
-//   background-color: #e9ccb9;
-//   background-position: center;
-//   background-repeat: no-repeat;
-//   transition: height 300ms ease;
-
-//   @include min($iphone) {
-//     height: 50vh;
-//     min-height: 310px;
-//   }
-
-//   @include min($tablet) {
-//     height: 85vh;
-//     min-height: 520px;
-//   }
-
-//   @include min($desktop) {
-//     height: 85vh;
-//     min-height: 720px;
-//   }
-
-//   @include min($xxlarge) {
-//     height: 85vh;
-//   }
-// }
-
-// .hero__product-info {
-//   position: absolute;
-//   bottom: 25%;
-//   right: 8%;
-//   color: $white;
-//   font-weight: 500;
-//   letter-spacing: 2px;
-//   font-size: 3rem;
-
-//   &:before {
-//     content: '';
-//     width: 120px;
-//     background: #fff;
-//     height: 2px;
-//     display: inline-block;
-//     position: absolute;
-//     left: -145px;
-//     top: 22px;
-//   }
-// }
-
-// .hero-header__label {
-//   font-family: $mono;
-//   font-size: 2rem;
-//   font-weight: bold;
-//   letter-spacing: 1px;
-//   border-bottom: 2px solid $white;
-//   display: inline-block;
-//   padding-bottom: 6px;
-// }
-
-// .header-text {
-//   display: block;
-// }
-
-// .see-details {
-//   display: inline-block;
-//   padding-bottom: 4px;
-//   border-bottom: 2px solid $white;
-//   letter-spacing: 1px;
-//   font-family: $mono;
-//   font-size: 1.8rem;
-// }
-
-// .hero-header {
-//   position: absolute;
-//   display: inline-block;
-//   top: 40px;
-//   left: 16%;
-//   z-index: 100;
-//   width: 37%;
-//   padding: 35px;
-//   color: $white;
-//   text-align: left;
-//   line-height: 1.6;
-//   font-size: 4rem;
-//   font-weight: 500;
-//   transition: transform 100ms ease;
-//   text-shadow: 0 1px 1px rgba($black, 0.05);
-
-//   .hero-header__text {
-//     display: block;
-//     margin-top: 12px;
-//   }
-// }
-
 .hero {
   position: relative;
-  margin-bottom: 4px;
-  padding: 0 100px 225px;
+  padding: 0 15px 50px;
   text-align: center;
-  background-color: $white;
-  // border-top: 2px solid $grey-border;
+  background: $white;
 
-  h1 {
-    position: absolute;
-    bottom: 90px;
-    left: 125px;
-    width: 40%;
-    color: $black;
-    text-align: left;
-    letter-spacing: 1px;
-    font-size: 2.4rem;
-    font-weight: 400;
+  @include min($tablet) {
+    padding: 10px 50px 100px;
   }
 
-  img {
-    padding: 0;
+  @include min($large) {
+    padding: 10px 100px 125px;
+  }
+
+  .hero-image {
+    display: inline-block;
+    height: 300px;
+    vertical-align: top;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include min($tablet) {
+      height: 500px;
+    }
+  }
+
+  .hero-image--first {
     width: 100%;
+    background-position: right;
+
+    @include min($tablet) {
+      width: 59.5%;
+      margin-right: 5px;
+    }
+
+    @include min($large) {
+      width: 60%;
+    }
   }
 
-  .hero-second-image {
-    position: relative;
-    top: 100px;
-    right: 20px;
-    width: 40%;
+  .hero-image--second {
+    display: none;
+    background-position: center;
+
+    @include min($tablet) {
+      display: inline-block;
+      width: 39.5%;
+    }
   }
 }
 
-.hero-image-wrapper {
-  position: relative;
-  display: inline-block;
-  height: 400px;
-  width: 60%;
-  margin: 1;
-  background-color: #e9ccb9;
+.hero-content {
+  padding: 25px 0;
+  text-align: left;
 
-  span {
-    position: absolute;
-    top: 50px;
-    left: 50px;
-    display: inline-block;
-    letter-spacing: 1px;
-    font-size: 2rem;
-    font-weight: 400;
-    color: $white;
+  @include min($tablet) {
+    padding: 50px 35px 0;
+  }
+}
+
+.hero-title {
+  margin-bottom: 2.5em;
+  width: 100%;
+  color: $black;
+  line-height: 1.8;
+  letter-spacing: 1px;
+  font-family: $sans;
+  font-size: 2.2rem;
+  font-weight: 400;
+  text-transform: none;
+
+  @include min($tablet) {
+    width: 60%;
+    font-size: 2.4rem;
+  }
+
+  @include min($xlarge) {
+    width: 48%;
   }
 }

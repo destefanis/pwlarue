@@ -134,7 +134,6 @@
   opacity: 0;
   z-index: 10;
   transition: opacity 400ms ease;
-  // background: $light-grey;
 }
 
 .product-info {
@@ -145,18 +144,33 @@
   opacity: 1;
   z-index: 100;
   width: 100%;
-  padding: 20px 25px 15px;
-  // background: $white;
+  padding: 20px 10px 15px;
   color: #4e4e4e;
   text-align: center;
   line-height: 1.2;
   letter-spacing: 1px;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 500;
+
+  @include min($tablet) {
+    padding: 20px 25px 15px;
+    font-size: 2rem;
+  }
 
   @include min($desktop) {
     transform: translateY(25px);
     opacity: 0;
+  }
+
+  &.product-info--long-title {
+    .product-text {
+      width: 80%;
+      text-align: left;
+    }
+
+    .price {
+      vertical-align: bottom;
+    }
   }
 
   em {
@@ -169,13 +183,17 @@
   .price {
     display: inline-block;
     vertical-align: top;
-    padding-top: 2px;
+    padding-top: 1px;
     padding-bottom: 4px;
     letter-spacing: 0;
     font-family: $sans;
     font-size: 1.8rem;
     webkit-font-smoothing: auto;
     color: $grey;
+
+    @include min($tablet) {
+      padding-top: 2px;
+    }
   }
 }
 

@@ -1,25 +1,31 @@
 {% if menu %}
-	{% for item in menu %}
-    {% if loop.first %}
-  		<a href="{{item.get_link}}" class="{{item.classes | join(' ')}} nav-link nav-link--first">
-  			{{item.title}}
-  		</a>
-    {% endif %}
-	{% endfor %}
+
   <div class="logo">
     <a href="{{site.url}}" rel="home">
       {% include ["svg/logo.svg"] %}
     </a>
   </div>
 
-  {% for item in menu %}
-    {% if loop.last %}
-      <span id="site-header-cart" class=""> {# cart-customlocation #}
-        <a class="{{item.classes | join(' ')}} cart-contents nav-link nav-link--last" href="{{ cart_url }}" title="View your shopping cart">
-          {{ item.title }}<span>{{ cart_content_count }}</span>
-        </a>
-      </span>
-    {% endif %}
-  {% endfor %}
+  {% spaceless %}
+
+  	{% for item in menu %}
+      {% if loop.first %}
+    		<a href="{{item.get_link}}" class="{{item.classes | join(' ')}} nav-link nav-link--first">
+    			{{item.title}}
+    		</a>
+      {% endif %}
+  	{% endfor %}
+
+    {% for item in menu %}
+      {% if loop.last %}
+        <span id="site-header-cart" class=""> {# cart-customlocation #}
+          <a class="{{item.classes | join(' ')}} cart-contents nav-link nav-link--last" href="{{ cart_url }}" title="View your shopping cart">
+            {{ item.title }}<span>{{ cart_content_count }}</span>
+          </a>
+        </span>
+      {% endif %}
+    {% endfor %}
+
+  {% endspaceless %}
 
 {% endif %}

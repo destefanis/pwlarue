@@ -30,7 +30,12 @@
     </li>
     <li class="breadcrumbs-list__item breadcrumb-link--current">
     <span class="breadcrumb-divider">> </span>
-      {{ post.title }}
+      {# Fix for long titles for breadcrumbs #}
+      {% if post.title|length > 35 %}
+        {{ post.title|slice(0, 17) }}
+      {% else %}
+        {{ post.title }}
+      {% endif %}
     </li>
   </ul>
   {% if next_product.guid %}
@@ -50,7 +55,8 @@
   {% do action('woocommerce_before_single_product') %}
 
   <section class="product-page">
-    <div class="product-image-wrapper">
+    
+    <div class="product-image-wrapper {% for category in product_categorys %} product-{{ category.name|lower }} {% endfor %}">
 
       {# Display the main product image #}
       <a href="{{ post.thumbnail.src('shop_single') }}" class="first product-image-link is-active" title=""data-id="{{ post.color }}">
@@ -159,7 +165,7 @@
     <div class="details details--large">
       <h5>About The Product</h5>
       <p class="product-full-description">
-        {{ post.content|striptags }}
+        {{ post.content|striptags('<a><br><span><em><strong>') }}
       </p>
 
       {% if post.dimensions %}

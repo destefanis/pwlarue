@@ -33,6 +33,21 @@
     width: 56%;
     padding: 0 25px;
   }
+  
+  // Bags shouldn't have overlap because they're so tall.
+  &.product-bags {
+    .product-thumbnails {
+      margin: 0 auto 30px;
+
+      @include min($tablet) {
+        margin-top: 0;
+      }
+
+      @include min($desktop) {
+        margin: 0 auto 50px;
+      }
+    }
+  }
 }
 
 .buy-section {
@@ -322,6 +337,7 @@
   top: 3px;
   display: inline-block;
   margin-right: 25px;
+  margin-bottom: 0;
   letter-spacing: 1px;
   font-weight: 400;
   font-size: 2.4rem;
@@ -360,9 +376,12 @@
 }
 
 .product-page-details {
-  padding: 70px 0 0;
-  // background: #AFC5C9;
+  padding: 50px 0 0;
   text-align: center;
+
+  @include min($tablet) {
+    padding: 70px 0 0;
+  }
 }
 
 .product-share {
@@ -458,6 +477,13 @@
 
   @include min($tablet) {
     font-size: 2.2rem;
+  }
+
+  // Minor bullet point styling.
+  span {
+    display: list-item;
+    margin-top: 1em;
+    margin-left: 20px;
   }
 }
 

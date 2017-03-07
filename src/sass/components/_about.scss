@@ -10,7 +10,7 @@
   padding: 0;
 
   @include min($tablet) {
-    padding: 25px 0 100px;
+    padding: 25px 2px 0;
   }
 }
 
@@ -26,56 +26,18 @@
   }
 }
 
-.about-image {
-  display: inline-block;
-  max-width: 100%;
-
-  @include min($tablet) {
-    display: inline-block;
-    // max-width: 68%;
-    max-width: 100%;
-  }
-
-  // @include min($xxlarge) {
-  //   max-width: 70%;
-  // }
-}
-
-// .section-content {
-//   position: absolute;
-//   // padding: 25px 28px 30px;
-//   // background: $white;
-//   backface-visibility: hidden;
-
-//   .cta-link {
-//     margin-top: 25px;
-//     float: none;
-//     display: inline-block;
-//     font-size: 1.6rem;
-//   }
-// }
-
-// .section-header {
-//   color: $white;;
-//   line-height: 1.8;
-//   letter-spacing: 1px;
-//   font-size: 1.8rem;
-//   font-family: $sans;
-//   font-weight: 400;
-
-//   @include min($tablet) {
-//     font-size: 3rem;
-//   }
-// }
-
 .section-header {
   color: $black;
   line-height: 1.8;
   letter-spacing: 1px;
   font-family: $sans;
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 400;
   text-transform: none;
+
+  @include min($tablet) {
+    font-size: 2.4rem;
+  }
 }
 
 .link {
@@ -106,8 +68,13 @@
   }
 
   .section-header {
-    display: inline-block;
-    max-width: 45%;
+    display: block;
+    max-width: 95%;
+    margin: 0 auto 2.5em;
+
+    @include min($desktop) {
+      max-width: 45%;
+    }
   }
 
   .instagram-photo {
@@ -115,12 +82,20 @@
   }
 
   .instagram-photo--first {
-    margin-right: 1px;
-    width: 43.5%;
+    width: 100%;
+
+    @include min($tablet) {
+      margin-right: 1px;
+      width: 47.25%;
+    }
   }
 
   .instagram-photo--second {
-    width: 55.25%;
+    width: 100%;
+
+    @include min($tablet) {
+      width: 51.5%;
+    }
   }
 
   video {
@@ -135,8 +110,12 @@
 .section-content--instagram {
   text-align: center;
   z-index: 100;
-  padding: 50px 35px 35px;
+  padding: 50px 0 25px;
   font-size: 2.2rem;
+
+  @include min($tablet) {
+    padding: 50px 35px 35px;
+  }
 }
 
 // .section-content--about {

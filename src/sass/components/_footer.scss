@@ -70,8 +70,12 @@
 
 .social-link {
   display: inline-block;
-  margin-right: 25px;
+  margin-right: 5px;
   transition: color 200ms ease;
+
+  @include min($iphone) {
+    margin-right: 25px;
+  }
 
   @include min($tablet) {
     margin-top: 0;

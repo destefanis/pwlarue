@@ -14,40 +14,34 @@
   </head>
   <body>
     
-  <nav class="navigation">
-      <a href="/shop" class="nav-link nav-link--first">
-        Shop  
-      </a>
+    <nav class="navigation">
       <div class="logo">
         <a href="/">
           @include("svg/logo.svg")
         </a>
       </div>
+      <a href="/shop" class="nav-link nav-link--first">
+        Shop  
+      </a>
       <a href="/cart" class="nav-link nav-link--last cart-contents">
         Cart
         <span>1</span>
       </a>
     </nav>
-    <section class="hero">
-      <h1 class="hero-header parallax">
-        <span class="hero-header__label">2017 Collection</span>
-        <span class="hero-header__text">
-          Leather and canvas goods made from the highest quality materials.
-        </span>
-      </h1>
-      <h3 class="hero__product-info">
-        <span class="header-text">
-          Navy Carry All Bag
-        </span>
-        <span class="see-details">
-          See Details
-        </span>
-      </h3>
-    </section>
 
-    <section class="section section--cta">
-      <h2 class="cta-header">Featured Products</h2>
-      <a href="/shop" class="cta-link">Shop All Products</a>
+    <section class="hero">
+      <div class="hero-image hero-image--first" style="background-image: url('https://pwlarue.com/wp-content/uploads/2017/03/hand_stitching_accordion_card_wallet_header-1.jpg');">
+      </div>
+      <div class="hero-image hero-image--second" style="background-image: url('https://pwlarue.com/wp-content/uploads/2017/03/Thread_Hero-wider-1.jpg');"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">
+          At the P.W. LaRue Co. we design and manufacture long lasting leather 
+          and canvas products in our studio based in Chicago, Illinois.
+        </h1>
+        <a href="/shop" class="button">
+          Shop All Products
+        </a>
+      </div>
     </section>
 
     <section class="section section--featured">
@@ -139,28 +133,20 @@
       </div>
     </section>
 
-    <section class="section section--about">
-      <img class="about-image about-image--first" src="images/studio-image-alt.jpg">
-      <div class="section-content section-content--about parallax">
-        <h2 class="section-header">
-          <span class="hero-header__label">About P.W. LaRue Co.</span>
-          We’re dedicated to being meticulous in our craft by providing 
-          long lasting products.
-        </h2>
-        <a href="/shop" class="cta-link">Learn More</a>
-      </div>
-    </section>
-
     <section class="section section--instagram">
+      <a href="https://www.instagram.com/p/BRHlNe3DVk-/">
+        <img class="instagram-photo instagram-photo--first" src="https://pwlarue.com/wp-content/uploads/2017/03/pwlarueco-instagram-3.jpg" alt="Hand stitching reinforcements on the accordion card wallet image">
+      </a>
+      <a href="https://www.instagram.com/p/BREzWgkjo7G/?taken-by=pwlarueco">
+        <img class="instagram-photo instagram-photo--second" src="https://pwlarue.com/wp-content/uploads/2017/03/pwlarueco-instagram-2.jpg" alt="Sewing up leather goods in our Chicago shop for the 2017 collection image">
+      </a>
       <div class="section-content section-content--instagram">
         <h2 class="section-header">
-          Follow our shop on Instagram
+          Follow our shop on Instagram to learn about our process and be
+          the first to hear about special promotions.
         </h2>
-        <a href="#" target="_blank" class="cta-link">Follow @p.w.larue</a>
+        <a class="button" href="https://instagram.com/pwlarueco">Follow Us</a>
       </div>
-      <video src="https://instagram.ford1-1.fna.fbcdn.net/t50.2886-16/14586328_1108032359273149_3779834119723155456_n.mp4" loop autoplay muted></video>
-      <video src="https://instagram.ford1-1.fna.fbcdn.net/t50.2886-16/14576856_1215374158483583_8744518565291360256_n.mp4" loop autoplay muted></video>
-      <!-- <img class="about-image" src="images/shop-machines-dark.jpg"> -->
     </section>
 
 
@@ -188,21 +174,24 @@
     <footer class="footer">
       <div class="grid">
         <div class="col text-left">
-          <span class="footer__label">
-            © P.W. LaRue Co.
-          </span>
           <a class="footer__link" href="terms.html">Terms &amp; Conditions</a>
         </div>
         <div class="col">
-          <div class="footer__email">
-            <a class="footer__link" href="mailto:info@pwlarue.com">info@pwlarue.com</a>
+          <div class="footer__social">
+            <!-- <span class="footer__label">Follow Us:</span> -->
+            <a class="footer__link social-link social-link--facebook" href="https://www.facebook.com/PWLaRueCo/">
+              @include("svg/facebook.svg")
+              Facebook
+            </a>
+            <a class="footer__link social-link" href="https://www.instagram.com/p.w.larue/">
+              @include("svg/instagram.svg")
+              Instagram
+            </a>
           </div>
         </div>
         <div class="col text-right">
-          <div class="footer__social">
-            <!-- <span class="footer__label">Follow Us:</span> -->
-            <a class="footer__link social-link" href="https://www.facebook.com/PWLaRueCo/">Facebook</a>
-            <a class="footer__link social-link" href="https://www.instagram.com/p.w.larue/">Instagram</a>
+          <div class="footer__email">
+            <a class="footer__link" href="mailto:info@pwlarue.com">info@pwlarue.com</a>
           </div>
         </div>
       </div>

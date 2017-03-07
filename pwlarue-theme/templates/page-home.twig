@@ -1,0 +1,32 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	{% spaceless %}
+		<section class="hero">
+	    <div class="hero-image hero-image--first" style="background-image: url('https://pwlarue.com/wp-content/uploads/2017/03/hand_stitching_accordion_card_wallet_header-1.jpg');">
+	    </div>
+	    <div class="hero-image hero-image--second" style="background-image: url('https://pwlarue.com/wp-content/uploads/2017/03/Thread_Hero-wider-1.jpg');"></div>
+	    <div class="hero-content">
+	      <h1 class="hero-title">
+	        At the P.W. LaRue Co. we design and manufacture long lasting leather 
+	        and canvas products in our studio based in Chicago, Illinois.
+	      </h1>
+	      <a href="/shop" class="button">
+	        Shop All Products
+	      </a>
+	    </div>
+	   </section>
+   {% endspaceless %}
+		
+	{% if post.get_field('featured_products') %}
+	   <section class="section section--featured shop-page">
+	    <div class="featured-products">
+	      {% for post in post.get_field('featured_products') %}
+	        {% include ["tease-product-featured.twig"] %}
+	      {% endfor %}
+	    </div>
+	  </section>
+  {% endif %}
+
+	{% include ["instagram.twig"] %}
+{% endblock %}
