@@ -39,6 +39,7 @@
 
   @include min($large) {
     width: 33%;
+    min-height: 400px;
   }
 
    &::after {
@@ -200,6 +201,39 @@
 .product-text {
   display: inline-block;
   padding-right: 5px;
+}
+
+// Fade In Animations
+.product-fade {
+
+  .featured-product__image {
+    animation: TileFadeIn 1000ms 1;
+  } 
+}
+
+.product-fade--2 {
+  .featured-product__image {
+    animation-delay: 200ms;
+  }
+}
+
+.product-fade--3 {
+  .featured-product__image {
+    animation-delay: 400ms;
+  }
+}
+
+
+@keyframes TileFadeIn {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }
 
 .grid {

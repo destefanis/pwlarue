@@ -15,153 +15,156 @@
   <body>
     
     <nav class="navigation">
-      <a href="/shop" class="nav-link nav-link--first">
-        Shop  
-      </a>
       <div class="logo">
         <a href="/">
           @include("svg/logo.svg")
         </a>
       </div>
-      <a href="/cart" class="nav-link nav-link--last cart-contents">
+      <a href="/shop.html" class="nav-link nav-link--first">
+        Shop  
+      </a>
+      <a href="/cart.html" class="nav-link nav-link--last cart-contents">
         Cart
         <span>1</span>
       </a>
     </nav>
-
-    <div class="filters">
-      <span class="filter-label">Shopping:</span>
-      <ul class="filter-list">
-        <li class="filter-list-item filter-list-item--active">
-          All Products
-        </li>
-        <li class="filter-list-item">
-          Bags
-        </li>
-        <li class="filter-list-item">
-          Wallets
-        </li>
-        <li class="filter-list-item">
-          Pouches
-        </li>
-        <li class="filter-list-item">
-          Accessories
-        </li>
-      </ul>
-      <div id="filter-sort" class="filter-sort">
-        <span class="filter-label">Sort By:</span>
-        <form class="woocommerce-ordering" method="get">
-          <select name="orderby" class="orderby">
-                  <option value="menu_order" selected="selected">Default</option>
-                  <option value="popularity">Popularity</option>
-                  <option value="date">New Products</option>
-                  <option value="price">Price (low to high)</option>
-                  <option value="price-desc">Price (high to low)</option>
+    
+    <div id="barba-wrapper">
+      <div class="barba-container">
+        <div class="filters">
+          <span class="filter-label">Shopping:</span>
+          <ul class="filter-list">
+            <li class="filter-list-item filter-list-item--active">
+              All Products
+            </li>
+            <li class="filter-list-item">
+              Bags
+            </li>
+            <li class="filter-list-item">
+              Wallets
+            </li>
+            <li class="filter-list-item">
+              Pouches
+            </li>
+            <li class="filter-list-item">
+              Accessories
+            </li>
+          </ul>
+          <div id="filter-sort" class="filter-sort">
+            <span class="filter-label">Sort By:</span>
+            <form class="woocommerce-ordering" method="get">
+              <select name="orderby" class="orderby">
+                <option value="menu_order" selected="selected">Default</option>
+                <option value="popularity">Popularity</option>
+                <option value="date">New Products</option>
+                <option value="price">Price (low to high)</option>
+                <option value="price-desc">Price (high to low)</option>
               </select>
-          </form>
+            </form>
+          </div>
+        </div>
+        <section id="product-grid" class="section section--featured shop-page">
+          <div class="featured-products">
+            
+            <div class="featured-product background-grey product--has-hover product-fade product-fade--1">
+              <a href="product.html">
+                <img class="featured-product__image" src="images/products/bi-fold-wallet-black-front.png" />
+                <img class="featured-product__image-alt" src="images/products/bi-fold-wallet-black-open.png">
+                <h3 class="product-info">
+                  <span class="product-text">
+                    Bi-Fold Wallet -
+                  </span>
+                  <span class="price">
+                    $99.00
+                  </span>
+                </h3>
+              </a>
+            </div>
+            <div class="featured-product background-grey product--has-hover product-fade product-fade--2">
+              <a href="product.html">
+                <img class="featured-product__image" src="images/products/accordian-wallet-tan-front.png" />
+                <img class="featured-product__image-alt" src="images/products/accordian-wallet-tan-open.png">
+                <h3 class="product-info">
+                  <span class="product-text">
+                    Snap Wallet -
+                  </span>
+                  <span class="price">
+                    $99.00
+                  </span>
+                </h3>
+              </a>
+            </div>
+            <div class="featured-product background-grey product-fade product-fade--3">
+              <a href="product.html">
+                <img class="featured-product__image" src="images/products/bi-fold-wallet-tan-front.png" />
+                <h3 class="product-info">
+                  <span class="product-text">
+                    Bi-Fold Wallet -
+                  </span>
+                  <span class="price">
+                    $99.00
+                  </span>
+                </h3>
+              </a>
+            </div>
+            <div class="featured-product background-grey">
+              <a href="product.html">
+                <img class="featured-product__image" src="images/products/carry-all-navy-front.png" />
+                <h3 class="product-info">
+                  <span class="product-text">
+                    Carry All Bag -
+                  </span>
+                  <span class="price">
+                    $299.00
+                  </span>
+                </h3>
+              </a>
+            </div>
+
+            <div class="featured-product background-grey">
+              <a href="product.html">
+                <img class="featured-product__image" src="images/black-roll-top-bag.png" />
+                <h3 class="product-info">
+                  <span class="product-text">
+                    Roll Top Bag -
+                  </span>
+                  <span class="price">
+                    $299.00
+                  </span>
+                </h3>
+              </a>
+            </div>
+
+            <div class="featured-product background-grey">
+              <a href="product.html">
+                <img class="featured-product__image" src="images/products/keyholder-tan-front.png" />
+                <h3 class="product-info">
+                  <span class="product-text">
+                    Keyholder -
+                  </span>
+                  <span class="price">
+                    $39.00
+                  </span>
+                </h3>
+              </a>
+            </div>
+
+          </div>
+        </section>
+
+        <section class="section section--instagram">
+          <div class="section-content section-content--instagram">
+            <h2 class="section-header">
+              Follow our shop on Instagram
+            </h2>
+            <a href="#" target="_blank" class="cta-link">Follow @p.w.larue</a>
+          </div>
+          <video src="https://instagram.ford1-1.fna.fbcdn.net/t50.2886-16/14586328_1108032359273149_3779834119723155456_n.mp4" loop autoplay muted></video>
+          <video src="https://instagram.ford1-1.fna.fbcdn.net/t50.2886-16/14576856_1215374158483583_8744518565291360256_n.mp4" loop autoplay muted></video>
+          <!-- <img class="about-image" src="images/shop-machines-dark.jpg"> -->
+        </section>
       </div>
     </div>
-
-    <section class="section section--featured shop-page">
-      <div class="featured-products">
-        
-        <div class="featured-product background-grey product--has-hover">
-          <a href="product.html">
-            <img class="featured-product__image" src="images/products/bi-fold-wallet-black-front.png" />
-            <img class="featured-product__image-alt" src="images/products/bi-fold-wallet-black-open.png">
-            <h3 class="product-info">
-              <span class="product-text">
-                Bi-Fold Wallet -
-              </span>
-              <span class="price">
-                $99.00
-              </span>
-            </h3>
-          </a>
-        </div>
-        <div class="featured-product background-grey product--has-hover">
-          <a href="product.html">
-            <img class="featured-product__image" src="images/products/accordian-wallet-tan-front.png" />
-            <img class="featured-product__image-alt" src="images/products/accordian-wallet-tan-open.png">
-            <h3 class="product-info">
-              <span class="product-text">
-                Snap Wallet -
-              </span>
-              <span class="price">
-                $99.00
-              </span>
-            </h3>
-          </a>
-        </div>
-        <div class="featured-product background-grey">
-          <a href="product.html">
-            <img class="featured-product__image" src="images/products/bi-fold-wallet-tan-front.png" />
-            <h3 class="product-info">
-              <span class="product-text">
-                Bi-Fold Wallet -
-              </span>
-              <span class="price">
-                $99.00
-              </span>
-            </h3>
-          </a>
-        </div>
-        <div class="featured-product background-grey">
-          <a href="product.html">
-            <img class="featured-product__image" src="images/products/carry-all-navy-front.png" />
-            <h3 class="product-info">
-              <span class="product-text">
-                Carry All Bag -
-              </span>
-              <span class="price">
-                $299.00
-              </span>
-            </h3>
-          </a>
-        </div>
-
-        <div class="featured-product background-grey">
-          <a href="product.html">
-            <img class="featured-product__image" src="images/black-roll-top-bag.png" />
-            <h3 class="product-info">
-              <span class="product-text">
-                Roll Top Bag -
-              </span>
-              <span class="price">
-                $299.00
-              </span>
-            </h3>
-          </a>
-        </div>
-
-        <div class="featured-product background-grey">
-          <a href="product.html">
-            <img class="featured-product__image" src="images/products/keyholder-tan-front.png" />
-            <h3 class="product-info">
-              <span class="product-text">
-                Keyholder -
-              </span>
-              <span class="price">
-                $39.00
-              </span>
-            </h3>
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="section section--instagram">
-      <div class="section-content section-content--instagram">
-        <h2 class="section-header">
-          Follow our shop on Instagram
-        </h2>
-        <a href="#" target="_blank" class="cta-link">Follow @p.w.larue</a>
-      </div>
-      <video src="https://instagram.ford1-1.fna.fbcdn.net/t50.2886-16/14586328_1108032359273149_3779834119723155456_n.mp4" loop autoplay muted></video>
-      <video src="https://instagram.ford1-1.fna.fbcdn.net/t50.2886-16/14576856_1215374158483583_8744518565291360256_n.mp4" loop autoplay muted></video>
-      <!-- <img class="about-image" src="images/shop-machines-dark.jpg"> -->
-    </section>
 
     <footer class="footer">
       <div class="grid">
@@ -196,7 +199,9 @@
 
     </script>  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.4/jquery.lazy.min.js"></script>
     <script src="bundle.js"></script>
 
   </body>

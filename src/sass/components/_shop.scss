@@ -4,12 +4,12 @@
 
 .filters {
   padding: 0 0 0 15px;
-  border-top: 1px solid $light-grey;
   letter-spacing: 1px;
   font-weight: 400;
 
   @include min($tablet) {
     padding: 0 25px;
+    border-top: 2px solid $light-grey;
   }
 
   @include min($desktop) {
@@ -30,7 +30,6 @@
   font-size: 1.6rem;
   font-weight: 400;
   font-family: $mono;
-  -webkit-font-smoothing: auto;
 
   @include min($tablet) {
     margin-top: 0;
@@ -44,7 +43,11 @@
 .filter-list {
   display: inline-block;
   margin: 0;
-  padding: 20px 0 20px;
+  padding: 25px 0;
+
+  @include min($desktop) {
+    padding: 35px 0;
+  }
 }
 
 .filter-list-item {
@@ -52,6 +55,7 @@
   margin-right: 15px;
   margin-bottom: 4px;
   padding: 5px 0px 2px;
+  color: $light-black;
   list-style: none;
   border-bottom: 2px solid transparent;
   transition: all 300ms ease;
@@ -84,12 +88,12 @@
   animation: fadeIn 1000ms 1;
 
   @include min($desktop) {
-    padding: 24px 0 16px;
+    padding: 34px 0 16px;
     float: right;
   }
 
   .filter-label {
-    margin-top: 0;
+    margin-top: 5px;
     margin-right: 25px;
   }
 
@@ -102,7 +106,7 @@
     display: inline-block;
     vertical-align: top;
     margin-top: 0;
-    border: 1px solid $light-grey;
+    border: 2px solid $grey-border;
     transition: border-color 300ms ease;
 
     @include min($tablet) {
@@ -167,4 +171,3 @@
     }
   }
 }
-

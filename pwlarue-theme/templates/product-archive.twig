@@ -27,10 +27,15 @@
 
   <div class="clear"></div>
 
-  <section class="section section--featured shop-page">
+  <section id="product-grid" class="section section--featured shop-page">
     <div class="featured-products">
       {% for post in products %}
-        {% include ["tease-product.twig"] %}
+
+        {% if loop.index <= 6 %}
+          {% include ["tease-product.twig"] %}
+        {% else %}
+          {% include ["tease-product-lazy.twig"] %}
+        {% endif %}
       {% endfor %}
     </div>
   </section>

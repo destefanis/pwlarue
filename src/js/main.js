@@ -1,6 +1,10 @@
 (function ($) {
   'use strict'
 
+  // Initialize Barba.js
+  Barba.Pjax.start();
+
+  // Parallax Code
   var parallax = document.querySelectorAll(".parallax"),
     speed = 0.025;
 
@@ -17,6 +21,17 @@
     };
   }
 
+  // For product pages, lazy load the tiles with the lazy load specific class.
+  if ($('#product-grid').length > 0) {
+    $('.js-lazy').Lazy({
+      scrollDirection: 'vertical',
+      threshold: 800,
+      onError: function(element) {
+        console.log('error loading ' + element.data('src'));
+      },
+    });
+  }
+  
   // Use selectize.js for our select fields.
   $('select').selectize({
     sortField: 'text'

@@ -124,6 +124,11 @@ function wpb_adding_scripts() {
 	// Enqueue the script for the selectize library.
   wp_register_script('selectize', 'https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.min.js', null, null, true);                     
   wp_enqueue_script('selectize');
+
+  // Enqueue the script for lazy loading images.
+  wp_register_script('lazy', '//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.4/jquery.lazy.min.js', null, null, true);                     
+  wp_enqueue_script('lazy');
+
   // Enqueue the script for the main js file.
   wp_register_script('bundle', get_template_directory_uri() . '/assets/bundle.js', array('jquery'),'1.1', true);
   wp_enqueue_script('bundle');
