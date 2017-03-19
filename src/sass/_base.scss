@@ -41,16 +41,24 @@ h2 {
   text-transform: capitalize;
 }
 
-.terms-wrapper {
+.terms-wrapper,
+.page-wrapper {
   padding: 10px;
   background: $light-grey;
 
   @include min($tablet) {
     padding: 50px;
   }
+
+  &.page-wrapper--error {
+    @include min($tablet) {
+      height: 700px;
+    }
+  }
 }
 
-.terms {
+.terms,
+.general-page {
   margin: auto;
   padding: 15px;
   background: $white;
@@ -86,6 +94,19 @@ h2 {
 
   li {
     padding-bottom: 1em;
+  }
+
+  a {
+    border-bottom: 2px solid $black;
+    transition: all 200ms ease;
+    transition-property: border-color, color;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $tan;
+      border-color: $tan;
+    }
   }
 }
 

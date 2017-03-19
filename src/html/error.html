@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+  <head>
+    <title>P.W. LaRue Co. | Authentic Leather Makers</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    
+    <nav class="navigation">
+      <a href="/shop" class="nav-link nav-link--first">
+        Shop  
+      </a>
+      <div class="logo">
+        <a href="/">
+          @include("svg/logo.svg")
+        </a>
+      </div>
+      <a href="/cart" class="nav-link nav-link--last cart-contents">
+        Cart
+        <span>1</span>
+      </a>
+    </nav>
+    
+    <div class="page-wrapper page-wrapper--error">
+      <div class="general-page text-center">
+      <h1 class="error-title">404</h1>
+      <p>
+        Sorry but this page could not be found, we suggested
+        <a href="/">returning to the homepage</a>, or <a href="https://pwlarue.com/shop/">shopping
+        our collection</a>.
+      </p>
+
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="grid">
+        <div class="col text-left">
+          <a class="footer__link" href="terms.html">Terms &amp; Conditions</a>
+        </div>
+        <div class="col">
+          <div class="footer__email">
+            <a class="footer__link" href="mailto:info@pwlarue.com">info@pwlarue.com</a>
+          </div>
+        </div>
+        <div class="col text-right">
+          <div class="footer__social">
+            <!-- <span class="footer__label">Follow Us:</span> -->
+            <a class="footer__link social-link" href="https://www.facebook.com/PWLaRueCo/">Facebook</a>
+            <a class="footer__link social-link" href="https://www.instagram.com/p.w.larue/">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.min.js"></script>
+    <script src="bundle.js"></script>
+
+  </body>
+</html>

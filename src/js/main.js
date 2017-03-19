@@ -4,6 +4,12 @@
   // Initialize Barba.js
   Barba.Pjax.start();
 
+  Barba.Dispatcher.on('newPageReady', function() {
+    $('select').selectize({
+      sortField: 'text'
+    });
+  });
+
   // Parallax Code
   var parallax = document.querySelectorAll(".parallax"),
     speed = 0.025;
