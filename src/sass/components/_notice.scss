@@ -39,9 +39,11 @@
       position: absolute;
       bottom: 15px;
       float: none;
-      padding: 0;
+      padding: 0 0 2px;
       border: 0;
+      border-radius: 0;
       border-bottom: 2px solid $black;
+      color: $black;
       box-shadow: none;
       text-decoration: none;
       font-size: 1.4rem;
@@ -53,13 +55,14 @@
         line-height: 2.8;
         text-decoration: underline;
         background: $white;
-        font-size: 1.4rem;
+        font-size: 1.5rem;
       }
 
       &:hover,
       &:active,
       &:focus {
         color: $tan;
+        border-color: $tan;
       }
 
       a {
