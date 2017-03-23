@@ -82,10 +82,6 @@
     .product-info {
       color: $white;
     }
-
-    .price {
-      color: $light-grey;
-    }
   }
 
   &.background-tan {
@@ -93,10 +89,6 @@
 
     .product-info {
       color: $white;
-    }
-
-    .price {
-      color: $light-grey;
     }
   }
 
@@ -184,22 +176,22 @@
   .price {
     display: inline-block;
     vertical-align: top;
-    padding-top: 1px;
-    padding-bottom: 4px;
+    // padding-top: 1px;
+    // padding-bottom: 4px;
     letter-spacing: 0;
     font-family: $sans;
-    font-size: 1.8rem;
-    webkit-font-smoothing: auto;
-    color: $grey;
+    font-size: 2rem;
+    color: $white;
 
     @include min($tablet) {
-      padding-top: 2px;
+      // padding-top: 2px;
     }
   }
 }
 
 .product-text {
   display: inline-block;
+  vertical-align: top;
   padding-right: 5px;
 }
 

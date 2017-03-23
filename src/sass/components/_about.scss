@@ -32,7 +32,7 @@
   letter-spacing: 1px;
   font-family: $sans;
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 300;
   text-transform: none;
 
   @include min($tablet) {
@@ -64,21 +64,27 @@
   text-align: center;
 
   @include min($tablet) {
-    padding: 150px 100px 100px;
+    padding: 120px 100px 100px;
   }
 
   .section-header {
+    position: relative;
     display: block;
     max-width: 95%;
-    margin: 0 auto 2.5em;
+    margin: -70px auto 0.5em;
+    padding: 35px;
+    background: $white;
+    z-index: 100;
 
     @include min($desktop) {
-      max-width: 45%;
+      max-width: 69%;
     }
   }
 
   .instagram-photo {
-    display: inline-block;
+    // display: inline-block;
+    display: block;
+    margin: 0 auto;
   }
 
   .instagram-photo--first {
@@ -94,7 +100,7 @@
     width: 100%;
 
     @include min($tablet) {
-      width: 51.5%;
+      width: 80.5%;
     }
   }
 
@@ -114,7 +120,24 @@
   font-size: 2.2rem;
 
   @include min($tablet) {
-    padding: 50px 35px 35px;
+    // padding: 50px 35px 35px;
+    padding: 0;
+  }
+}
+
+.inline-link {
+  display: inline-block;
+  padding-bottom: 4px;
+  border-bottom: 2px solid $black;
+  font-family: $mono;
+  font-size: 1.6rem;
+  transition: all 200ms ease;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $tan;
+    border-color: tan;
   }
 }
 

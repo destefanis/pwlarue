@@ -382,7 +382,7 @@
     var rev3 = new RevealFx(document.querySelector('#hero-title'), {
       revealSettings : {
         bgcolor: '#f7f7f7',
-        delay: 400,
+        delay: 500,
         direction: 'rl',
         onCover: function(contentEl, revealerEl) {
           contentEl.style.opacity = 1;

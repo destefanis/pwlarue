@@ -4,7 +4,7 @@
 
 .hero {
   position: relative;
-  margin-top: 10px;
+  margin-top: 0;
   padding: 0 15px 50px;
   text-align: center;
   background: $white;
@@ -99,4 +99,54 @@
   // @include min($xlarge) {
   //   width: 54%;
   // }
+}
+
+.row {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.all-products {
+  margin: 0 2px;
+  padding: 100px;
+  background: $light-grey;
+  text-align: center;
+}
+
+.all-products-image {
+  float: left;
+  display: inline-block;
+  width: 49.6%;
+  margin: 0 2px 2px;
+  vertical-align: top;
+
+  @include min($xlarge) {
+    width: 49.7%;
+  }
+
+  &.all-products-image--first {
+    width: 39.5%;
+  }
+
+  &.all-products-image--second {
+    width: 59.25%;
+  }
+}
+
+.shop-all-link {
+  display: inline-block;
+  margin-top: -50px;
+  margin-bottom: 2px;
+  padding: 35px 150px;
+  background: $white;
+  letter-spacing: 1px;
+  font-family: $mono;
+  font-size: 1.6rem;
+  font-weight: 300;
 }
