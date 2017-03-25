@@ -19,7 +19,7 @@
   padding-bottom: 0;
 
   .featured-product {
-    padding: 0px 0 50px;
+    padding: 35px 0;
   }
 }
 
@@ -50,7 +50,7 @@
     opacity: 1;
     height: 100%;
     width: 100%;
-    background: linear-gradient(#f3d6c4, $tan);
+    background: $tan;
     transition: opacity 550ms ease;
 
     @include min($desktop) {

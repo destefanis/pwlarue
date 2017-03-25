@@ -5,7 +5,7 @@
 .hero {
   position: relative;
   margin-top: 0;
-  padding: 0 15px 50px;
+  padding: 4px 4px 25px;
   text-align: center;
   background: $white;
 
@@ -66,7 +66,7 @@
   position: relative;
   z-index: 100;
   padding: 25px 0;
-  text-align: center;
+  text-align: left;
 
   @include min($tablet) {
     margin-top: -130px;
@@ -80,13 +80,14 @@
   margin-bottom: 2.5em;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 10px;
   width: 100%;
   background: $white;
   color: $black;
   line-height: 1.8;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   font-family: $sans;
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 300;
   text-transform: none;
 
@@ -99,54 +100,4 @@
   // @include min($xlarge) {
   //   width: 54%;
   // }
-}
-
-.row {
-  &:before,
-  &:after {
-    content: " "; // 1
-    display: table; // 2
-  }
-  &:after {
-    clear: both;
-  }
-}
-
-.all-products {
-  margin: 0 2px;
-  padding: 100px;
-  background: $light-grey;
-  text-align: center;
-}
-
-.all-products-image {
-  float: left;
-  display: inline-block;
-  width: 49.6%;
-  margin: 0 2px 2px;
-  vertical-align: top;
-
-  @include min($xlarge) {
-    width: 49.7%;
-  }
-
-  &.all-products-image--first {
-    width: 39.5%;
-  }
-
-  &.all-products-image--second {
-    width: 59.25%;
-  }
-}
-
-.shop-all-link {
-  display: inline-block;
-  margin-top: -50px;
-  margin-bottom: 2px;
-  padding: 35px 150px;
-  background: $white;
-  letter-spacing: 1px;
-  font-family: $mono;
-  font-size: 1.6rem;
-  font-weight: 300;
 }

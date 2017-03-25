@@ -21,7 +21,6 @@
   background: $white;
 
   @include min($tablet) {
-    // padding: 100px 100px 100px;
     padding: 0;
   }
 }
@@ -58,7 +57,7 @@
 }
 
 .section--instagram {
-  padding: 25px 15px 50px;
+  padding: 4px 4px 50px;
   position: relative;
   background: $white;
   text-align: center;
@@ -82,7 +81,6 @@
   }
 
   .instagram-photo {
-    // display: inline-block;
     display: block;
     margin: 0 auto;
   }
@@ -100,7 +98,7 @@
     width: 100%;
 
     @include min($tablet) {
-      width: 80.5%;
+      width: 100%;
     }
   }
 
@@ -120,7 +118,6 @@
   font-size: 2.2rem;
 
   @include min($tablet) {
-    // padding: 50px 35px 35px;
     padding: 0;
   }
 }
@@ -140,29 +137,3 @@
     border-color: tan;
   }
 }
-
-// .section-content--about {
-//   position: relative;
-//   bottom: 50px;
-//   width: 90%;
-
-//   @include min($tablet) {
-//     position: absolute;
-//     // top: 47%;
-//     // right: 4%;
-//     top: 47%;
-//     left: 100px;
-//     width: 34%;
-//   }
-
-//   .cta-link {
-//     color: $white;
-//     border-color: $white;
-//     margin-top: 25px;
-//     font-size: 1.8rem;
-//   }
-
-//   .section-header {
-//     font-size: 4rem;
-//   }
-// }
