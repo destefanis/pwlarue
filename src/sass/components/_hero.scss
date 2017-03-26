@@ -7,11 +7,11 @@
   margin-top: 0;
   padding: 4px 4px 25px;
   text-align: center;
-  background: $light-grey;
 
   @include min($tablet) {
     margin-bottom: 4px;
     padding: 0 2px 15px;
+    background: $light-grey;
   }
 
   // @include min($large) {
