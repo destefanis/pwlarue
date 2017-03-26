@@ -7,12 +7,11 @@
   margin-top: 0;
   padding: 4px 4px 25px;
   text-align: center;
-  background: $white;
+  background: $light-grey;
 
   @include min($tablet) {
-    background: $light-grey;
-    padding: 0 0 15px;
     margin-bottom: 4px;
+    padding: 0 2px 15px;
   }
 
   // @include min($large) {
@@ -31,6 +30,10 @@
 
   @include min($tablet) {
     height: 600px;
+  }
+
+  @include min($xlarge) {
+    height: 700px;
   }
 }
 
@@ -97,7 +100,11 @@
     font-size: 2.4rem;
   }
 
-  // @include min($xlarge) {
-  //   width: 54%;
-  // }
+  @include min($xlarge) {
+    width: 54%;
+  }
+
+  @include min($xxlarge) {
+    width: 50%;
+  }
 }

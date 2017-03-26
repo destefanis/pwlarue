@@ -3,18 +3,19 @@
  */
 
 .footer {
-  padding: 50px 25px 25px;
+  padding: 50px 0 25px;
   border-top: 2px solid $light-grey;
   background: $white;
   color: $black;
-  text-align: left;
+  text-align: center;
   font-family: $mono;
   font-weight: 400;
   font-size: 1.6rem;
 
-  @include min($tablet) {
-    text-align: center;
+  @include min($desktop) {
+    padding: 50px 25px 25px;
   }
+
 
   @include min($desktop) {
     padding: 50px 100px;
@@ -70,7 +71,7 @@
 
 .social-link {
   display: inline-block;
-  margin-right: 5px;
+  margin-right: 15px;
   transition: color 200ms ease;
 
   @include min($iphone) {

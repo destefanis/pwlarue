@@ -354,42 +354,42 @@
 
 
 (function() {
-  // Fake loading.
   setTimeout(init, 0);
   function init() {
-    document.body.classList.remove('loading');
+
     //************************ Example 1 - reveal on load ********************************
-    
-    var rev1 = new RevealFx(document.querySelector('#hero-image-1'), {
-      revealSettings : {
-        bgcolor: '#9599a5',
-        onCover: function(contentEl, revealerEl) {
-          contentEl.style.opacity = 1;
+    if ($('#hero-image-1').length > 0) {
+      var rev1 = new RevealFx(document.querySelector('#hero-image-1'), {
+        revealSettings : {
+          bgcolor: '#9599a5',
+          onCover: function(contentEl, revealerEl) {
+            contentEl.style.opacity = 1;
+          }
         }
-      }
-    });
-    rev1.reveal();
-    var rev2 = new RevealFx(document.querySelector('#hero-image-2'), {
-      revealSettings : {
-        bgcolor: '#f4ebe4',
-        delay: 250,
-        onCover: function(contentEl, revealerEl) {
-          contentEl.style.opacity = 1;
+      });
+      rev1.reveal();
+      var rev2 = new RevealFx(document.querySelector('#hero-image-2'), {
+        revealSettings : {
+          bgcolor: '#f4ebe4',
+          delay: 250,
+          onCover: function(contentEl, revealerEl) {
+            contentEl.style.opacity = 1;
+          }
         }
-      }
-    });
-    rev2.reveal();
-    var rev3 = new RevealFx(document.querySelector('#hero-title'), {
-      revealSettings : {
-        bgcolor: '#f7f7f7',
-        delay: 500,
-        direction: 'rl',
-        onCover: function(contentEl, revealerEl) {
-          contentEl.style.opacity = 1;
+      });
+      rev2.reveal();
+      var rev3 = new RevealFx(document.querySelector('#hero-title'), {
+        revealSettings : {
+          bgcolor: '#f7f7f7',
+          delay: 500,
+          direction: 'rl',
+          onCover: function(contentEl, revealerEl) {
+            contentEl.style.opacity = 1;
+          }
         }
-      }
-    });
-    rev3.reveal();
+      });
+      rev3.reveal();
+    }
   }
 })();
 

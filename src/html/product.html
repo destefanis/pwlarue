@@ -16,7 +16,7 @@
     
     <nav class="navigation">
       <div class="logo">
-        <a href="/">
+        <a href="/index.html">
           @include("svg/logo.svg")
         </a>
       </div>
@@ -29,51 +29,53 @@
       </a>
     </nav>
     
-  <div id="barba-wrapper">
-    <div class="barba-container">
-      <div class="breadcrumbs">
-        <a class="breadcrumb-link breadcrumb-link--previous" href="#">Previous Product</a>
-        <ul class="breadcrumbs-list">
-          <li class="breadcrumbs-list__item">
-            <a href="/shop" class="breadcrumbs-list__item-link">
-              Products
-            </a>
-            <span class="breadcrumb-divider">
-              >
-            </span>
-          </li>
-          <li class="breadcrumbs-list__item">
-            <a href="/shop/wallets" class="breadcrumbs-list__item-link">
-              Wallets
-            </a>
-          </li>
-          <li class="breadcrumbs-list__item breadcrumb-link--current">
-            <span class="breadcrumb-divider">> </span>Bi-Fold Wallet
-          </li>
-        </ul>
-        <a class="breadcrumb-link breadcrumb-link--next" href="#">Next Product</a>
-      </div>
+    <div id="barba-wrapper">
+      <div class="barba-container">
+        <div class="breadcrumbs">
+          <a class="breadcrumb-link breadcrumb-link--previous" href="#">Previous Product</a>
+          <ul class="breadcrumbs-list">
+            <li class="breadcrumbs-list__item">
+              <a href="/shop" class="breadcrumbs-list__item-link">
+                Products
+              </a>
+              <span class="breadcrumb-divider">
+                >
+              </span>
+            </li>
+            <li class="breadcrumbs-list__item">
+              <a href="/shop/wallets" class="breadcrumbs-list__item-link">
+                Wallets
+              </a>
+            </li>
+            <li class="breadcrumbs-list__item breadcrumb-link--current">
+              <span class="breadcrumb-divider">> </span>Bi-Fold Wallet
+            </li>
+          </ul>
+          <a class="breadcrumb-link breadcrumb-link--next" href="#">Next Product</a>
+        </div>
 
-      <section class="product-page-wrapper">
-        <div class="product-page">
-          <div class="product-image-wrapper">
-            <a href="#" class="product-image-link is-active" data-id="black">
-              <img class="product-image" data-id="black" src="images/products/bi-fold-wallet-black-front.png">
-            </a>
-            <a href="#" class="product-image-link is-hidden" data-id="tan">
-              <img class="product-image" data-id="tan" src="images/products/bi-fold-wallet-tan-front.png">
-            </a>
-            <div class="product-thumbnails" data-id="black">
-              <img class="product-thumbnail" data-id="black" src="images/products/bi-fold-wallet-black-front.png">
-              <img class="product-thumbnail" data-id="black" src="images/products/bi-fold-wallet-black-open.png">
-              <img class="product-thumbnail" data-id="black" src="images/products/bi-fold-wallet-black-side.png">
+        <section class="product-page-wrapper">
+          
+          <!-- Product Hero -->
+          <div class="product-page">
+            <div class="product-image-wrapper">
+              <a href="#" class="product-image-link is-active" data-id="black">
+                <img class="product-image" data-id="black" src="images/products/bi-fold-wallet-black-front.png">
+              </a>
+              <a href="#" class="product-image-link is-hidden" data-id="tan">
+                <img class="product-image" data-id="tan" src="images/products/bi-fold-wallet-tan-front.png">
+              </a>
+              <div class="product-thumbnails" data-id="black">
+                <img class="product-thumbnail" data-id="black" src="images/products/bi-fold-wallet-black-front.png">
+                <img class="product-thumbnail" data-id="black" src="images/products/bi-fold-wallet-black-open.png">
+                <img class="product-thumbnail" data-id="black" src="images/products/bi-fold-wallet-black-side.png">
+              </div>
+              <div class="product-thumbnails is-hidden" data-id="tan">
+                <img class="product-thumbnail" src="images/products/bi-fold-wallet-tan-front.png">
+                <img class="product-thumbnail" src="images/products/bi-fold-wallet-tan-front.png">
+              </div>
             </div>
-            <div class="product-thumbnails is-hidden" data-id="tan">
-              <img class="product-thumbnail" src="images/products/bi-fold-wallet-tan-front.png">
-              <img class="product-thumbnail" src="images/products/bi-fold-wallet-tan-front.png">
-            </div>
-          </div>
-          <div class="buy-section">
+            <div class="buy-section">
               <h1 id="product-name" class="product-name">Bi-Fold Wallet</h1>
               <p class="product-description">
                 A small open format wallet with plenty of space for your essential cards and folded cash.
@@ -124,135 +126,140 @@
                   @include("svg/twitter.svg")
                 </a>
               </div>
-          </div>
-        </div>
-        <div class="product-page-details">
-          <div class="details details--large">
-            <h5>About The Product</h5>
-            <p class="product-full-description">
-              An ode to early American advertising wallets, this is our take on a traditional bi-fold with added room and easy access to the essentials. By far our largest format wallet, it features 4 card pockets and two hidden pockets as well as a large, easily accessible, cash flap.
-            </p>
-            <div class="product-spec">
-              <h5 class="product-spec-header">
-                Dimensions
-              </h5>
-              <p class="product-spec-detail">
-                4.5” x 3.5”
-              </p>
-            </div>
-            <div class="product-spec">
-              <h5 class="product-spec-header">
-                Materials
-              </h5>
-              <p class="product-spec-detail">
-                Wickett &amp; Craig English Bridle Leather
-                <br>
-                <span>(USA)</span>
-                Tex 90 Bonded Nylon Thread <span>(USA)</span>
-                <br>
-                Solid Brass Snaps <span>(USA)</span>
-              </p>
-            </div>
-            <div class="product-spec">
-              <h5 class="product-spec-header">
-                Construction
-              </h5>
-              <p class="product-spec-detail">
-                Fully burnished and finished edges
-                <br>
-                Hand stitched reinforcements
-                <br>
-                High stitch count
-                <br>
-                Structured (Lined) lid &amp; edge reinforcement
-                <br>
-                P.W. LaRue branded stamp
-              </p>
             </div>
           </div>
-        </div>
-        <section class="section section--featured text-center">
-          <h3 class="subheader text-center">
-            Related Products
-          </h3>
-          <div class="featured-products">
-            <div class="featured-product background-grey">
-              <a href="product.html">
-                <img class="featured-product__image" src="images/products/accordian-wallet-tan-front.png" />
-                <img class="featured-product__image-alt" src="images/products/accordian-wallet-tan-open.png">
-                <h3 class="product-info">
-                  <span class="product-text">
-                    Snap Wallet
-                  </span>
-                  <span class="price">
-                    $99.00
-                  </span>
-                </h3>
-              </a>
+
+          <!-- Product Additional Gallery -->
+          <div class="product-gallery">
+            <div class="product-gallery__image" style="background-image: url('images/bifold-overview.png');">
             </div>
-            <div class="featured-product background-grey">
-              <a href="product.html">
-                <img class="featured-product__image" src="images/products/bi-fold-wallet-tan-front.png" />
-                <h3 class="product-info">
-                  <span class="product-text">
-                    Bi-Fold Wallet
-                  </span>
-                  <span class="price">
-                    $99.00
-                  </span>
-                </h3>
-              </a>
+            <div class="product-gallery__image product-gallery__image--second" style="background-image: url('images/bifold-environmental.jpg');">
             </div>
           </div>
+
+          <!-- Details and Construction Aspects -->
+          <div class="product-page-details">
+            <div class="details details--large">
+              <h5>About The Product</h5>
+              <p class="product-full-description">
+                An ode to early American advertising wallets, this is our take on a traditional bi-fold with added room and easy access to the essentials. By far our largest format wallet, it features 4 card pockets and two hidden pockets as well as a large, easily accessible, cash flap.
+              </p>
+              <div class="product-spec">
+                <h5 class="product-spec-header">
+                  Dimensions
+                </h5>
+                <p class="product-spec-detail">
+                  4.5” x 3.5”
+                </p>
+              </div>
+              <div class="product-spec">
+                <h5 class="product-spec-header">
+                  Materials
+                </h5>
+                <p class="product-spec-detail">
+                  Wickett &amp; Craig English Bridle Leather
+                  <br>
+                  <span>(USA)</span>
+                  Tex 90 Bonded Nylon Thread <span>(USA)</span>
+                  <br>
+                  Solid Brass Snaps <span>(USA)</span>
+                </p>
+              </div>
+              <div class="product-spec">
+                <h5 class="product-spec-header">
+                  Construction
+                </h5>
+                <p class="product-spec-detail">
+                  Fully burnished and finished edges
+                  <br>
+                  Hand stitched reinforcements
+                  <br>
+                  High stitch count
+                  <br>
+                  Structured (Lined) lid &amp; edge reinforcement
+                  <br>
+                  P.W. LaRue branded stamp
+                </p>
+              </div>
+            </div>
+          </div>
+          <section class="section section--featured text-center">
+            <h3 class="subheader text-center">
+              Related Products
+            </h3>
+            <div class="featured-products">
+              <div class="featured-product background-grey">
+                <a href="product.html">
+                  <img class="featured-product__image" src="images/products/accordian-wallet-tan-front.png" />
+                  <img class="featured-product__image-alt" src="images/products/accordian-wallet-tan-open.png">
+                  <h3 class="product-info">
+                    <span class="product-text">
+                      Snap Wallet —
+                    </span>
+                    <span class="price">
+                      $99.00
+                    </span>
+                  </h3>
+                </a>
+              </div>
+              <div class="featured-product background-grey">
+                <a href="product.html">
+                  <img class="featured-product__image" src="images/products/bi-fold-wallet-tan-front.png" />
+                  <h3 class="product-info">
+                    <span class="product-text">
+                      Bi-Fold Wallet —
+                    </span>
+                    <span class="price">
+                      $99.00
+                    </span>
+                  </h3>
+                </a>
+              </div>
+            </div>
+          </section>
         </section>
-        <div class="product-page-materials">
-          <!-- <img src="images/shop-machines-dark.jpg">
-          <img src="images/shop-machines.jpg"> -->
-        </div>
-      </section>
 
-        <div class="content-wrapper">
-          <div class="woocommerce-message global-message">
-            Item Added To Cart
-            <span id="message-close" class="global-message-close">
-              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-       width="612px" height="612px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
-                <g>
-                  <polygon points="612,36.004 576.521,0.603 306,270.608 35.478,0.603 0,36.004 270.522,306.011 0,575.997 35.478,611.397 
-                    306,341.411 576.521,611.397 612,575.997 341.459,306.011"/>
-                </g>
-              </svg>
-            </span>
+          <div class="content-wrapper">
+            <div class="woocommerce-message global-message">
+              Item Added To Cart
+              <span id="message-close" class="global-message-close">
+                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="612px" height="612px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
+                  <g>
+                    <polygon points="612,36.004 576.521,0.603 306,270.608 35.478,0.603 0,36.004 270.522,306.011 0,575.997 35.478,611.397 306,341.411 576.521,611.397 612,575.997 341.459,306.011"/>
+                  </g>
+                </svg>
+              </span>
+            </div>
           </div>
+
         </div>
       </div>
-    </div>
 
-    <footer class="footer">
-      <div class="grid">
-        <div class="col text-left">
-          <a class="footer__link" href="terms.html">Terms &amp; Conditions</a>
-        </div>
-        <div class="col">
-          <div class="footer__social">
-            <!-- <span class="footer__label">Follow Us:</span> -->
-            <a class="footer__link social-link social-link--facebook" href="https://www.facebook.com/PWLaRueCo/">
-              @include("svg/facebook.svg")
-              Facebook
-            </a>
-            <a class="footer__link social-link" href="https://www.instagram.com/p.w.larue/">
-              @include("svg/instagram.svg")
-              Instagram
-            </a>
+      <footer class="footer">
+        <div class="grid">
+          <div class="col text-left">
+            <a class="footer__link" href="terms.html">Terms &amp; Conditions</a>
+          </div>
+          <div class="col">
+            <div class="footer__social">
+              <!-- <span class="footer__label">Follow Us:</span> -->
+              <a target="_blank" class="footer__link social-link social-link--facebook" href="https://www.facebook.com/PWLaRueCo/">
+                @include("svg/facebook.svg")
+                Facebook
+              </a>
+              <a target="_blank" class="footer__link social-link" href="https://www.instagram.com/PWLaRueCo/">
+                @include("svg/instagram.svg")
+                Instagram
+              </a>
+            </div>
+          </div>
+          <div class="col text-right">
+            <div class="footer__email">
+              <a class="footer__link" href="mailto:info@pwlarue.com">info@pwlarue.com</a>
+            </div>
           </div>
         </div>
-        <div class="col text-right">
-          <div class="footer__email">
-            <a class="footer__link" href="mailto:info@pwlarue.com">info@pwlarue.com</a>
-          </div>
-        </div>
-      </div>
-    </footer>
+      </footer>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>

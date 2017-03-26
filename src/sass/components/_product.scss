@@ -3,8 +3,8 @@
  */
 
 .product-page {
-  padding: 0 15px 15px;
-  background: $light-grey;
+  padding: 0 15px 50px;
+  background: $white;
   text-align: center;
 
   @include min($tablet) {
@@ -16,7 +16,7 @@
   }
 
   @include min($xlarge) {
-    padding: 0 100px 100px;
+    padding: 0 100px 50px;
   }
 }
 
@@ -82,7 +82,7 @@
 
 .product-image {
   width: 100%;
-  max-width: 700px;
+  max-width: 800px;
 }
 
 .product-image-link {
@@ -93,10 +93,6 @@
     display: none;
   }
 }
-
-// .zoomImg {
-//   background: #f7f7f7;
-// }
 
 .product-thumbnails {
   display: block;
@@ -123,8 +119,8 @@
   transform: translateY(0);
   display: inline-block;
   width: 28%;
-  margin: 0 6px;
-  background: $white;
+  margin: 0 2px;
+  background: $light-grey;
   transition: background 100ms ease, box-shadow 300ms ease, transform 300ms ease;
   cursor: pointer;
 
@@ -156,20 +152,21 @@
 
 .breadcrumbs {
   padding: 30px 10px 0;
-  background: $light-grey;
+  background: $white;
   color: $grey;
   text-align: center;
 
   @include min($tablet) {
-    padding: 30px 25px 0;
+    padding: 35px 25px 0;
+    border-top: 1px solid $light-grey;
   }
 
   @include min($desktop) {
-    padding: 30px 50px 0;
+    padding: 35px 50px 0;
   }
 
   @include min($large) {
-    padding: 30px 100px 0;
+    padding: 35px 100px 0;
   }
 }
 
@@ -182,10 +179,10 @@
 
 .breadcrumbs-list__item {
   display: inline-block;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   font-family: $sans;
   font-size: 1.4rem;
-  font-weight: 400;
+  font-weight: 300;
   -webkit-font-smoothing: auto;
 
   @include min($desktop) {
@@ -207,10 +204,10 @@
 .breadcrumb-link {
   display: inline-block;
   color: $grey;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   font-family: $sans;
   font-size: 1.4rem;
-  font-weight: 400;
+  font-weight: 300;
   -webkit-font-smoothing: auto;
   transition: all 200ms ease;
 
@@ -270,21 +267,17 @@
   transition: all 250ms ease;
   transform: translateY(0);
   display: inline-block;
-  padding: 10px 32px 13px;
+  padding: 8px 32px 10px;
   border-radius: 30px;
   background: $black;
   color: $white;
   border: 2px solid $black;
-  font-family: $mono;
-  font-size: 1.5rem;
-  font-weight: 400;
-  letter-spacing: 2px;
+  font-family: $sans;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 3px;
   box-shadow: 0 1px 5px rgba($black, 0.16);
   cursor: pointer;
-
-  @include min($tablet) {
-    font-size: 1.5rem;
-  }
 
   &:hover,
   &:active,
@@ -311,18 +304,14 @@
   }
 }
 
-.button--buy {
-  text-transform: uppercase;
-}
-
 .product-name {
   margin-bottom: 0.25em;
   letter-spacing: 1px;
   font-size: 2.6rem;
-  font-weight: 400;
+  font-weight: 700;
 
   @include min($desktop) {
-    font-size: 3.2rem;
+    font-size: 3rem;
   }
 
   // @include min($large) {
@@ -340,7 +329,7 @@
   margin-right: 25px;
   margin-bottom: 0;
   letter-spacing: 1px;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 2.4rem;
   color: $black;
 
@@ -368,7 +357,7 @@
   line-height: 1.8;
   letter-spacing: 0.5px;
   font-size: 1.6rem;
-  font-weight: 400;
+  font-weight: 300;
 
   @include min($tablet) {
     width: 100%;
@@ -376,19 +365,11 @@
   }
 }
 
-.product-page-details {
-  padding: 50px 0 0;
-  text-align: center;
-
-  @include min($tablet) {
-    padding: 70px 0 0;
-  }
-}
-
 .product-share {
+  display: inline-block;
   margin-top: 40px;
   padding-top: 20px;
-  border-top: 2px solid $grey-border;
+  border-top: 2px solid $light-grey;
   font-size: 1.6rem;
   font-weight: 400;
   letter-spacing: 1px;
@@ -403,15 +384,23 @@
   position: relative;
   top: -5px;
   display: inline-block;
+  letter-spacing: 0.5px;
+  font-weight: 300;
 }
 
 .share-link {
   display: inline-block;
   margin-left: 20px;
+  padding: 6px 10px;
+  border-radius: 40px;
+  background: $light-grey;
+  transition: background 200ms ease;
 
   &:hover,
   &:active,
   &:focus {
+    background: $white;
+
     svg {
       fill: $tan;
     }
@@ -424,10 +413,58 @@
   }
 
   svg {
-    height: 22px;
+    position: relative;
+    top: 3px;
+    height: 20px;
     width: auto;
     fill: $grey;
     transition: fill 200ms ease;
+  }
+}
+
+.product-gallery {
+  text-align: center;
+  padding: 4px;
+  font-size: 0;
+}
+
+.product-gallery__image {
+  height: 300px;
+  width: 100%;
+  display: inline-block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 2px;
+  font-size: 0;
+
+  @include min($tablet) {
+    height: 600px;
+    width: calc(50% - 2px);
+  }
+}
+
+.product-gallery__image--second {
+  margin-top: 4px;
+  margin-right: 0;
+
+  @include min($tablet) {
+    margin-top: 0;
+    margin-left: 2px;
+  }
+}
+
+.product-page-details {
+  padding: 50px 4px 0;
+  text-align: center;
+  background: $light-grey;
+
+  @include min($tablet) {
+    padding: 100px 0;
+  }
+
+  @include min($xlarge) {
+    padding: 150px 0 150px;
   }
 }
 
@@ -435,11 +472,12 @@
   display: inline-block;
   vertical-align: top;
   width: 100%;
-  max-width: 800px;
+  max-width: 860px;
   margin: 0 auto;
   padding: 25px 25px 50px;
   text-align: left;
   color: $black;
+  background-color: $white;
 
   @include min($tablet) {
     padding: 70px 75px 50px;
@@ -546,7 +584,7 @@
   margin-top: 14px;
   letter-spacing: 0.5px;
   color: $grey;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 1.6rem;
   font-family: $sans;
 

@@ -7,10 +7,14 @@
 }
 
 .section--featured {
-  padding: 0;
+  padding: 25px 2px 0;
 
   @include min($tablet) {
-    padding: 25px 2px 0;
+    padding: 100px 2px 0;
+  }
+
+  @include min($xlarge) {
+    padding: 150px 2px 0;
   }
 }
 
@@ -53,72 +57,6 @@
   &:active,
   &:focus {
     color: $tan;
-  }
-}
-
-.section--instagram {
-  padding: 4px 4px 50px;
-  position: relative;
-  background: $white;
-  text-align: center;
-
-  @include min($tablet) {
-    padding: 120px 100px 100px;
-  }
-
-  .section-header {
-    position: relative;
-    display: block;
-    max-width: 95%;
-    margin: -70px auto 0.5em;
-    padding: 35px;
-    background: $white;
-    z-index: 100;
-
-    @include min($desktop) {
-      max-width: 69%;
-    }
-  }
-
-  .instagram-photo {
-    display: block;
-    margin: 0 auto;
-  }
-
-  .instagram-photo--first {
-    width: 100%;
-
-    @include min($tablet) {
-      margin-right: 1px;
-      width: 47.25%;
-    }
-  }
-
-  .instagram-photo--second {
-    width: 100%;
-
-    @include min($tablet) {
-      width: 100%;
-    }
-  }
-
-  video {
-    width: 100%;
-
-    @include min($tablet) {
-      width: 50%;
-    }
-  }
-}
-
-.section-content--instagram {
-  text-align: center;
-  z-index: 100;
-  padding: 50px 0 25px;
-  font-size: 2.2rem;
-
-  @include min($tablet) {
-    padding: 0;
   }
 }
 

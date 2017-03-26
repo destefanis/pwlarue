@@ -1,9 +1,14 @@
 /*
- *  Define the product styles.
+ *  Define the product tiles styles.
  */
 
 .featured-products {
+  padding: 2px;
   font-size: 0;
+
+  @include min($tablet) {
+    padding: 0;
+  }
 
   .grid {
     padding: 0;
@@ -34,11 +39,13 @@
 
   @include min($tablet) {
     width: 49.5%;
+    width: calc(50% - 4px);
     margin: 0 2px 4px;
   }
 
   @include min($large) {
-    width: 33%;
+    width: 33.1%;
+    width: calc(33.33% - 4px);
     min-height: 400px;
   }
 
@@ -91,10 +98,6 @@
       color: $white;
     }
   }
-
-  &.background-blue {
-    background-color: rgba($blue, 0.25);
-  }
 }
 
 .product--has-hover {
@@ -143,7 +146,7 @@
   line-height: 1.2;
   letter-spacing: 1px;
   font-size: 1.8rem;
-  font-weight: 500;
+  font-weight: 700;
 
   @include min($tablet) {
     padding: 20px 25px 15px;

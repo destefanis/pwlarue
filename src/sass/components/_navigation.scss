@@ -11,7 +11,7 @@
   width: 100%;
   height: auto;
   padding: 15px 0 0;
-  border-bottom: 2px solid $grey-border;
+  border-bottom: 1px solid $grey-border;
   text-align: center;
   
   @include min($tablet) {
@@ -20,11 +20,11 @@
   }
 
    @include min($desktop) {
-    padding: 25px 50px;
+    padding: 20px 50px;
   }
 
   @include min($large) {
-    padding: 25px 100px;
+    padding: 20px 100px;
   }
 }
 
@@ -34,7 +34,7 @@
   width: 100%;
   text-align: center;
   padding-bottom: 10px;
-  border-bottom: 2px solid $grey-border;
+  border-bottom: 1px solid $grey-border;
 
   @include min($tablet) {
     display: inline-block;
@@ -77,8 +77,8 @@
   vertical-align: top;
   color: $black;
   letter-spacing: 1px;
-  font-family: $mono;
-  font-weight: 400;
+  font-family: $sans;
+  font-weight: 700;
   font-size: 1.6rem;
   webkit-font-smoothing: auto;
   transition: color 250ms ease;
@@ -97,7 +97,7 @@
   }
 
   &.nav-link--first {
-    border-right: 2px solid $grey-border;
+    border-right: 1px solid $grey-border;
     text-align: center;
 
     @include min($tablet) {
@@ -136,7 +136,7 @@
     display: inline-block;
     width: 26px;
     height: 26px;
-    margin-left: 3px;
+    margin-left: 10px;
     border-radius: 100%;
     background: $black;
     color: $white;
