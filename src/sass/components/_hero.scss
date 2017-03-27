@@ -32,7 +32,7 @@
     height: 600px;
   }
 
-  @include min($xlarge) {
+  @include min($xxlarge) {
     height: 700px;
   }
 }

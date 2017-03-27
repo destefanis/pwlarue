@@ -6,7 +6,12 @@
   padding: 4px 4px 50px;
   position: relative;
   background: $white;
-  text-align: center;
+  text-align: left;
+
+  a {
+    width: 49.5%;
+    display: inline-block;
+  }
 
   @include min($tablet) {
     padding: 120px 100px 100px;
@@ -14,22 +19,22 @@
 
   .section-header {
     position: relative;
-    display: block;
-    max-width: 95%;
-    margin: -70px auto 0.5em;
+    display: inline-block;
+    // margin: -70px auto 0.5em;
     padding: 35px;
     background: $white;
     z-index: 100;
+    vertical-align: top;
 
     @include min($desktop) {
-      max-width: 69%;
+      width: 49.5%;
     }
   }
 
   .instagram-photo {
     display: inline-block;
     margin: 0 auto;
-    width: calc(33% - 2px);
+    vertical-align: top;
   }
 
   .instagram-photo--first {
@@ -58,13 +63,13 @@
   }
 }
 
-.section-content--instagram {
-  text-align: center;
-  z-index: 100;
-  padding: 50px 0 25px;
-  font-size: 2.2rem;
+// .section-content--instagram {
+//   display: inline-block;
+//   z-index: 100;
+//   padding: 50px 0 25px;
+//   font-size: 2.2rem;
 
-  @include min($tablet) {
-    padding: 0;
-  }
-}
+//   @include min($tablet) {
+//     padding: 0;
+//   }
+// }
