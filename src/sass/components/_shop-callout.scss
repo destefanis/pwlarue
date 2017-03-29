@@ -3,20 +3,25 @@
  */
 
 .row {
+
   &:before,
   &:after {
-    content: " "; // 1
-    display: table; // 2
+    content: " ";
+    display: table;
   }
+
   &:after {
     clear: both;
   }
 }
 
-.all-products {
+.all-products,
+.product-feature {
+  position: relative;
   padding: 4px;
   background: $light-grey;
   text-align: center;
+  -webkit-perspective: 1000;
 
   @include min($tablet) {
     margin: 0 2px;
@@ -24,65 +29,128 @@
   }
 
   @include min($desktop) {
-    padding: 100px 100px 50px;
+    padding: 100px;
+  }
+
+  &.product-feature--right {
+    text-align: right;
+  }
+
+  &.product-feature--left {
+    text-align: left;
   }
 }
 
-.all-products-image {
-  float: left;
-  display: none;
+.product-feature-image {
+  display: inline-block;
   vertical-align: top;
+  width: 100%;
 
   @include min($tablet) {
-    margin: 0 2px 2px;
-  }
-
-  &.all-products-image--first {
-    width: 39.5%;
-
-    @include min($tablet) {
-      display: inline-block;
-    }
-  }
-
-  &.all-products-image--second {
-    display: inline-block;
-    width: 100%;
-
-    @include min($tablet) {
-      width: 59.25%;
-    }
+    width: 60%;
   }
 }
 
-.shop-all-link {
-  transform: translateY(0);
+.product-callout__title {
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  font-family: $sans;
+  font-size: 2rem;
+  font-weight: 300;
+  text-transform: none;
+
+  @include min($tablet) {
+    font-size: 2.8rem;
+  }
+}
+
+.product-callout {
+  transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  padding: 35px 35px 45px;
+  background: $white;
+  text-align: left;
+  font-family: $mono;
+  font-size: 1.6rem;
+  -webkit-transform-style: preserve-3d;
+  transform: translate3d(0, -50%, 0);
+  -webkit-perspective: 1000;
+
+  @include min($desktop) {
+    min-width: 440px;
+  }
+
+  &.product-callout--left {
+    left: 150px;
+  }
+
+  &.product-callout--right {
+    right: 150px;
+  }
+}
+
+.product-callout__list {
+  margin-top: 2em;
+  padding: 0;
+  list-style: none;
+}
+
+.product-callout__link {
   position: relative;
   display: inline-block;
-  top: -55px;
-  margin-bottom: 2px;
-  padding: 25px 50px;
-  border-radius: 50px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  background: $black;
-  color: $white;
-  letter-spacing: 3px;
-  font-family: $sans;
-  font-size: 1.6rem;
-  font-weight: 700;
-  transition: all 250ms ease;
-  transition-property: color, background, box-shadow, transform;
+  margin-top: 3em;
+  transition: all 350ms cubic-bezier(0.86, 0, 0.07, 1);
 
-  @include min($tablet) {
-    padding: 25px 100px;
-    font-size: 1.8rem;
+  &:hover {
+    color: $tan;
+
+    &::after {
+      transform: scaleX(0);
+      transition-delay: 0;
+    }
+
+    &::before {
+      transform: scaleX(1);
+    }
   }
 
-  &:hover,
-  &:active {
-    transform: translateY(-2px);
-    background: $grey;
-    color: $white;
-    box-shadow: 0 1px 6px rgba($black, 0.2);
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    display: block;
+    width: 100%;
+    height: 2px;
+  }
+
+  &::before {
+    background: $tan;
+    transform: scaleX(0);
+    transition: all 200ms cubic-bezier(0.86, 0, 0.07, 1);
+    transition-delay: 300ms;
+    transform-origin: left;
+  }
+  
+  &::after {
+    background: $black;
+    transform: scaleX(1);
+    transition: all 200ms cubic-bezier(0.86, 0, 0.07, 1);
+    transform-origin: right;
   }
 }
+
+// @keyframes wipeReveal {
+//   0% {
+//     transform: scaleX(1);
+//   }
+
+//   50% {
+//     transform: scaleX(0);
+//   }
+
+//   100% {
+//     transform: scaleX(1);;
+//   }
+// }
