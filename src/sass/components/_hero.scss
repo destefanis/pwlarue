@@ -19,6 +19,33 @@
   // }
 }
 
+.hero-video {
+  width: 100%;
+  height: auto;
+  // margin-top: 25px;
+}
+
+// Index 2s
+.hero-alt {
+  .hero-video {
+
+  }
+}
+
+.hero-video-alt {
+  display: inline-block;
+  margin: auto;
+
+  @include min($tablet) {
+    width: 90%;
+    margin: 50px auto 0;
+  }
+
+  @include min($large) {
+    width: 70%;
+  }
+}
+
 .hero-image {
   display: inline-block;
   height: 300px;
@@ -39,6 +66,7 @@
 
 .hero-image-wrapper {
   display: inline-block;
+  vertical-align: top;
 }
 
 .hero-image-wrapper--first {
@@ -61,7 +89,12 @@
 
   @include min($tablet) {
     display: inline-block;
-    width: 39.5%;
+    width: 39.75%;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
   }
 }
 

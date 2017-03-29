@@ -105,7 +105,7 @@ gulp.task('js', () => {
 // images
 
 gulp.task('images', () => {
-  return gulp.src('src/images/**/*.{gif,jpg,png,svg}')
+  return gulp.src('src/images/**/*.{gif,jpg,png,svg,mp4}')
     .pipe(plumber({ errorHandler: onError }))
     .pipe(changed('dist/images'))
     .pipe(gulp.dest('dist/images'))
@@ -174,7 +174,7 @@ gulp.task('watch', () => {
   gulp.watch('src/html/**/*.html', ['html', reload])
   gulp.watch('src/sass/**/*.scss', ['sass', reload])
   gulp.watch('src/js/**/*.js', ['js', reload])
-  gulp.watch('src/images/**/*.{gif,jpg,png,svg}', ['images', reload])
+  gulp.watch('src/images/**/*.{gif,jpg,png,svg,mp4}', ['images', reload])
 })
 
 // build and default tasks

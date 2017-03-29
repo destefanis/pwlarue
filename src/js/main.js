@@ -390,6 +390,29 @@
       });
       rev3.reveal();
     }
+
+    if ($('#hero-video-alt').length > 0) {
+      var videoReveal = new RevealFx(document.querySelector('#hero-video-alt'), {
+        revealSettings : {
+          bgcolor: '#9599a5',
+          onCover: function(contentEl, revealerEl) {
+            contentEl.style.opacity = 1;
+          }
+        }
+      });
+      videoReveal.reveal();
+      var rev3 = new RevealFx(document.querySelector('#hero-title'), {
+        revealSettings : {
+          bgcolor: '#f7f7f7',
+          delay: 500,
+          direction: 'rl',
+          onCover: function(contentEl, revealerEl) {
+            contentEl.style.opacity = 1;
+          }
+        }
+      });
+      rev3.reveal();
+    }
   }
 })();
 

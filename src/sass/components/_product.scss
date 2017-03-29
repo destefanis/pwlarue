@@ -463,9 +463,9 @@
     padding: 100px 0;
   }
 
-  @include min($xlarge) {
-    padding: 150px 0 150px;
-  }
+  // @include min($xlarge) {
+  //   padding: 150px 0 150px;
+  // }
 }
 
 .details {
