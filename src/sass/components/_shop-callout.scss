@@ -15,17 +15,15 @@
   }
 }
 
-.all-products,
 .product-feature {
   position: relative;
-  padding: 4px;
+  padding: 100px 4px 4px;
   background: $light-grey;
   text-align: center;
   -webkit-perspective: 1000;
 
   @include min($tablet) {
-    margin: 0 2px;
-    padding: 50px;
+    padding: 50px 25px;
   }
 
   @include min($desktop) {
@@ -65,28 +63,63 @@
 }
 
 .product-callout {
-  transform: translateY(-50%);
-  position: absolute;
-  top: 50%;
   padding: 35px 35px 45px;
   background: $white;
   text-align: left;
   font-family: $mono;
   font-size: 1.6rem;
   -webkit-transform-style: preserve-3d;
-  transform: translate3d(0, -50%, 0);
   -webkit-perspective: 1000;
+
+  @include min($tablet) {
+    transform: translateY(-50%);
+    transform: translate3d(0, -50%, 0);
+    position: absolute;
+    top: 50%;
+    max-width: 45%;
+  }
 
   @include min($desktop) {
     min-width: 440px;
+    max-width: auto;
   }
 
   &.product-callout--left {
-    left: 150px;
+
+    @include min($tablet) {
+      left: 25px;
+    }
+
+    @include min($desktop) {
+      left: 100px;
+    }
+
+    @include min($xlarge) {
+      left: 150px;
+    }
+
+    @include min($xxlarge) {
+      left: 250px;
+    }
   }
 
   &.product-callout--right {
-    right: 150px;
+
+    @include min($tablet) {
+      right: 25px;
+    }
+
+    @include min($desktop) {
+      right: 100px;
+    }
+
+    @include min($xlarge) {
+      right: 150px;
+    }
+
+    @include min($xxlarge) {
+      right: 250px;
+    }
   }
 }
 
@@ -94,6 +127,14 @@
   margin-top: 2em;
   padding: 0;
   list-style: none;
+}
+
+.product-callout__body {
+  max-width: 400px;
+  margin-top: 2em;
+  margin-bottom: 0;
+  padding: 0;
+  font-size: 1.6rem;
 }
 
 .product-callout__link {

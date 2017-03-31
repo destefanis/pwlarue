@@ -5,46 +5,61 @@
 .hero {
   position: relative;
   margin-top: 0;
-  padding: 4px 4px 25px;
   text-align: center;
 
   @include min($tablet) {
-    margin-bottom: 4px;
-    padding: 0 2px 15px;
+    padding: 0;
     background: $light-grey;
   }
-
-  // @include min($large) {
-  //   padding: 10px 100px 125px;
-  // }
 }
 
 .hero-video {
   width: 100%;
   height: auto;
-  // margin-top: 25px;
+
+  @include min($tablet) {
+    margin-top: -6.9%;
+    margin-bottom: -7.65%;
+  }
+}
+
+.hero-link {
+  text-align: left;
+  transform: translateX(-50%);
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  // right: 100px;
+  display: inline-block;
+  z-index: 150;
+  letter-spacing: 1px;
+  color: $white;
+  font-family: $mono;
+  font-size: 1.6rem;
+  font-weight: 300;
 }
 
 // Index 2s
-.hero-alt {
-  .hero-video {
+// .hero-alt {
+//   .hero-video {
+//     margin-top: -100px;
+//     width: 100%;
+//   }
+// }
 
-  }
-}
+// .hero-video-alt {
+//   display: inline-block;
+//   margin: auto;
 
-.hero-video-alt {
-  display: inline-block;
-  margin: auto;
+//   @include min($tablet) {
+//     width: 90%;
+//     margin: 50px auto 0;
+//   }
 
-  @include min($tablet) {
-    width: 90%;
-    margin: 50px auto 0;
-  }
-
-  @include min($large) {
-    width: 70%;
-  }
-}
+//   @include min($large) {
+//     width: 70%;
+//   }
+// }
 
 .hero-image {
   display: inline-block;

@@ -2,30 +2,30 @@
   'use strict'
 
   // Initialize Barba.js
-  Barba.Pjax.start();
+  // Barba.Pjax.start();
 
-  Barba.Dispatcher.on('newPageReady', function() {
-    $('select').selectize({
-      sortField: 'text'
-    });
-  });
+  // Barba.Dispatcher.on('newPageReady', function() {
+  //   $('select').selectize({
+  //     sortField: 'text'
+  //   });
+  // });
 
   // Parallax Code
-  var parallax = document.querySelectorAll(".parallax"),
-    speed = 0.025;
+  // var parallax = document.querySelectorAll(".parallax"),
+  //   speed = 0.025;
 
-  if (($(window).width() > 1024)) {
-    window.onscroll = function(){
-      [].slice.call(parallax).forEach(function(el,i){
+  // if (($(window).width() > 1024)) {
+  //   window.onscroll = function(){
+  //     [].slice.call(parallax).forEach(function(el,i){
 
-        var windowYOffset = window.pageYOffset,
-          elTransfromPos = (windowYOffset * speed);
+  //       var windowYOffset = window.pageYOffset,
+  //         elTransfromPos = (windowYOffset * speed);
         
-        el.style.transform = "translate(0px, -" + elTransfromPos + "%)";
+  //       el.style.transform = "translate(0px, -" + elTransfromPos + "%)";
 
-      });
-    };
-  }
+  //     });
+  //   };
+  // }
 
   // For product pages, lazy load the tiles with the lazy load specific class.
   if ($('#product-grid').length > 0) {
@@ -47,10 +47,6 @@
   $('.content-wrapper').on('click', '.global-message-close', function() {
     $('.global-message').addClass('is-closing');
   });
-
-  // Enable zoom on product images
-  // $('.product-image-link').zoom();
-
 
   // Product variant and gallery fuctionality
   var $ctx = $('.product-page');
@@ -394,7 +390,7 @@
     if ($('#hero-video-alt').length > 0) {
       var videoReveal = new RevealFx(document.querySelector('#hero-video-alt'), {
         revealSettings : {
-          bgcolor: '#9599a5',
+          bgcolor: '#f7f7f7',
           onCover: function(contentEl, revealerEl) {
             contentEl.style.opacity = 1;
           }
