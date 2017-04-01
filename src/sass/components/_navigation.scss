@@ -17,7 +17,6 @@
   
   @include min($tablet) {
     padding: 15px 25px;
-    border-bottom: none;
   }
 
    @include min($desktop) {

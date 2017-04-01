@@ -43,6 +43,12 @@
     sortField: 'text'
   });
 
+  // Magnific Popup Init
+  $('.open-popup-link').magnificPopup({
+    type:'inline',
+    midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+  });
+
   // Hide notice
   $('.content-wrapper').on('click', '.global-message-close', function() {
     $('.global-message').addClass('is-closing');
@@ -391,6 +397,7 @@
       var videoReveal = new RevealFx(document.querySelector('#hero-video-alt'), {
         revealSettings : {
           bgcolor: '#f7f7f7',
+          delay: 100,
           onCover: function(contentEl, revealerEl) {
             contentEl.style.opacity = 1;
           }

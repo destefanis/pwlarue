@@ -21,7 +21,7 @@
 
       <h3 class="product-info {% if post.title|length > 32 %} product-info--long-title {% endif %}">
         <span class="product-text">
-          {{ post.title }} -
+          {{ post.title }} —
         </span>
         {% do action( 'woocommerce_after_shop_loop_item_title' ) %}
       </h3>

@@ -12,11 +12,11 @@
   }
 
   @include min($desktop) {
-    padding: 0 50px 50px;
+    padding: 0 50px 25px;
   }
 
   @include min($xlarge) {
-    padding: 0 100px 50px;
+    padding: 0 100px 25px;
   }
 }
 
@@ -267,8 +267,8 @@
   transition: all 250ms ease;
   transform: translateY(0);
   display: inline-block;
-  padding: 8px 32px 10px;
-  border-radius: 30px;
+  padding: 10px 32px 12px;
+  border-radius: 50px;
   background: $black;
   color: $white;
   border: 2px solid $black;
@@ -462,42 +462,28 @@
   @include min($tablet) {
     padding: 100px 0;
   }
-
-  // @include min($xlarge) {
-  //   padding: 150px 0 150px;
-  // }
 }
 
 .details {
   display: inline-block;
   vertical-align: top;
   width: 100%;
-  max-width: 860px;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 25px 25px 50px;
+  padding: 25px 25px 25px;
   text-align: left;
   color: $black;
   background-color: $white;
 
   @include min($tablet) {
-    padding: 70px 75px 50px;
-  }
-
-  h5 {
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-    color: $grey;
-    font-size: 1.6rem;
-    font-weight: 400;
-    font-family: $mono;
-    -webkit-font-smoothing: antialiased;
+    padding: 70px 75px 25px;
   }
 }
 
 .materials,
 .construction-details {
   font-size: 1.8rem;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 1px;
   line-height: 2;
 }
@@ -507,15 +493,13 @@
 }
 
 .product-full-description {
-  padding-top: 15px;
-  padding-bottom: 50px;
   font-size: 1.8rem;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 1px;
   line-height: 1.8;
 
   @include min($tablet) {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   // Minor bullet point styling.
@@ -540,9 +524,9 @@
   color: $grey;
   font-size: 1.6rem;
   line-height: 34px;
-  font-weight: 700;
+  font-weight: 400;
   font-family: $mono;
-  -webkit-font-smoothing: auto;
+  -webkit-font-smoothing: antialiased;
 }
 
 .product-spec-detail {
@@ -552,7 +536,7 @@
   letter-spacing: 1px;
   line-height: 1.8;
   font-size: 1.6rem;
-  font-weight: 400;
+  font-weight: 300;
 
   @include min($tablet) {
     font-size: 2rem;
@@ -603,7 +587,7 @@
 
   &:hover {
     .control__text {
-      transform: translate(-50%, -22px);
+      transform: translate(-50%, -20px);
       opacity: 1;
     }
   }
@@ -621,7 +605,7 @@
   top: 0;
   opacity: 0;
   padding: 2px 8px;
-  transform: translate(-50%, -18px);
+  transform: translate(-50%, -16px);
   color: $black;
   letter-spacing: 1px;
   transition: all 350ms ease;

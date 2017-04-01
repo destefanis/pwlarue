@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+  <head>
+    <title>P.W. LaRue Co. | Authentic Leather Makers</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    
+    <nav class="navigation">
+      <div class="logo">
+        <a href="/index.html">
+          @include("svg/pwlarue-logo.svg")
+        </a>
+      </div>
+      <a href="/shop.html" class="nav-link nav-link--first">
+        Shop  
+      </a>
+      <a href="/cart.html" class="nav-link nav-link--last cart-contents">
+        Cart
+        <span>1</span>
+      </a>
+    </nav>
+
+    <section class="about">
+      <div class="about-hero">
+        <video class="about-hero__video" loop="" autoplay="" muted="" preload="auto" width="auto" height="auto" poster="https://s3.us-east-2.amazonaws.com/pwlarue/pwlarue-video-placeholder-min.jpg">
+          <source src="https://s3.us-east-2.amazonaws.com/pwlarue/about-page-loop.mp4">
+        </video>
+        <div class="about-hero-content">
+          <h1 class="about-hero__title">About P.W. Larue Co.</h1>
+        </div>
+        <a class="about-hero__link open-popup-link" href="#video-popup">
+          Play Video
+        </a>
+      </div>
+
+      <div class="details">
+        <div class="product-spec">
+          <p class="product-full-description">
+            The P.W. LaRue Co. is a design and manufacturing studio based in 
+            Chicago, Illinois. We specialize in handcrafted leather wallets and 
+            canvas bags. Our motive is to create long lasting products by using 
+            the highest quality materials. This, in unison with thoughtful 
+            construction techniques results in products we believe will 
+            endure the test of time.
+          </p>
+        </div>
+      </div>
+      
+      <div class="about-image-wrapper">
+        <img class="about-image" src="images/studio-image.jpg">
+        <img class="about-image about-image--2" src="images/shop-machines.jpg">
+      </div>
+
+      <div class="about-image-wrapper">
+        <img src="https://s3.us-east-2.amazonaws.com/pwlarue/machines-min.jpg">
+      </div>
+
+    </section>
+
+    <div id="video-popup" class="white-popup mfp-hide">
+      <video class="hero-video" id="hero-video" loop="" autoplay="" controls="" preload="none" width="auto" height="auto" poster="https://s3.us-east-2.amazonaws.com/pwlarue/pwlarue-video-placeholder-min.jpg">
+        <source src="https://s3.us-east-2.amazonaws.com/pwlarue/P.W.+LARUE+HERO+LOOP2.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <footer class="footer">
+      <div class="grid">
+        <div class="col text-left">
+          <a class="footer__link" href="terms.html">Terms &amp; Conditions</a>
+        </div>
+        <div class="col">
+          <div class="footer__social">
+            <a target="_blank"  class="footer__link social-link social-link--facebook" href="https://www.facebook.com/PWLaRueCo/">
+              @include("svg/facebook.svg")
+              Facebook
+            </a>
+            <a target="_blank" class="footer__link social-link" href="https://www.instagram.com/pwlarueco/">
+              @include("svg/instagram.svg")
+              Instagram
+            </a>
+          </div>
+        </div>
+        <div class="col text-right">
+          <div class="footer__email">
+            <a class="footer__link" href="mailto:info@pwlarue.com">info@pwlarue.com</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.0/anime.min.js"></script>
+    <script src="bundle.js"></script>
+
+  </body>
+</html>
