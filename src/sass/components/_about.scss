@@ -14,7 +14,11 @@
   }
 
   @include min($desktop) {
-    padding: 0 100px 100px;
+    padding: 0 50px 50px;
+  }
+
+  @include min($large) {
+    padding: 0 100px 50px;
   }
 
   .details {

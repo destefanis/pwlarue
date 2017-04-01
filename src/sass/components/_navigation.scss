@@ -35,12 +35,17 @@
   text-align: center;
   padding-bottom: 10px;
   border-bottom: 1px solid $grey-border;
+  vertical-align: top;
 
   @include min($tablet) {
     display: inline-block;
-    width: 60%;
+    width: 33%;
     padding-bottom: 0;
     border-bottom: 0;
+  }
+
+  @include min($large) {
+    width: 50%;
   }
 
   svg {
@@ -49,7 +54,7 @@
     stroke: $black;
 
     @include min($tablet) {
-      width: 200px;
+      width: 210px;
     }
 
     &:hover,
@@ -69,11 +74,61 @@
   }
 }
 
+.nav-links-wrapper {
+  display: inline-block;
+  padding-top: 2px;
+  vertical-align: top;
+
+  @include min($tablet) {
+    width: 33%;
+  }
+
+  @include min($large) {
+    width: 25%;
+  }
+
+  &.nav-links-wrapper--left {
+
+    @include min($tablet) {
+      float: left;
+      text-align: left;
+    }
+
+    .nav-link {
+
+      @include min($tablet) {
+        margin-right: 50px;
+      }
+
+      @include min($xlarge) {
+        margin-right: 75px;
+      }
+    }
+  }
+
+  &.nav-links-wrapper--right {
+
+    @include min($tablet) {
+      float: right;
+      text-align: right;
+    }
+
+    .nav-link {
+
+      @include min($tablet) {
+        margin-left: 50px;
+      }
+
+      @include min($xlarge) {
+        margin-left: 75px;
+      }
+    }
+  }
+}
+
 .nav-link {
   display: inline-block;
-  padding: 15px;
-  height: 56px;
-  width: 49.25%;
+  padding: 15px 20px;
   vertical-align: top;
   color: $black;
   letter-spacing: 1px;
@@ -85,7 +140,7 @@
 
   @include min($tablet) {
     height: auto;
-    width: 19%;
+    width: auto;
     margin-top: 18px;
     padding: 0;
   }
@@ -96,25 +151,25 @@
     color: $tan;
   }
 
-  &.nav-link--first {
-    border-right: 1px solid $grey-border;
-    text-align: center;
+  // &.nav-link--first {
+  //   border-right: 1px solid $grey-border;
+  //   text-align: center;
 
-    @include min($tablet) {
-      float: left;
-      border: 0;
-      text-align: left;
-    }
-  }
+  //   @include min($tablet) {
+  //     // float: left;
+  //     border: 0;
+  //     text-align: left;
+  //   }
+  // }
 
-  &.nav-link--last {
-    text-align: center;
+  // &.nav-link--last {
+  //   text-align: center;
 
-    @include min($tablet) {
-      float: right;
-      text-align: right;
-    }
-  }
+  //   @include min($tablet) {
+  //     float: right;
+  //     text-align: right;
+  //   }
+  // }
 }
 
 .cart-contents {
