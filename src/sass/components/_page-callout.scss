@@ -1,0 +1,28 @@
+
+.page-callouts {
+  margin: 100px 0 75px;
+  padding: 0 100px;
+  text-align: left;
+}
+
+.page-callout {
+  position: relative;
+  display: inline-block;
+  height: 600px;
+  width: calc(50% - 25px);
+  overflow: hidden;
+  text-align: center;
+
+  &:last-of-type {
+    float: right;
+  }
+
+  video {
+    transform: translateX(-50%);
+    position: absolute;
+    top: -18%;
+    left: 50%;
+    height: 135%;
+    width: auto;
+  }
+}

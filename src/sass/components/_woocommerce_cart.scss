@@ -1,5 +1,7 @@
 /*
- *  Styles for the cart page.
+ * Styles for the cart page.
+ * Overriding most of the base styling provided by woocommerce instead of
+ * refactoring their entire cart setup and classes.
  */
 
 .post-cart,
@@ -20,9 +22,9 @@
   .article-title {
     margin: 2em 0 1em;
     padding: 0 25px;
-    text-align: left;
+    text-align: center;
     font-size: 2.8rem;
-    font-weight: 400;
+    font-weight: 300;
 
     &.title-center {
       text-align: center;
@@ -43,13 +45,27 @@
     position: relative;
     width: 100%;
   }
+
+  .article-content .article-body .woocommerce .checkout_coupon {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 0;
+    margin-bottom: 1.25em;
+    background: #fff;
+    text-align: center;
+    border: 0;
+
+    @include min($tablet) {
+      width: 70%;
+    }
+  }
   
   h2,
   h3 {
     padding: 25px 10px;
     text-align: center;
     letter-spacing: 1px;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 2.2rem;
 
     @include min($tablet) {
@@ -162,15 +178,16 @@
       background: $grey;
     }
   }
-
+  
+  // Proceed to Checkout Button
   .woocommerce .button.alt,
   .woocommerce a.button,
   .button {
     float: none;
     margin: 25px 0;
-    padding: 0.8em 1.5em;
+    padding: 0.8em 1.75em;
     border: 2px solid $black;
-    border-radius: 0;
+    border-radius: 50px;
     background: $white;
     background-color: $white;
     color: $black;
@@ -221,7 +238,7 @@
     h2 {
       padding: 25px 10px;
       letter-spacing: 1px;
-      font-weight: 400;
+      font-weight: 300;
       font-size: 2.8rem;
 
       @include min($tablet) {
@@ -292,8 +309,13 @@
     }
   }
 
-  // .woocommerce-shipping-calculator {
-  // }
+  .woocommerce-shipping-calculator {
+
+    // Adjust margin from the button they wrapped in a paragraph tag.
+    p {
+      margin-bottom: 0.5em;
+    }
+  }
 
   .shipping-calculator-button {
     display: inline-block;
@@ -426,9 +448,9 @@
     .actions .button {
       float: none;
       margin: 25px 0;
-      padding: 0.8em 1.5em;
+      padding: 0.8em 1.75em;
       border: 2px solid $black;
-      border-radius: 0;
+      border-radius: 50px;
       background: $white;
       color: $black;
       font-family: $sans;

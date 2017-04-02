@@ -41,13 +41,22 @@
 
 .feature-image-wrapper {
   position: relative;
-  display: block;
-  // box-shadow: 0 0 0 rgba($black, 0);
+  display: inline-block;
+  width: 100%;
+  transition: all 300ms ease-in-out;
+  overflow: hidden;
+
+  @include min($tablet) {
+    width: 65%;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.16);
+  }
 
   &:hover,
   &:active {
-    // box-shadow: 0 1px 6px rgba(0, 0, 0, 0.16);
-    transition: all 300ms cubic-bezier(0.86, 0, 0.07, 1);
+
+    .product-feature-image {
+      transform: scale(1.015);
+    }
 
     .feature-cta {
       transform: translateY(0);
@@ -56,7 +65,7 @@
   }
 
   a {
-    display: block;
+    display: inline-block;
   }
 }
 
@@ -77,10 +86,9 @@
   display: inline-block;
   vertical-align: top;
   width: 100%;
-
-  @include min($tablet) {
-    width: 60%;
-  }
+  height: auto;
+  transition: transform 750ms ease;
+  transform: scale(1);
 }
 
 .product-callout {
@@ -116,11 +124,11 @@
     }
 
     @include min($xlarge) {
-      left: 150px;
+      left: 100px;
     }
 
     @include min($xxlarge) {
-      left: 250px;
+      left: 150px;
     }
   }
 
@@ -135,11 +143,11 @@
     }
 
     @include min($xlarge) {
-      right: 150px;
+      right: 100px;
     }
 
     @include min($xxlarge) {
-      right: 250px;
+      right: 150px;
     }
   }
 }

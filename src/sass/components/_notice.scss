@@ -89,15 +89,24 @@
   }
 
   .woocommerce-info {
-    width: 70%;
+    width: 100%;
     margin: 0 auto 1em !important;
-    border-color: $blue;
+    border-color: $black;
     color: $black;
     background: $white;
     font-size: 1.8rem;
+    font-weight: 300;
+
+    @include min($tablet) {
+      width: 70%;
+    }
 
     &:before {
-      color: $blue;
+      content: none;
+    }
+
+    a {
+      border-bottom: 2px solid $black;
     }
   }
 }
@@ -140,6 +149,11 @@
     height: auto;
     fill: $black;
   }
+}
+
+.wc-terms-and-conditions {
+  background: none;
+  letter-spacing: 0;
 }
 
 @keyframes fadeIn {

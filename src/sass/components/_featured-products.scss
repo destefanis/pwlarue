@@ -179,15 +179,13 @@
   .price {
     display: inline-block;
     vertical-align: top;
-    // padding-top: 1px;
-    // padding-bottom: 4px;
+    color: $white;
     letter-spacing: 0;
     font-family: $sans;
-    font-size: 2rem;
-    color: $white;
+    font-size: 1.8rem;
 
     @include min($tablet) {
-      // padding-top: 2px;
+      font-size: 2rem;
     }
   }
 }
