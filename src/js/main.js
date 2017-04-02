@@ -44,9 +44,32 @@
   });
 
   // Magnific Popup Init
-  $('.open-popup-link').magnificPopup({
-    type:'inline',
-    midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+  $('.popup-with-form').magnificPopup({
+      type: 'inline',
+      preloader: false,
+      focus: '#name',
+
+      // When elemened is focused, some mobile browsers in some cases zoom in
+      // It looks not nice, so we disable it:
+      callbacks: {
+        beforeOpen: function() {
+          if($(window).width() < 700) {
+            this.st.focus = false;
+          } else {
+            this.st.focus = '#name';
+          }
+        }
+      }
+    });
+
+  $('.popup-vimeo').magnificPopup({
+    disableOn: 700,
+    type: 'iframe',
+    mainClass: 'mfp-fade',
+    removalDelay: 160,
+    preloader: false,
+
+    fixedContentPos: false
   });
 
   // Hide notice

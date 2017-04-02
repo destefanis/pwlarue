@@ -16,23 +16,23 @@
     
     <nav class="navigation">
       <div class="logo">
-        <a href="/index.html">
+        <a href="index.html">
           @include("svg/pwlarue-logo.svg")
         </a>
       </div>
       <div class="nav-links-wrapper nav-links-wrapper--left">
-        <a href="/shop.html" class="nav-link nav-link--first">
+        <a href="shop.html" class="nav-link nav-link--first">
           Shop
         </a>
-        <a href="/about.html" class="nav-link nav-link--first">
+        <a href="about.html" class="nav-link nav-link--first">
           About
         </a>
       </div>
       <div class="nav-links-wrapper nav-links-wrapper--right">
-        <a href="#" class="nav-link nav-link--last">
+        <a href="#contact-popup" class="nav-link nav-link--last popup-with-form">
           Contact
         </a>
-        <a href="/cart.html" class="nav-link nav-link--last cart-contents">
+        <a href="cart.html" class="nav-link nav-link--last cart-contents">
           Cart
           <span>1</span>
         </a>
@@ -211,27 +211,31 @@
       </div>
     </div>
 
+    <!-- Contact Form -->
+    <form id="contact-popup" class="mfp-hide popup">
+      <h2 class="popup__title">Contact Us</h2>
+      <p class="popup__body">
+        Have a question, comment, or request?<br>We'd love to hear from you.
+      </p>
+      <fieldset>
+        <p class="form-row form-row form-row-first">
+          <input type="text" class="input-text form-input" name="contact_name" id="contact_name" placeholder="Name" autocomplete="given-name" value="" required="">
+        </p>
 
-   <!--  <section class="notify-me">
-      <div class="container">
-
-        <div id="mc_embed_signup">
-          <form action="//pwlarue.us13.list-manage.com/subscribe/post?u=97bb7956ddd6e8c4ba53b6ea3&amp;id=560d436540" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-            <div id="mc_embed_signup_scroll">
-              <div class="col col-sm-offset-2 col-sm-6">
-                <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-                 real people should not fill this in and expect good things - do not remove this or risk form bot signups
-                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_97bb7956ddd6e8c4ba53b6ea3_560d436540" tabindex="-1" value=""></div>
-              </div>
-              <div class="col col-xs-6 col-sm-2">
-                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="submit-button">
-              </div>
-            </div>
-          </form>
+        <div class="form-row form-row form-row-first">
+          <input type="email" class="input-text form-input" name="contact_email" id="contact_email" placeholder="Email" value="" required="">
         </div>
 
-      </div>
-    </section> -->
+        <div class="form-row">
+          <textarea id="contact_textarea" cols="5" rows="5" name="contact_textarea" placeholder="Your message goes here. If it's regarding an order, please include an order number :)" value=""></textarea>
+        </div>
+
+        <div class="form-row text-center">
+          <input type="submit" value="Submit" class="button button--form">
+        </div>
+
+      </fieldset>
+    </form>
 
     <footer class="footer">
       <div class="grid">
@@ -260,6 +264,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.0/anime.min.js"></script>
     <script src="bundle.js"></script>

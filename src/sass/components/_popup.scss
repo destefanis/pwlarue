@@ -1,0 +1,41 @@
+/*
+ *  Define the magnific popup styles
+ */
+
+.popup {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 25px 25px 25px;
+  background-color: $white;
+
+  @include min($tablet) {
+    padding: 70px 75px 25px;
+  }
+
+  .form-row {
+    margin-bottom: 2em;
+  }
+}
+
+.popup__title {
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+.popup__body {
+  text-align: center;
+  font-weight: 300;
+}
+
+.form-label {
+  display: block;
+}
+
+.form-input {
+  width: 100%;
+}
+
+.button--form {
+  margin: 0 auto;
+  width: 50%;
+}

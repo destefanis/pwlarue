@@ -16,23 +16,23 @@
     
     <nav class="navigation">
       <div class="logo">
-        <a href="/index.html">
+        <a href="index.html">
           @include("svg/pwlarue-logo.svg")
         </a>
       </div>
       <div class="nav-links-wrapper nav-links-wrapper--left">
-        <a href="/shop.html" class="nav-link nav-link--first">
+        <a href="shop.html" class="nav-link nav-link--first">
           Shop
         </a>
-        <a href="/about.html" class="nav-link nav-link--first">
+        <a href="about.html" class="nav-link nav-link--first">
           About
         </a>
       </div>
       <div class="nav-links-wrapper nav-links-wrapper--right">
-        <a href="#" class="nav-link nav-link--last">
+        <a href="#contact-popup" class="nav-link nav-link--last popup-with-form">
           Contact
         </a>
-        <a href="/cart.html" class="nav-link nav-link--last cart-contents">
+        <a href="cart.html" class="nav-link nav-link--last cart-contents">
           Cart
           <span>1</span>
         </a>
@@ -47,7 +47,7 @@
         <div class="about-hero-content">
           <h1 class="about-hero__title">About P.W. Larue Co.</h1>
         </div>
-        <a class="about-hero__link open-popup-link" href="#video-popup">
+        <a class="about-hero__link popup-vimeo" href="https://vimeo.com/211126996">
           Play Video
         </a>
       </div>
@@ -73,14 +73,33 @@
       <div class="about-image-wrapper">
         <img src="https://s3.us-east-2.amazonaws.com/pwlarue/machines-min.jpg" alt="Shop Machines Overview">
       </div>
-
     </section>
 
-    <div id="video-popup" class="white-popup mfp-hide">
-      <video class="hero-video" id="hero-video" loop="" autoplay="" controls="" preload="none" width="auto" height="auto" poster="https://s3.us-east-2.amazonaws.com/pwlarue/pwlarue-video-placeholder-min.jpg">
-        <source src="https://s3.us-east-2.amazonaws.com/pwlarue/P.W.+LARUE+HERO+LOOP2.mp4" type="video/mp4">
-      </video>
-    </div>
+    <!-- Contact Form -->
+    <form id="contact-popup" class="mfp-hide popup">
+      <h2 class="popup__title">Contact Us</h2>
+      <p class="popup__body">
+        Have a question, comment, or request?<br>We'd love to hear from you.
+      </p>
+      <fieldset>
+        <p class="form-row form-row form-row-first">
+          <input type="text" class="input-text form-input" name="contact_name" id="contact_name" placeholder="Name" autocomplete="given-name" value="" required="">
+        </p>
+
+        <div class="form-row form-row form-row-first">
+          <input type="email" class="input-text form-input" name="contact_email" id="contact_email" placeholder="Email" value="" required="">
+        </div>
+
+        <div class="form-row">
+          <textarea id="contact_textarea" cols="5" rows="5" name="contact_textarea" placeholder="Your message goes here. If it's regarding an order, please include an order number :)" value=""></textarea>
+        </div>
+
+        <div class="form-row text-center">
+          <input type="submit" value="Submit" class="button button--form">
+        </div>
+
+      </fieldset>
+    </form>
 
     <footer class="footer">
       <div class="grid">
