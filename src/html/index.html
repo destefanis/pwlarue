@@ -43,9 +43,9 @@
       <div>
 
         <section class="hero hero-alt">
-          <div id="hero-video-alt" class="hero-video-alt">
-            <video class="hero-video" id="hero-video" loop="" autoplay="" muted="" preload="auto" width="auto" height="auto" poster="https://s3.us-east-2.amazonaws.com/pwlarue/pwlarue-video-placeholder-min.jpg">
-              <source src="https://s3.us-east-2.amazonaws.com/pwlarue/P.W.+LARUE+HERO+LOOP2.mp4#t=14.4" type="video/mp4">
+          <div id="hero-video" class="hero-video-alt">
+            <video class="hero-video" loop="" autoplay="" muted="" preload="auto" width="auto" height="auto" poster="https://s3.us-east-2.amazonaws.com/pwlarue/video-hero-placeholder-min.jpg"> <!--#t=14.4-->
+              <source src="https://s3.us-east-2.amazonaws.com/pwlarue/P.W.+LARUE+HERO+LOOP2.mp4" type="video/mp4">
             </video>
           </div>
           <a class="hero-link" href="about.html">
@@ -57,8 +57,8 @@
           <div class="row">
 
             <div class="feature-image-wrapper">
-              <a href="/product.html">
-                <img class="product-feature-image" src="https://s3.us-east-2.amazonaws.com/pwlarue/navy-carry-all-feature-min.jpg" alt="Navy Carry All Bag Product Photo">
+              <a href="product.html">
+                <img class="product-feature-image js-lazy" src="https://s3.us-east-2.amazonaws.com/pwlarue/navy-carry-all-feature-min.jpg" alt="Navy Carry All Bag Product Photo">
                 <span class="feature-cta">
                   View Product
                 </span>
@@ -81,9 +81,9 @@
         <div class="product-feature product-feature--right">
           <div class="row">
 
-            <div class="feature-image-wrapper">
-              <a href="/product.html">
-                <img class="product-feature-image" alt="Olive Roll Top Bag Image" src="https://s3.us-east-2.amazonaws.com/pwlarue/olive-roll-top-feature-min.jpg">
+            <div id="js-feature-product-1" class="feature-image-wrapper">
+              <a href="product.html">
+                <img class="product-feature-image js-lazy" alt="Olive Roll Top Bag Image" src="https://s3.us-east-2.amazonaws.com/pwlarue/olive-roll-top-feature-min.jpg">
                 <span class="feature-cta">
                   View Product
                 </span>
@@ -105,9 +105,9 @@
 
         <div class="product-feature product-feature--left">
           <div class="row">
-            <div class="feature-image-wrapper">
-              <a href="/product.html">
-                <img class="product-feature-image" src="images/bifold-environmental.jpg">
+            <div id="js-feature-product-2" class="feature-image-wrapper js-lazy">
+              <a href="product.html">
+                <img class="product-feature-image js-lazy" src="images/bifold-environmental.jpg">
                 <span class="feature-cta">
                   View Product
                 </span>
@@ -120,6 +120,31 @@
                 easy access to the essentials.
               </p>
               <a class="product-callout__link" href="/product.html">
+                Shop Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-feature product-feature--right">
+          <div class="row">
+
+            <div class="feature-image-wrapper">
+              <a href="shop.html">
+                <img class="product-feature-image js-lazy" alt="Olive Roll Top Bag Image" src="https://s3.us-east-2.amazonaws.com/pwlarue/shop-all-callout-image.jpg">
+                <span class="feature-cta">
+                  Shop All Products
+                </span>
+              </a>
+            </div>
+
+            <div class="product-callout product-callout--left">
+              <h2 class="product-callout__title">All Products</h2>
+              <p class="product-callout__body">
+                Our newest wallets, pouches, bags, and accessories
+                are now available.
+              </p>
+              <a class="product-callout__link" href="product.html">
                 Shop Now
               </a>
             </div>
@@ -195,9 +220,11 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.4/jquery.lazy.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.0/anime.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/scrollmonitor/1.2.0/scrollMonitor.js"></script>
     <script src="bundle.js"></script>
 
   </body>

@@ -37,6 +37,17 @@
       },
     });
   }
+
+  // For the home page, lazy load the featured product callout components.
+  // if ($('#hero-video').length > 0) {
+  //   $('.js-lazy').Lazy({
+  //     scrollDirection: 'vertical',
+  //     threshold: 800,
+  //     onError: function(element) {
+  //       console.log('error loading ' + element.data('src'));
+  //     },
+  //   });
+  // }
   
   // Use selectize.js for our select fields.
   $('select').selectize({
@@ -207,23 +218,30 @@
   RevealFx.prototype.options = {
     // If true, then the content will be hidden until it´s "revealed".
     isContentHidden: true,
-    // The animation/reveal settings. This can be set initially or passed when calling the reveal method.
+    // The animation/reveal settings. This can be set initially or passed when 
+    // calling the reveal method.
     revealSettings: {
-      // Animation direction: left right (lr) || right left (rl) || top bottom (tb) || bottom top (bt).
+      // Animation direction: left right (lr) || right left (rl) || top bottom 
+      // (tb) || bottom top (bt).
       direction: 'lr',
       // Revealer´s background color.
       bgcolor: '#f0f0f0',
-      // Animation speed. This is the speed to "cover" and also "uncover" the element (seperately, not the total time).
+      // Animation speed. This is the speed to "cover" and also "uncover" the 
+      //element (seperately, not the total time).
       duration: 500,
-      // Animation easing. This is the easing to "cover" and also "uncover" the element.
+      // Animation easing. This is the easing to "cover" and also "uncover" the 
+      // element.
       easing: 'easeInOutQuint',
-      // percentage-based value representing how much of the area should be left covered.
+      // percentage-based value representing how much of the area should be 
+      // left covered.
       coverArea: 0,
-      // Callback for when the revealer is covering the element (halfway through of the whole animation).
+      // Callback for when the revealer is covering the element (halfway 
+      // through of the whole animation).
       onCover: function(contentEl, revealerEl) { return false; },
       // Callback for when the animation starts (animation start).
       onStart: function(contentEl, revealerEl) { return false; },
-      // Callback for when the revealer has completed uncovering (animation end).
+      // Callback for when the revealer has completed uncovering 
+      // (animation end).
       onComplete: function(contentEl, revealerEl) { return false; }
     }
   };
@@ -299,7 +317,8 @@
   };
 
   /**
-   * Reveal animation. If revealSettings is passed, then it will overwrite the options.revealSettings.
+   * Reveal animation. If revealSettings is passed, then it will overwrite 
+   * the options.revealSettings.
    */
   RevealFx.prototype.reveal = function(revealSettings) {
     // Do nothing if currently animating.
@@ -382,62 +401,50 @@
   setTimeout(init, 0);
   function init() {
 
-    //************************ Example 1 - reveal on load ********************************
-    if ($('#hero-image-1').length > 0) {
-      var rev1 = new RevealFx(document.querySelector('#hero-image-1'), {
+    // Reveal elements, only init if we're on the homepage.
+    if ($('#hero-video').length > 0) {
+      var rev1 = new RevealFx(document.querySelector('#hero-video'), {
         revealSettings : {
-          bgcolor: '#9599a5',
+          bgcolor: '#f7f7f7',
           onCover: function(contentEl, revealerEl) {
             contentEl.style.opacity = 1;
           }
         }
       });
       rev1.reveal();
-      var rev2 = new RevealFx(document.querySelector('#hero-image-2'), {
-        revealSettings : {
-          bgcolor: '#f4ebe4',
-          delay: 250,
-          onCover: function(contentEl, revealerEl) {
-            contentEl.style.opacity = 1;
-          }
-        }
-      });
-      rev2.reveal();
-      var rev3 = new RevealFx(document.querySelector('#hero-title'), {
-        revealSettings : {
-          bgcolor: '#f7f7f7',
-          delay: 500,
-          direction: 'rl',
-          onCover: function(contentEl, revealerEl) {
-            contentEl.style.opacity = 1;
-          }
-        }
-      });
-      rev3.reveal();
-    }
 
-    if ($('#hero-video-alt').length > 0) {
-      var videoReveal = new RevealFx(document.querySelector('#hero-video-alt'), {
-        revealSettings : {
-          bgcolor: '#f7f7f7',
-          delay: 100,
-          onCover: function(contentEl, revealerEl) {
-            contentEl.style.opacity = 1;
+      var productCalloutReveal_1 = document.getElementById('js-feature-product-1'),
+        firstScrollWatcher = scrollMonitor.create(productCalloutReveal_1, -200),        
+        elementReveal_1 = new RevealFx(productCalloutReveal_1, {
+          revealSettings : {
+            bgcolor: '#c8beb4',
+            direction: 'rl',
+            onCover: function(contentEl, revealerEl) {
+              contentEl.style.opacity = 1;
+            }
           }
-        }
+        })
+      firstScrollWatcher.enterViewport(function() {
+        elementReveal_1.reveal();
+        firstScrollWatcher.destroy();
       });
-      videoReveal.reveal();
-      var rev3 = new RevealFx(document.querySelector('#hero-title'), {
-        revealSettings : {
-          bgcolor: '#f7f7f7',
-          delay: 500,
-          direction: 'rl',
-          onCover: function(contentEl, revealerEl) {
-            contentEl.style.opacity = 1;
+
+      var productCalloutReveal_2 = document.getElementById('js-feature-product-2'),
+        secondScrollWatcher = scrollMonitor.create(productCalloutReveal_2, -250),        
+        elementReveal_2 = new RevealFx(productCalloutReveal_2, {
+          revealSettings : {
+            bgcolor: '#cc7856',
+            direction: 'lr',
+            onCover: function(contentEl, revealerEl) {
+              contentEl.style.opacity = 1;
+            }
           }
-        }
+        })
+      secondScrollWatcher.enterViewport(function() {
+        elementReveal_2.reveal();
+        secondScrollWatcher.destroy();
       });
-      rev3.reveal();
+
     }
   }
 })();
