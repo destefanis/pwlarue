@@ -1,0 +1,41 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<section class="about">
+  <div class="about-hero">
+    <video class="about-hero__video" loop="" autoplay="" muted="" preload="auto" width="auto" height="auto" poster="https://s3.us-east-2.amazonaws.com/pwlarue/about-video-placeholder.jpg">
+      <source src="https://s3.us-east-2.amazonaws.com/pwlarue/about-page-loop.mp4">
+    </video>
+    <div class="about-hero-content">
+      <h1 class="about-hero__title">About P.W. Larue Co.</h1>
+    </div>
+    <a class="about-hero__link popup-vimeo" href="https://vimeo.com/211126996">
+      Play Video
+    </a>
+  </div>
+
+  <div class="details">
+    <div class="product-spec">
+      <p class="product-full-description">
+        The P.W. LaRue Co. is a design and manufacturing studio based in 
+        Chicago, Illinois. We specialize in handcrafted leather wallets and 
+        canvas bags. Our motive is to create long lasting products by using 
+        the highest quality materials. This, in unison with thoughtful 
+        construction techniques results in products we believe will 
+        endure the test of time.
+      </p>
+    </div>
+  </div>
+  
+  <div class="about-image-wrapper">
+    <img class="about-image" src="https://s3.us-east-2.amazonaws.com/pwlarue/About/studio-image.jpg" alt="P.W. LaRue Co Studio Image">
+    <img class="about-image about-image--2" src="https://s3.us-east-2.amazonaws.com/pwlarue/About/shop-machines.jpg" alt="Shop Sewing Machines Image">
+  </div>
+
+  <div class="about-image-wrapper">
+    <img class="about-image--full" src="https://s3.us-east-2.amazonaws.com/pwlarue/machines-min.jpg" alt="Shop Machines Overview">
+  </div>
+</section>
+
+{% endblock %}

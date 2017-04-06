@@ -9,7 +9,6 @@
 
   @include min($tablet) {
     padding: 0 25px;
-    border-top: 1px solid $light-grey;
   }
 
   @include min($desktop) {

@@ -163,10 +163,12 @@
 
   <section class="product-page-details">
     <div class="details details--large">
-      <h5>Description</h5>
-      <p class="product-full-description">
-        {{ post.content|striptags('<a><br><span><em><strong>') }}
-      </p>
+      <div class="product-spec">
+        <h5 class="product-spec-header">Description</h5>
+        <p class="product-full-description">
+          {{ post.content|striptags('<a><br><span><em><strong>') }}
+        </p>
+      </div>
 
       {% if post.dimensions %}
         <div class="product-spec">

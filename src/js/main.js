@@ -445,6 +445,38 @@
         secondScrollWatcher.destroy();
       });
 
+      var productCalloutReveal_3 = document.getElementById('js-feature-product-3'),
+        thirdScrollWatcher = scrollMonitor.create(productCalloutReveal_3, -250),        
+        elementReveal_3 = new RevealFx(productCalloutReveal_3, {
+          revealSettings : {
+            bgcolor: '#cc7856',
+            direction: 'rl',
+            onCover: function(contentEl, revealerEl) {
+              contentEl.style.opacity = 1;
+            }
+          }
+        })
+      thirdScrollWatcher.enterViewport(function() {
+        elementReveal_3.reveal();
+        thirdScrollWatcher.destroy();
+      });
+
+      var productCalloutReveal_4 = document.getElementById('js-feature-product-4'),
+        fourthScrollWatcher = scrollMonitor.create(productCalloutReveal_4, -250),        
+        elementReveal_4 = new RevealFx(productCalloutReveal_4, {
+          revealSettings : {
+            bgcolor: '#c8beb4',
+            direction: 'lr',
+            onCover: function(contentEl, revealerEl) {
+              contentEl.style.opacity = 1;
+            }
+          }
+        })
+      fourthScrollWatcher.enterViewport(function() {
+        elementReveal_4.reveal();
+        fourthScrollWatcher.destroy();
+      });
+
     }
   }
 })();

@@ -125,9 +125,21 @@ function wpb_adding_scripts() {
   wp_register_script('selectize', 'https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.min.js', null, null, true);                     
   wp_enqueue_script('selectize');
 
+  // Enqueue the script for the magnific popup library
+  wp_register_script('magnific', 'https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js', null, null, true);                     
+  wp_enqueue_script('magnific');
+
+  // Enqueue the script for the anime.js library
+  wp_register_script('anime', 'https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.0/anime.min.js', null, null, true);                     
+  wp_enqueue_script('anime');
+
   // Enqueue the script for lazy loading images.
   wp_register_script('lazy', '//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.4/jquery.lazy.min.js', null, null, true);                     
   wp_enqueue_script('lazy');
+
+  // Enqueue the script for the scrollMonitor js library
+  wp_register_script('scrollMonitor', 'https://cdnjs.cloudflare.com/ajax/libs/scrollmonitor/1.2.0/scrollMonitor.js', null, null, true);                     
+  wp_enqueue_script('scrollMonitor');
 
   // Enqueue the script for the main js file.
   wp_register_script('bundle', get_template_directory_uri() . '/assets/bundle.js', array('jquery'),'1.1', true);

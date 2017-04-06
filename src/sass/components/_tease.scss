@@ -1,0 +1,80 @@
+/*
+ *  Define the tease placeholder styling for the intial reveal.
+ */
+
+.tease {
+  position: relative;
+  height: 320px;
+  width: 100%;
+
+  @include min($phone) {
+    height: 348px;
+  }
+
+  @include min($iphone) {
+    height: 500px;
+  }
+
+  @include min($tablet) {
+    height: 768px;
+  }
+
+  @include min($desktop) {
+    height: 1024px;
+    height: 100vh;
+    min-height: 768px;
+  }
+}
+
+.tease-background {
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.tease-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .tease-logo svg {
+    width: 220px;
+    height: auto;
+
+    @include min($tablet) {
+      width: 400px;
+    }
+
+    * {
+      fill: $white;
+      stroke: $white;
+    }
+  }
+}
+
+.coming-soon {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  display: block;
+  transform: translateX(-50%);
+
+  svg {
+    width: 180px;
+    height: auto;
+
+    @include min($tablet) {
+      width: 300px;
+    }
+
+    * {
+      fill: $white;
+      // stroke: $white;
+    }
+  }
+}
