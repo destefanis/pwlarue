@@ -40,7 +40,10 @@ gulp.task('clean', () => del('dist'))
 gulp.task('html', ['images'], () => {
   return gulp.src('src/html/**/*.html')
     .pipe(plumber({ errorHandler: onError }))
-    .pipe(include({ prefix: '@', basepath: 'dist/images/' }))
+    .pipe(include({
+      prefix: '@',
+      basepath: '@file'
+    }))
     .pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
     .pipe(gulp.dest('dist'))
 })

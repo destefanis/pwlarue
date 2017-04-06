@@ -1,50 +1,18 @@
 <!DOCTYPE html>
 
 <html lang="en-US">
-  <head>
-    <title>P.W. LaRue Co. | Authentic Leather Makers</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  @include('./includes/_head.html')
 
-    <link rel="stylesheet" href="style.css">
-  </head>
   <body>
-    
-    <nav class="navigation">
-      <div class="logo">
-        <a href="/index.html">
-          @include("svg/pwlarue-logo.svg")
-        </a>
-      </div>
-      <div class="nav-links-wrapper nav-links-wrapper--left">
-        <a href="/shop.html" class="nav-link nav-link--first">
-          Shop
-        </a>
-        <a href="/about.html" class="nav-link nav-link--first">
-          About
-        </a>
-      </div>
-      <div class="nav-links-wrapper nav-links-wrapper--right">
-        <a href="#" class="nav-link nav-link--last">
-          Contact
-        </a>
-        <a href="/cart.html" class="nav-link nav-link--last cart-contents">
-          Cart
-          <span>1</span>
-        </a>
-      </div>
-    </nav>
-    
+
+    @include('./includes/_navigation.html')
+
     <div class="terms-wrapper">
       <div class="terms">
       <h1>
         Terms of Service
       </h1>
-      
+
       <p>
         This website is operated by P.W. LaRue Company. Throughout the site, the terms “we”, “us” and “our” refer to P.W. LaRue Company. P.W. LaRue Company offers this website, including all information, tools and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here.
       </p>
@@ -296,29 +264,9 @@
       </div>
     </div>
 
-    <footer class="footer">
-      <div class="grid">
-        <div class="col text-left">
-          <a class="footer__link" href="terms.html">Terms &amp; Conditions</a>
-        </div>
-        <div class="col">
-          <div class="footer__email">
-            <a class="footer__link" href="mailto:info@pwlarue.com">info@pwlarue.com</a>
-          </div>
-        </div>
-        <div class="col text-right">
-          <div class="footer__social">
-            <!-- <span class="footer__label">Follow Us:</span> -->
-            <a class="footer__link social-link" href="https://www.facebook.com/PWLaRueCo/">Facebook</a>
-            <a class="footer__link social-link" href="https://www.instagram.com/p.w.larue/">Instagram</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.min.js"></script>
-    <script src="bundle.js"></script>
+    @include('./includes/_contact-form.html')
+    @include('./includes/_footer.html')
+    @include('./includes/_js-block.html')
 
   </body>
 </html>

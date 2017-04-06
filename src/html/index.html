@@ -1,43 +1,11 @@
 <!DOCTYPE html>
 
 <html lang="en-US">
-  <head>
-    <title>P.W. LaRue Co. | Authentic Leather Makers</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  @include('./includes/_head.html')
 
-    <link rel="stylesheet" href="style.css">
-  </head>
   <body>
     
-    <nav class="navigation">
-      <div class="logo">
-        <a href="index.html">
-          @include("svg/pwlarue-logo.svg")
-        </a>
-      </div>
-      <div class="nav-links-wrapper nav-links-wrapper--left">
-        <a href="shop.html" class="nav-link nav-link--first">
-          Shop
-        </a>
-        <a href="about.html" class="nav-link nav-link--first">
-          About
-        </a>
-      </div>
-      <div class="nav-links-wrapper nav-links-wrapper--right">
-        <a href="#contact-popup" class="nav-link nav-link--last popup-with-form">
-          Contact
-        </a>
-        <a href="cart.html" class="nav-link nav-link--last cart-contents">
-          Cart
-          <span>1</span>
-        </a>
-      </div>
-    </nav>
+    @include('./includes/_navigation.html')
 
     <div>
       <div>
@@ -167,65 +135,9 @@
       </div>
     </div>
 
-    <!-- Contact Form -->
-    <form id="contact-popup" class="mfp-hide popup">
-      <h2 class="popup__title">Contact Us</h2>
-      <p class="popup__body">
-        Have a question, comment, or request?<br>We'd love to hear from you.
-      </p>
-      <fieldset>
-        <p class="form-row form-row form-row-first">
-          <input type="text" class="input-text form-input" name="contact_name" id="contact_name" placeholder="Name" autocomplete="given-name" value="" required="">
-        </p>
-
-        <div class="form-row form-row form-row-first">
-          <input type="email" class="input-text form-input" name="contact_email" id="contact_email" placeholder="Email" value="" required="">
-        </div>
-
-        <div class="form-row">
-          <textarea id="contact_textarea" cols="5" rows="5" name="contact_textarea" placeholder="Your message goes here. If it's regarding an order, please include an order number :)" value=""></textarea>
-        </div>
-
-        <div class="form-row text-center">
-          <input type="submit" value="Submit" class="button button--form">
-        </div>
-
-      </fieldset>
-    </form>
-
-    <footer class="footer">
-      <div class="grid">
-        <div class="col text-left">
-          <a class="footer__link" href="terms.html">Terms &amp; Conditions</a>
-        </div>
-        <div class="col">
-          <div class="footer__social">
-            <a target="_blank"  class="footer__link social-link social-link--facebook" href="https://www.facebook.com/PWLaRueCo/">
-              @include("svg/facebook.svg")
-              Facebook
-            </a>
-            <a target="_blank" class="footer__link social-link" href="https://www.instagram.com/pwlarueco/">
-              @include("svg/instagram.svg")
-              Instagram
-            </a>
-          </div>
-        </div>
-        <div class="col text-right">
-          <div class="footer__email">
-            <a class="footer__link" href="mailto:info@pwlarue.com">info@pwlarue.com</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.4/jquery.lazy.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.0/anime.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/scrollmonitor/1.2.0/scrollMonitor.js"></script>
-    <script src="bundle.js"></script>
+    @include('./includes/_contact-form.html')
+    @include('./includes/_footer.html')
+    @include('./includes/_js-block.html')
 
   </body>
 </html>
