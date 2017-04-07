@@ -3,7 +3,7 @@
  */
 
 .popup {
-  max-width: 600px;
+  max-width: 560px;
   margin: 0 auto;
   padding: 25px 25px 25px;
   background-color: $white;
@@ -12,8 +12,21 @@
     padding: 50px 75px 25px;
   }
 
+  &.popup--email {
+    text-align: center;
+
+    .email {
+      width: 100%;
+    }
+  }
+
   .form-row {
     margin-bottom: 2em;
+  }
+
+  .button {
+    margin-top: 0.5em;
+    width: 75%;
   }
 }
 
@@ -38,4 +51,44 @@
 .button--form {
   margin: 0 auto;
   width: 50%;
+}
+
+// Classes for modal animation
+.mfp-fade.mfp-bg {
+  opacity: 0;
+  transition: opacity 700ms ease;
+}
+
+.mfp-fade {
+
+  &.mfp-ready {
+    .popup {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  &.mfp-removing {
+    .popup {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+  }
+
+  .popup {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 600ms ease;
+  }
+}
+
+/* overlay animate in */
+.mfp-fade.mfp-bg.mfp-ready {
+  opacity: $mfp-overlay-opacity;
+}
+
+/* overlay animate out */
+.mfp-fade.mfp-bg.mfp-removing {
+  opacity: 0;
+  transition-delay: 300ms;
 }

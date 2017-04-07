@@ -37,17 +37,6 @@
       },
     });
   }
-
-  // For the home page, lazy load the featured product callout components.
-  // if ($('#hero-video').length > 0) {
-  //   $('.js-lazy').Lazy({
-  //     scrollDirection: 'vertical',
-  //     threshold: 800,
-  //     onError: function(element) {
-  //       console.log('error loading ' + element.data('src'));
-  //     },
-  //   });
-  // }
   
   // Use selectize.js for our select fields.
   $('select').selectize({
@@ -56,22 +45,44 @@
 
   // Magnific Popup Init
   $('.popup-with-form').magnificPopup({
-      type: 'inline',
-      preloader: false,
-      focus: '#name',
+    type: 'inline',
+    preloader: false,
+    focus: '#contact_name',
+    mainClass: 'mfp-fade',
+    removalDelay: 700,
 
-      // When elemened is focused, some mobile browsers in some cases zoom in
-      // It looks not nice, so we disable it:
-      callbacks: {
-        beforeOpen: function() {
-          if($(window).width() < 700) {
-            this.st.focus = false;
-          } else {
-            this.st.focus = '#name';
-          }
+    // When elemened is focused, some mobile browsers in some cases zoom in
+    // It looks not nice, so we disable it:
+    callbacks: {
+      beforeOpen: function() {
+        if($(window).width() < 700) {
+          this.st.focus = false;
+        } else {
+          this.st.focus = '#contact_name';
         }
       }
-    });
+    }
+  });
+
+  $('.popup-for-email').magnificPopup({
+    type: 'inline',
+    preloader: false,
+    focus: '#mce-EMAIL',
+    mainClass: 'mfp-fade',
+    removalDelay: 700,
+
+    // When elemened is focused, some mobile browsers in some cases zoom in
+    // It looks not nice, so we disable it:
+    callbacks: {
+      beforeOpen: function() {
+        if($(window).width() < 700) {
+          this.st.focus = false;
+        } else {
+          this.st.focus = '#mce-EMAIL';
+        }
+      }
+    }
+  });
 
   $('.popup-vimeo').magnificPopup({
     disableOn: 700,
@@ -398,7 +409,7 @@
 
 
 (function() {
-  setTimeout(init, 0);
+  init();
   function init() {
 
     // Reveal elements, only init if we're on the homepage.

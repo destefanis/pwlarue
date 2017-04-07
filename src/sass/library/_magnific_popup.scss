@@ -230,13 +230,14 @@ button {
   line-height: 44px;
 
   position: absolute;
-  right: 25px;
-  top: 0;
+  right: 15px;
+  top: 15px;
   text-decoration: none;
   text-align: center;
   opacity: 1;
   padding: 0 0 18px 10px;
   color: $mfp-controls-color;
+  border: 1px solid $grey;
 
   font-style: normal;
   font-size: 28px;
@@ -245,10 +246,7 @@ button {
   &:hover,
   &:focus {
     opacity: 1;
-  }
-
-  &:active {
-    top: 1px;
+    color: $black;
   }
 }
 .mfp-close-btn-in {
