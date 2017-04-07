@@ -117,16 +117,20 @@ function theme_sort_change( $translated_text, $text, $domain ) {
 return $translated_text;
 }
 
+// Disables constant Ajax by WooCommerce for cart fragments
+add_action( 'wp_enqueue_scripts', 'dequeue_woocommerce_cart_fragments', 11); 
+  function dequeue_woocommerce_cart_fragments() { if (is_front_page()) wp_dequeue_script('wc-cart-fragments'); }
 
 // Register custom scripts and pass the handle to wp_enqueue_scripts so
 // they can be loaded by the theme.
 function wpb_adding_scripts() {
+
 	// Enqueue the script for the selectize library.
   wp_register_script('selectize', 'https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.min.js', null, null, true);                     
   wp_enqueue_script('selectize');
 
   // Enqueue the script for the magnific popup library
-  wp_register_script('magnific', 'https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js', null, null, true);                     
+  wp_register_script('magnific', 'https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js', array('jquery'), null, true);                     
   wp_enqueue_script('magnific');
 
   // Enqueue the script for the anime.js library
@@ -134,7 +138,7 @@ function wpb_adding_scripts() {
   wp_enqueue_script('anime');
 
   // Enqueue the script for lazy loading images.
-  wp_register_script('lazy', '//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.4/jquery.lazy.min.js', null, null, true);                     
+  wp_register_script('lazy', '//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.4/jquery.lazy.min.js', array('jquery'), null, true);                     
   wp_enqueue_script('lazy');
 
   // Enqueue the script for the scrollMonitor js library
