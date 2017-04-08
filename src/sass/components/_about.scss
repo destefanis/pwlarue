@@ -129,10 +129,6 @@
   display: block;
   text-align: left;
   margin-bottom: 4px;
-
-  // @include min($tablet) {
-  //   margin-bottom: 100px;
-  // }
   
   &.about-image-wrapper--right {
     text-align: right;
@@ -142,12 +138,11 @@
 .about-image {
   display: inline-block;
   width: 100%;
-  margin-right: 1px;
   margin-bottom: 4px;
   vertical-align: top;
 
   @include min($tablet) {
-    width: 64.5%;
+    width: 64.75%;
     margin-bottom: 0;
   }
 }
@@ -156,7 +151,15 @@
   width: 100%;
 
   @include min($tablet) {
-    width: 34.75%;
+    width: 34.7%;
+  }
+
+  @include min($large) {
+    width: 34.8%;
+  }
+
+  @include min($large) {
+    width: 34.85%;
   }
 }
 

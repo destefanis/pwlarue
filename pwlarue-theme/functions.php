@@ -118,8 +118,8 @@ return $translated_text;
 }
 
 // Disables constant Ajax by WooCommerce for cart fragments
-add_action( 'wp_enqueue_scripts', 'dequeue_woocommerce_cart_fragments', 11); 
-  function dequeue_woocommerce_cart_fragments() { if (is_front_page()) wp_dequeue_script('wc-cart-fragments'); }
+// add_action( 'wp_enqueue_scripts', 'dequeue_woocommerce_cart_fragments', 11); 
+//   function dequeue_woocommerce_cart_fragments() { if (is_front_page()) wp_dequeue_script('wc-cart-fragments'); }
 
 // Register custom scripts and pass the handle to wp_enqueue_scripts so
 // they can be loaded by the theme.
@@ -170,8 +170,6 @@ function woocommerce_support() {
 }
 
 add_filter('add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment');
-
-
 if ( ! function_exists( 'storefront_cart_link' ) ) {
 	/**
 	 * Cart Link

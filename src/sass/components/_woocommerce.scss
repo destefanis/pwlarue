@@ -87,6 +87,7 @@ fieldset {
   border-radius: 50px;
   background: $black;
   color: $white;
+  -webkit-appearance: none;
 }
 
 [placeholder]:focus::-webkit-input-placeholder {

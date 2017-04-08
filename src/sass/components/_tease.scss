@@ -4,11 +4,11 @@
 
 .tease {
   position: relative;
-  height: 320px;
+  height: 480px;
   width: 100%;
 
   @include min($phone) {
-    height: 348px;
+    height: 480px;
   }
 
   @include min($iphone) {
@@ -61,8 +61,8 @@
 .sign-up-link {
   display: inline-block;
   margin-top: 1.5em;
-  padding-bottom: 5px;
-  border-bottom: 2px solid $white;
+  padding: 5px 15px;
+  border: 2px solid $white;
   color: $white;
   font-family: $mono;
 }
