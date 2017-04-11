@@ -69,9 +69,6 @@
   &:active,
   &:focus {
 
-    // transform: translateY(-5px);
-    // box-shadow: 0 1px 4px rgba($black, 0.26);
-
     &::after {
       opacity: 1;
     }

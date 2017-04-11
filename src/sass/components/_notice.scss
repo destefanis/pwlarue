@@ -45,17 +45,20 @@
       border-bottom: 2px solid $black;
       color: $black;
       box-shadow: none;
+      letter-spacing: 0;
       text-decoration: none;
+      font-family: $sans;
       font-size: 1.4rem;
 
       @include min($tablet) {
         position: static;
         float: right;
         margin-left: 2em;
+        border-bottom: 0;
         line-height: 2.8;
-        text-decoration: underline;
         background: $white;
-        font-size: 1.5rem;
+        text-decoration: underline;
+        font-size: 1.6rem;
       }
 
       &:hover,

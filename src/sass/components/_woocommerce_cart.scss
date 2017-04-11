@@ -4,6 +4,32 @@
  * refactoring their entire cart setup and classes.
  */
 
+.woocommerce-shipping-fields {
+  margin-top: 1em;
+}
+
+.woocommerce table.shop_table tfoot td {
+  font-weight: 400;
+}
+
+.woocommerce-checkout-review-order-table {
+  padding: 0 15px;
+}
+
+.wc-proceed-to-checkout {
+  text-align: right;
+}
+
+.cart-empty {
+  padding: 50px;
+  background: $white;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+
+// Nested cart styling to override woocommerce
 .post-cart,
 .post-checkout {
   position: relative;
@@ -57,6 +83,36 @@
 
     @include min($tablet) {
       width: 70%;
+    }
+
+    input.button {
+      transition: all 250ms ease;
+      transform: translateY(0);
+      display: inline-block;
+      padding: 10px 32px 12px;
+      border: 2px solid $black;
+      border-radius: 50px;
+      background: $black;
+      color: $white;
+      letter-spacing: 0.5px;
+      box-shadow: 0 1px 5px rgba($black, 0.16);
+      text-transform: capitalize;
+      font-family: $mono;
+      font-size: 1.6rem;
+      font-weight: 400;
+      cursor: pointer;
+      -webkit-appearance: none;
+
+      &:hover,
+      &:active,
+      &:focus {
+        transform: translateY(-4px);
+        background: $white;
+        border-color: $black;
+        box-shadow: 0 2px 8px rgba($black, 0.26);
+        color: $black;
+        outline: none;
+      }
     }
   }
   
@@ -186,22 +242,23 @@
     float: none;
     margin: 25px 0;
     padding: 0.8em 1.75em;
-    border: 2px solid $black;
+    border: 2px solid transparent;
     border-radius: 50px;
-    background: $white;
-    background-color: $white;
-    color: $black;
+    background: $black;
+    background-color: $black;
+    color: $white;
+    letter-spacing: 0.5px;
     font-family: $sans;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 400;
     -webkit-appearance: none;
 
     &:hover,
     &:active,
     &:focus {
-      background: $black;
-      background-color: $black;
-      color: $white;
+      background: $white;
+      background-color: $white;
+      color: $black;
     }
   }
 
@@ -210,7 +267,7 @@
     margin-top: 10px;
     margin-left: 0;
     padding: 9px 15px;
-    border: 2px solid $light-grey;
+    border: 1px solid $light-grey;
 
     @include min($tablet) {
       width: 240px;
@@ -256,7 +313,7 @@
       padding: 0 10px;
 
       @include min($tablet) {
-        padding: 0 25px;
+        padding: 25px 50px;
       }
 
       th {
@@ -292,6 +349,35 @@
         margin-left: 15px;
       }
     }
+  }
+
+  .woocommerce-checkout-review-order-table {
+    padding: 0 10px;
+
+    @include min($tablet) {
+      padding: 25px 50px;
+    }
+
+    .product-total {
+      text-align: right;
+    }
+  }
+
+  .woocommerce-checkout-payment {
+    padding: 0 10px;
+
+    @include min($tablet) {
+      padding: 25px 50px;
+    }
+
+    .payment_box p {
+      letter-spacing: 0.5px;
+      font-size: 1.6rem;
+    }
+  }
+
+  .order_review_heading {
+    margin-top: 25px;
   }
 
   .cart-subtotal,
@@ -450,11 +536,12 @@
       float: none;
       margin: 25px 0;
       padding: 0.8em 1.75em;
-      border: 2px solid $black;
+      border: none;
       border-radius: 50px;
-      background: $white;
-      color: $black;
-      font-family: $sans;
+      background: $black;
+      letter-spacing: 0.5px;
+      color: $white;
+      font-family: $mono;
       font-size: 1.6rem;
       font-weight: 400;
 
@@ -543,29 +630,3 @@
     padding: 25px 50px 35px;
   }
 }
-
-.woocommerce-shipping-fields {
-  margin-top: 1em;
-}
-
-.woocommerce table.shop_table tfoot td {
-  font-weight: 400;
-}
-
-.woocommerce-checkout-review-order-table {
-  padding: 0 15px;
-}
-
-.wc-proceed-to-checkout {
-  text-align: right;
-}
-
-.cart-empty {
-  padding: 50px;
-  background: $white;
-  font-size: 2.4rem;
-}
-
-// .woocommerce table.shop_table_responsive tr:nth-child(2n) td {
-//   background-color: $white !important;
-// }

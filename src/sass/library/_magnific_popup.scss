@@ -256,14 +256,28 @@ button {
     border-radius: 50px;
   }
 }
+
 .mfp-image-holder,
 .mfp-iframe-holder {
   .mfp-close {
+    transform: translateY();
+    position: absolute;
     color: $mfp-controls-color;
-    right: -6px;
-    text-align: right;
-    padding-right: 6px;
-    width: 100%;
+    top: 55px;
+    right: 15px;
+    width: 44px;
+    padding: 0;
+    text-align: center;
+    color: $black;
+    box-shadow: 0 0 0 rgba($black, 0.1);
+    transition: all 250ms ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 1px 6px rgba($black, 0.16);
+      background-color: $light-grey;
+      color: $black;
+    }
   }
 }
 
@@ -290,6 +304,8 @@ button {
     width: 90px;
     height: 110px;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
+    transition: opacity 250ms ease;
+
     &:active {
       margin-top: -54px;
     }
@@ -312,16 +328,15 @@ button {
     }
 
     &:after {
-
-      border-top-width: 13px;
-      border-bottom-width: 13px;
-      top:8px;
+      border-top-width: 11px;
+      border-bottom-width: 11px;
+      top: 8px;
     }
 
     &:before {
       border-top-width: 21px;
       border-bottom-width: 21px;
-      opacity: 0.7;
+      opacity: 1;
     }
 
   }
@@ -329,23 +344,23 @@ button {
   .mfp-arrow-left {
     left: 0;
     &:after {
-      border-right: 17px solid $mfp-controls-color;
+      border-right: 14px solid $mfp-controls-color;
       margin-left: 31px;
     }
     &:before {
       margin-left: 25px;
-      border-right: 27px solid $mfp-controls-border-color;
+      // border-right: 27px solid $mfp-controls-border-color;
     }
   }
 
   .mfp-arrow-right {
     right: 0;
     &:after {
-      border-left: 17px solid $mfp-controls-color;
+      border-left: 14px solid $mfp-controls-color;
       margin-left: 39px
     }
     &:before {
-      border-left: 27px solid $mfp-controls-border-color;
+      // border-left: 27px solid $mfp-controls-border-color;
     }
   }
 }
