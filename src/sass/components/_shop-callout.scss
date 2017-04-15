@@ -17,7 +17,7 @@
 
 .product-feature {
   position: relative;
-  padding: 100px 4px 4px;
+  padding: 2px 4px 2px;
   background: $light-grey;
   text-align: center;
   -webkit-perspective: 1000;
@@ -36,6 +36,14 @@
 
   &.product-feature--left {
     text-align: left;
+  }
+
+  &.product-feature--first {
+    padding-top: 50px;
+
+    @include min($desktop) {
+      padding-top: 100px;
+    }
   }
 }
 
@@ -71,8 +79,8 @@
 .feature-cta {
   position: absolute;
   opacity: 0;
-  bottom: 15px;
-  left: 25px;
+  bottom: 25px;
+  left: 35px;
   transform: translateY(10px);
   color: $white;
   font-size: 1.6rem;
@@ -127,7 +135,7 @@
     }
 
     @include min($xxlarge) {
-      left: 150px;
+      left: 200px;
     }
   }
 
@@ -146,7 +154,7 @@
     }
 
     @include min($xxlarge) {
-      right: 150px;
+      right: 200px;
     }
   }
 }
@@ -184,9 +192,10 @@
 .product-callout__link {
   position: relative;
   display: inline-block;
-  margin-top: 3em;
-  letter-spacing: 1px;
+  margin-top: 2.75em;
+  letter-spacing: 0;
   transition: all 350ms cubic-bezier(0.86, 0, 0.07, 1);
+  -webkit-font-smoothing: antialiased;
 
   &:hover {
     color: $tan;
@@ -205,7 +214,7 @@
   &::before {
     content: '';
     position: absolute;
-    bottom: -6px;
+    bottom: -8px;
     display: block;
     width: 100%;
     height: 2px;

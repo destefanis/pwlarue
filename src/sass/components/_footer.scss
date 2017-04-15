@@ -4,7 +4,7 @@
 
 .footer {
   padding: 50px 0 25px;
-  border-top: 2px solid $light-grey;
+  border-top: 1px solid $light-grey;
   background: $white;
   color: $black;
   text-align: center;
@@ -82,6 +82,11 @@
     margin-top: 0;
     margin-right: 20px;
     margin-left: 20px;
+  }
+
+  @include min($large) {
+    margin-right: 35px;
+    margin-left: 35px;
   }
 
   &.social-link--facebook {

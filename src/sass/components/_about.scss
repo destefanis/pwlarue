@@ -23,12 +23,15 @@
 
   .details {
     padding: 0 10px 25px;
-    text-align: center;
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: 400;
 
     @include min($tablet) {
       padding: 0 25px;
       padding-bottom: 0;
-      text-align: left;
+      font-size: 1.8rem;
+      font-weight: 300;
     }
 
     @include min($desktop) {
@@ -51,7 +54,7 @@
   display: inline-block;
   width: 100%;
   z-index: 10;
-  margin-bottom: 25px;
+  margin-bottom: 50px;
 
   @include min($tablet) {
     margin: 0;
@@ -175,7 +178,7 @@
   padding: 25px 2px 0;
 
   @include min($tablet) {
-    padding: 75px 2px 100px;
+    padding: 75px 2px 0;
   }
 }
 

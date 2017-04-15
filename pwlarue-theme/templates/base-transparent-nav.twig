@@ -9,7 +9,7 @@
 	<body data-template="base.twig">
 
 		{% block header %}
-			<nav id="navigation" class="navigation" role="navigation">
+			<nav id="navigation" class="navigation navigation--transparent" role="navigation">
 				{% include "menu.twig" with {'menu': menu.get_items} %}
 			</nav>
 		{% endblock %}

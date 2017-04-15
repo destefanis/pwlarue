@@ -127,17 +127,19 @@
         </div>
       {% endif %}
       
-      {# Set the product back to the intial product post #}
-      {{ fn('timber_set_product', post)}}
+      <div class="product-status">
+        {# Set the product back to the intial product post #}
+        {{ fn('timber_set_product', post)}}
 
-      {# Use the WooCommerce action to pull in the add to cart form #}
-      {% do action('woocommerce_single_product_summary') %}
+        {# Use the WooCommerce action to pull in the add to cart form #}
+        {% do action('woocommerce_single_product_summary') %}
 
-      {% if post._stock_status == "outofstock" %}
-        <span class="button out-of-stock">
-          Out Of Stock
-        </span>
-      {% endif %}
+        {% if post._stock_status == "outofstock" %}
+          <span class="button out-of-stock">
+            Out Of Stock
+          </span>
+        {% endif %}
+      </div>
       
       {# Product Share #}
       <div class="product-share">
@@ -160,6 +162,19 @@
       <meta itemprop="url" content="{{ post.link }}" />
     </article>
   </section>
+  
+  <!-- Product Additional Gallery -->
+  {% if post.lifestyle_gallery %}
+    <div class="product-gallery product-gallery--{{ post.lifestyle_gallery|length }}up">
+      {% for image in post.get_field('lifestyle_gallery') %}
+        {% set image = TimberImage(image.id) %}
+          <a href="{{ image.src }}" class="product-gallery__link">
+            <div class="product-gallery__image" style="background-image: url('{{ image.src }}');">
+            </div>
+          </a>
+      {% endfor %}
+    </div>
+  {% endif %}
 
   <section class="product-page-details">
     <div class="details details--large">

@@ -118,19 +118,11 @@
 .product-thumbnail {
   transform: translateY(0);
   display: inline-block;
-  width: 28%;
-  margin: 0 2px;
+  width: 24%;
+  margin: 0;
   background: $light-grey;
   transition: background 100ms ease, box-shadow 300ms ease, transform 300ms ease;
   cursor: pointer;
-
-  &:hover,
-  &:active,
-  &:focus {
-    transform: translateY(-4px);
-    box-shadow: 0 2px 8px rgba($black, 0.16);
-    background: $tan;
-  }
 
   @include min($tablet) {
     width: 29%;
@@ -139,6 +131,14 @@
   @include min($desktop) {
     width: 31%;
     max-width: 140px;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    transform: translateY(-4px);
+    box-shadow: 0 2px 8px rgba($black, 0.16);
+    background: $tan;
   }
 }
 
@@ -266,28 +266,28 @@
   transition: all 250ms ease;
   transform: translateY(0);
   display: inline-block;
-  padding: 10px 32px 12px;
+  padding: 10px 50px 12px;
   border: 2px solid $black;
   border-radius: 50px;
   background: $black;
   color: $white;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   box-shadow: 0 1px 5px rgba($black, 0.16);
   text-transform: capitalize;
   font-family: $mono;
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 400;
   cursor: pointer;
   -webkit-appearance: none;
 
   &:hover,
   &:active,
   &:focus {
-    transform: translateY(-4px);
-    background: $white;
-    border-color: $black;
+    transform: translateY(-2px);
+    background: $tan;
+    border-color: $tan;
     box-shadow: 0 2px 8px rgba($black, 0.26);
-    color: $black;
+    color: $white;
     outline: none;
   }
 
@@ -370,7 +370,7 @@
   display: inline-block;
   margin-top: 40px;
   padding-top: 20px;
-  border-top: 2px solid $light-grey;
+  border-top: 1px solid $light-grey;
   font-size: 1.6rem;
   font-weight: 400;
   letter-spacing: 1px;
@@ -383,7 +383,7 @@
 
 .share-label {
   position: relative;
-  top: -5px;
+  top: -2px;
   display: inline-block;
   letter-spacing: 0.5px;
   font-weight: 300;
@@ -430,14 +430,20 @@
   
   // Two images in lifestyle gallery
   &.product-gallery--2up {
-    padding: 0 2px 4px;
+    padding: 0 2px 2px;
+
+    @include min($tablet) {
+      padding: 0 2px 4px;
+    }
     
     .product-gallery__link  {
-      margin: 0 2px;
+      padding: 2px;
 
       @include min($tablet) {
         width: 49.5%;
         width: calc(50% - 4px);
+        margin: 0 2px;
+        padding: 0;
       }
     }
   }
@@ -451,6 +457,7 @@
       @include min($tablet) {
         width: 33%;
         width: calc(33.33% - 4px);
+        margin: 0 2px;
       }
     }
   }
@@ -535,7 +542,7 @@
 // }
 
 .product-page-details {
-  padding: 50px 4px 0;
+  padding: 4px 4px 0;
   text-align: center;
   background: $light-grey;
 

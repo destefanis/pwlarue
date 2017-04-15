@@ -6,14 +6,15 @@
   position: relative;
   margin-top: 0;
   text-align: center;
+  background: $light-grey;
 
   @include min($tablet) {
-    padding: 0;
-    background: $light-grey;
+    padding: 0; 
   }
 }
 
 .hero-video {
+  position: relative;
   width: 100%;
   height: auto;
 
@@ -21,18 +22,44 @@
     margin-top: -6.9%;
     margin-bottom: -7.65%;
   }
+
+  @include min($large) {
+    margin-top: -15%;
+  }
 }
 
 .hero-link {
-  text-align: left;
-  transform: translateX(-50%);
-  position: absolute;
-  bottom: 25px;
-  left: 50%;
-  // right: 100px;
   display: inline-block;
+  margin: 0 auto;
+  padding: 35px 0 2px;
+  text-align: center;
   z-index: 150;
-  color: $white;
+  font-family: $mono;
+  font-size: 1.6rem;
+  font-weight: 300;
+  background: $light-grey;
+  border-bottom: 2px solid $black;
+  transition: color 250ms ease;
+
+  &:hover {
+    color: $tan;
+  }
+
+  @include min($desktop) {
+    transform: translateX(-50%);
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    display: inline-block;
+    padding: 0;
+    border: none;
+    background: none;
+    color: $white;
+  }
+}
+
+.hero-link__title {
+  letter-spacing: 0;
   font-family: $mono;
   font-size: 1.6rem;
   font-weight: 300;

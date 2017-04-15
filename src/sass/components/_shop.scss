@@ -86,7 +86,7 @@
   padding: 0 0 16px;
   animation: fadeIn 1000ms 1;
 
-  @include min($desktop) {
+  @include min($large) {
     padding: 34px 0 16px;
     float: right;
   }

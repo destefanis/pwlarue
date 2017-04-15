@@ -27,6 +27,36 @@
   }
 }
 
+.navigation--transparent {
+  background: $white;
+  transition: all 200ms ease;
+
+  @include min($large) {
+    background: rgba($white, 0);
+    border-bottom: none;
+
+    .logo svg {
+      * {
+        fill: $white;
+        stroke: $white;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        * {
+          fill: $tan;
+          stroke: $tan;
+        }
+      }
+    }
+
+    .nav-link {
+      color: $white;
+    }
+  }
+}
+
 .logo {
   display: block;
   z-index: 100;
@@ -75,10 +105,10 @@
 
 .nav-links-wrapper {
   display: inline-block;
-  padding-top: 2px;
   vertical-align: top;
 
   @include min($tablet) {
+    padding-top: 2px;
     width: 33%;
   }
 
@@ -98,6 +128,10 @@
       @include min($tablet) {
         margin-right: 50px;
       }
+
+      @include min($xlarge) {
+        margin-right: 65px;
+      }
     }
   }
 
@@ -113,6 +147,10 @@
       @include min($tablet) {
         margin-left: 50px;
       }
+
+      @include min($xlarge) {
+        margin-left: 65px;
+      }
     }
   }
 }
@@ -125,7 +163,7 @@
   letter-spacing: 1px;
   font-family: $sans;
   font-weight: 400;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   webkit-font-smoothing: auto;
   transition: color 250ms ease;
 
@@ -138,6 +176,7 @@
     width: auto;
     margin-top: 18px;
     padding: 0;
+    font-size: 1.6rem;
   }
 
   &:hover,
@@ -182,10 +221,10 @@
     transition: all 250ms ease;
     box-shadow: 0;
     position: relative;
-    top: -3px;
+    top: -1px;
     display: inline-block;
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
     margin-left: 10px;
     border-radius: 100%;
     background: $black;
@@ -195,7 +234,9 @@
     font-size: 1.3rem;
 
     @include min($tablet) {
-      top: -1px;
+      width: 26px;
+      height: 26px;
+      line-height: 1.95;
     }
   }
 }
