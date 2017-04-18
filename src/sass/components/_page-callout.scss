@@ -9,7 +9,7 @@
   position: relative;
   display: inline-block;
   height: 600px;
-  width: calc(50% - 25px);
+  width: calc(49% - 25px);
   overflow: hidden;
   text-align: center;
 
@@ -25,4 +25,22 @@
     height: 135%;
     width: auto;
   }
+}
+
+.page-callout__link {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.page-callout__link-text {
+  transform: translateX(-50%);
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  font-family: $mono;
+  font-size: 2rem;
+  font-weight: 300;
+  color: $white;
 }

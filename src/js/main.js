@@ -422,20 +422,24 @@
   init();
   function init() {
 
-    // Reveal elements, only init if we're on the homepage.
-    if ($('#hero-video').length > 0) {
-      var rev1 = new RevealFx(document.querySelector('#hero-video'), {
+    if ($('#about-video').length > 0) {
+      var rev1 = new RevealFx(document.querySelector('#about-video'), {
         revealSettings : {
           bgcolor: '#f7f7f7',
+          delay: 200,
           onCover: function(contentEl, revealerEl) {
             contentEl.style.opacity = 1;
           }
         }
       });
       rev1.reveal();
+    }
+
+    // Reveal elements, only init if we're on the homepage.
+    if ($('#hero-video').length > 0) {
 
       var productCalloutReveal_1 = document.getElementById('js-feature-product-1'),
-        firstScrollWatcher = scrollMonitor.create(productCalloutReveal_1, -200),        
+        firstScrollWatcher = scrollMonitor.create(productCalloutReveal_1, 0),        
         elementReveal_1 = new RevealFx(productCalloutReveal_1, {
           revealSettings : {
             bgcolor: '#c8beb4',
