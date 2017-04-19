@@ -40,7 +40,17 @@ gulp.task('clean', () => del('dist'))
 gulp.task('html', ['images'], () => {
   return gulp.src('src/html/**/*.html')
     .pipe(plumber({ errorHandler: onError }))
-    .pipe(include({ prefix: '@', basepath: 'dist/images/' }))
+    .pipe(include({
+      prefix: '@',
+      basepath: '@file'
+    }))
+    .pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
+    .pipe(gulp.dest('dist'))
+})
+
+gulp.task('woocommerce', () => {
+  return gulp.src('src/woocommerce/woocommerce.css')
+    .pipe(plumber({ errorHandler: onError }))
     .pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
     .pipe(gulp.dest('dist'))
 })
@@ -60,6 +70,7 @@ gulp.task('sass', () => {
     .pipe(postcss(processors))
     .pipe(maps.write('./maps', { addComment: false }))
     .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('pwlarue-theme/assets', { overwrite: true }))
 })
 
 // js
@@ -89,6 +100,7 @@ gulp.task('js', () => {
 
       // write the files to dist
       fs.writeFileSync('dist/bundle.js', files.code)
+      fs.writeFileSync('pwlarue-theme/assets/bundle.js', files.code)
       fs.writeFileSync('dist/maps/bundle.js.map', files.map.toString())
     })
 })
@@ -96,7 +108,7 @@ gulp.task('js', () => {
 // images
 
 gulp.task('images', () => {
-  return gulp.src('src/images/**/*.{gif,jpg,png,svg}')
+  return gulp.src('src/images/**/*.{gif,jpg,png,svg,mp4}')
     .pipe(plumber({ errorHandler: onError }))
     .pipe(changed('dist/images'))
     .pipe(gulp.dest('dist/images'))
@@ -165,7 +177,7 @@ gulp.task('watch', () => {
   gulp.watch('src/html/**/*.html', ['html', reload])
   gulp.watch('src/sass/**/*.scss', ['sass', reload])
   gulp.watch('src/js/**/*.js', ['js', reload])
-  gulp.watch('src/images/**/*.{gif,jpg,png,svg}', ['images', reload])
+  gulp.watch('src/images/**/*.{gif,jpg,png,svg,mp4}', ['images', reload])
 })
 
 // build and default tasks
@@ -176,7 +188,7 @@ gulp.task('build', ['clean'], () => {
   fs.mkdirSync('dist/maps')
 
   // run the tasks
-  gulp.start('html', 'sass', 'js', 'images', 'fonts', 'videos', 'favicon')
+  gulp.start('html', 'sass', 'js', 'images', 'fonts', 'videos', 'favicon', 'woocommerce')
 })
 
 gulp.task('default', ['build', 'server', 'watch'])

@@ -1,0 +1,18 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper">
+		<div class="post-type-{{ post.post_type }} post-{{ post.post_name }}" id="post-{{ post.ID }}">
+			<div class="article-content">
+				<h1 class="article-title title-center">
+					Checkout
+				</h1>
+				<div class="article-body">
+					{% filter shortcodes %}
+						[woocommerce_checkout]
+					{% endfilter %}
+				</div>
+			</div>
+		</div>
+	</div><!-- /content-wrapper -->
+{% endblock %}

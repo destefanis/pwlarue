@@ -1,4 +1,5 @@
 // FONT
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400,700');
 
 html {
   // 1rem = 10px
@@ -14,25 +15,130 @@ body {
 }
 
 p {
-  line-height: 1.5;
-}
-
-h1 {
-  font-size: 3rem;
+  margin-bottom: 2em;
+  line-height: 1.8;
   letter-spacing: 1px;
+  font-size: 1.4rem;
+  font-weight: 400;
 
-  @include min($desktop) {
-    font-size: 4rem;
+  @include min($tablet) {
+    font-size: 1.8rem;
   }
 }
 
+h1 {
+  letter-spacing: 1px;
+  font-size: 3rem;
+  font-weight: 300;
+
+  @include min($desktop) {
+    font-size: 3.4rem;
+  }
+}
+
+h2 {
+  font-size: 2.8rem;
+  text-transform: capitalize;
+}
+
+.terms-wrapper,
+.page-wrapper {
+  padding: 10px;
+  background: $light-grey;
+
+  @include min($tablet) {
+    padding: 50px;
+  }
+
+  &.page-wrapper--error {
+    @include min($tablet) {
+      height: 700px;
+    }
+  }
+}
+
+.terms,
+.general-page {
+  margin: auto;
+  padding: 15px;
+  background: $white;
+  max-width: 780px;
+
+  @include min($desktop) {
+    padding: 50px;
+  }
+
+  h1 {
+    margin-bottom: 1em;
+  }
+
+  h2 {
+    margin-top: 3.5em;
+    margin-bottom: 1em;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $grey;
+    font-size: 1.8rem;
+    font-family: $mono;
+    color: $grey;
+  }
+
+  p {
+    font-size: 1.6rem;
+  }
+
+  ul {
+    padding-bottom: 2em;
+    padding-left: 1em;
+    font-size: 1.6rem;
+  }
+
+  li {
+    padding-bottom: 1em;
+  }
+
+  a {
+    border-bottom: 2px solid $black;
+    transition: all 200ms ease;
+    transition-property: border-color, color;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $tan;
+      border-color: $tan;
+    }
+  }
+}
+
+.subheader {
+  margin: 0 0 50px;
+  letter-spacing: 1px;
+  font-family: $mono;
+  font-size: 2rem;
+  font-weight: 400;
+}
 
 .text-left {
-  text-align: left;
+
+  @include min($desktop) {
+    text-align: left;
+  }
 }
 
 .text-right {
-  text-align: right;
+
+  @include min($desktop) {
+    text-align: right;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.element-invisible {
+  visibility: hidden;
+  display: none;
 }
 
 // LAYOUT

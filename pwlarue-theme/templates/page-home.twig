@@ -1,0 +1,133 @@
+{% extends "base-transparent-nav.twig" %}
+
+{% block content %}
+
+<section class="hero">
+  <div id="hero-video">
+    <video class="hero-video" loop="" autoplay="" muted="" preload="auto" width="auto" height="auto" poster="https://s3.us-east-2.amazonaws.com/pwlarue/video-hero-placeholder-min.jpg"> <!--#t=14.4-->
+      <source src="https://s3.us-east-2.amazonaws.com/pwlarue/P.W.+LARUE+HERO+LOOP2.mp4" type="video/mp4">
+    </video>
+  </div>
+  <a class="hero-link" href="/about">
+    <h1 class="hero-link__title">About P.W. LaRue Co.</h1>
+  </a>
+</section>
+
+<div class="product-feature product-feature--left">
+  <div class="row">
+
+    <div id="js-feature-product-1" class="feature-image-wrapper">
+      <a href="https://pwlarue.com/shop/bags/carry-all-tote-bag-navy/">
+        <img class="product-feature-image js-lazy" src="https://s3.us-east-2.amazonaws.com/pwlarue/navy-carry-all-feature-min.jpg" alt="Navy Carry All Bag Product Photo">
+        <span class="feature-cta">
+          View Product
+        </span>
+      </a>
+    </div>
+
+    <div class="product-callout product-callout--right">
+      <h2 class="product-callout__title">Carry All Bag</h2>
+      <p class="product-callout__body">
+        A water-resistant open top tote designed for 
+        versatility and durability.
+      </p>
+      <a class="product-callout__link" href="https://pwlarue.com/shop/bags/carry-all-tote-bag-navy">
+        Shop Now
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<div class="product-feature product-feature--right">
+  <div class="row">
+
+    <div id="js-feature-product-2" class="feature-image-wrapper">
+      <a href="https://pwlarue.com/shop/bags/roll-top-tote-bag-olive-brown-chromexcel/">
+        <img class="product-feature-image js-lazy" alt="Olive Roll Top Bag Image" src="https://s3.us-east-2.amazonaws.com/pwlarue/olive-roll-top-feature-min.jpg">
+        <span class="feature-cta">
+          View Product
+        </span>
+      </a>
+    </div>
+
+    <div class="product-callout product-callout--left">
+      <h2 class="product-callout__title">Roll Top Bag</h2>
+      <p class="product-callout__body">
+        A water-resistant tote with a secure roll-top closure. 
+        Great for work, class, or a weekend trip.
+      </p>
+      <a class="product-callout__link" href="https://pwlarue.com/shop/bags/roll-top-tote-bag-olive-brown-chromexcel/">
+        Shop Now
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="product-feature product-feature--left">
+  <div class="row">
+    <div id="js-feature-product-3" class="feature-image-wrapper">
+      <a href="https://pwlarue.com/shop/wallets/billfold-wallet-tan/">
+        <img class="product-feature-image js-lazy" src="https://s3.us-east-2.amazonaws.com/pwlarue/bifold-environmental.jpg">
+        <span class="feature-cta">
+          View Product
+        </span>
+      </a>
+    </div>
+    <div class="product-callout product-callout--right">
+      <h2 class="product-callout__title">BillFold Wallet</h2>
+      <p class="product-callout__body">
+        Our take on a traditional bi-fold with added room and 
+        easy access to the essentials.
+      </p>
+      <a class="product-callout__link" href="https://pwlarue.com/shop/wallets/billfold-wallet-tan/">
+        Shop Now
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="product-feature product-feature--right">
+  <div class="row">
+
+    <div id="js-feature-product-4" class="feature-image-wrapper">
+      <a href="/shop">
+        <img class="product-feature-image" alt="Olive Roll Top Bag Image" src="https://s3.us-east-2.amazonaws.com/pwlarue/shop-all-callout-image.jpg">
+        <span class="feature-cta">
+          Shop All Products
+        </span>
+      </a>
+    </div>
+
+    <div class="product-callout product-callout--left">
+      <h2 class="product-callout__title">All Products</h2>
+      <p class="product-callout__body">
+        Our newest wallets, pouches, bags, and accessories
+        are now available.
+      </p>
+      <a class="product-callout__link" href="/shop">
+        Shop Now
+      </a>
+    </div>
+  </div>
+</div>
+
+{% spaceless %}
+
+{# For Looping Featured Products
+{% if post.get_field('featured_products') %}
+  <section class="section section--featured shop-page">
+     <div class="featured-products">
+       {% for post in post.get_field('featured_products') %}
+        {% include ["tease-product-featured.twig"] %}
+       {% endfor %}
+     </div>
+  </section>
+{% endif %}
+#}
+
+{% endspaceless %}
+
+{% include ["instagram.twig"] %}
+
+{% endblock %}

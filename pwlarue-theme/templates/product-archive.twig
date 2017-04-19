@@ -1,0 +1,48 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+  {# {% do action('woocommerce_before_main_content') %} #}
+
+  <div class="filters">
+    <span class="filter-label">Shopping:</span>
+    <ul class="filter-list">
+      {% for category in product_categorys %}
+        {% if title|lower == category.slug %} 
+          <li class="filter-list-item filter-list-item--active" data-category="{{ category.slug }}">
+        {% else %}
+          <li class="filter-list-item" data-category="{{ category.slug }}">
+        {% endif %}
+            <a href="/shop/{{ category.slug }}">
+              {{ category.name }}
+            </a>
+          </li>
+      {% endfor %}
+    </ul>
+    <div class="filter-sort">
+      <span class="filter-label">Sort By:</span>
+      {% do action( 'woocommerce_before_shop_loop') %}
+    </div>
+  </div>
+
+  <div class="clear"></div>
+
+  <section id="product-grid" class="section section--featured shop-page">
+    <div class="featured-products">
+      {% for post in products %}
+
+        {% if loop.index <= 6 %}
+          {% include ["tease-product.twig"] %}
+        {% else %}
+          {% include ["tease-product-lazy.twig"] %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+{% do action('woocommerce_after_shop_loop') %}
+{% do action('woocommerce_after_main_content') %}
+
+{% include ["instagram.twig"] %}
+
+{% endblock  %}

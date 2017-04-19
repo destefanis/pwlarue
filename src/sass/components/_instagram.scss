@@ -1,0 +1,75 @@
+/*
+ *  Define the instagram styles.
+ */
+
+.section--instagram {
+  padding: 4px 4px 50px;
+  position: relative;
+  background: $white;
+  text-align: left;
+
+  a {
+    width: 49.5%;
+    display: inline-block;
+  }
+
+  @include min($tablet) {
+    padding: 120px 100px 100px;
+  }
+
+  .section-header {
+    position: relative;
+    display: inline-block;
+    // margin: -70px auto 0.5em;
+    padding: 35px;
+    background: $white;
+    z-index: 100;
+    vertical-align: top;
+
+    @include min($desktop) {
+      width: 49.5%;
+    }
+  }
+
+  .instagram-photo {
+    display: inline-block;
+    margin: 0 auto;
+    vertical-align: top;
+  }
+
+  .instagram-photo--first {
+    width: 100%;
+
+    @include min($tablet) {
+      margin-right: 1px;
+      width: 47.25%;
+    }
+  }
+
+  .instagram-photo--second {
+    width: 100%;
+
+    @include min($tablet) {
+      width: 100%;
+    }
+  }
+
+  video {
+    width: 100%;
+
+    @include min($tablet) {
+      width: 50%;
+    }
+  }
+}
+
+// .section-content--instagram {
+//   display: inline-block;
+//   z-index: 100;
+//   padding: 50px 0 25px;
+//   font-size: 2.2rem;
+
+//   @include min($tablet) {
+//     padding: 0;
+//   }
+// }

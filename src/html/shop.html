@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+  @include('./includes/_head.html')
+
+  <body>
+
+    @include('./includes/_navigation.html')
+
+    <div id="barba-wrapper">
+      <div class="barba-container">
+        <div class="filters">
+          <span class="filter-label">Shopping:</span>
+          <ul class="filter-list">
+            <li class="filter-list-item filter-list-item--active">
+              All Products
+            </li>
+            <li class="filter-list-item">
+              Bags
+            </li>
+            <li class="filter-list-item">
+              Wallets
+            </li>
+            <li class="filter-list-item">
+              Pouches
+            </li>
+            <li class="filter-list-item">
+              Accessories
+            </li>
+          </ul>
+          <div id="filter-sort" class="filter-sort">
+            <span class="filter-label">Sort By:</span>
+            <form class="woocommerce-ordering" method="get">
+              <select name="orderby" class="orderby">
+                <option value="menu_order" selected="selected">Default</option>
+                <option value="popularity">Popularity</option>
+                <option value="date">New Products</option>
+                <option value="price">Price (low to high)</option>
+                <option value="price-desc">Price (high to low)</option>
+              </select>
+            </form>
+          </div>
+        </div>
+        <section id="product-grid" class="section section--featured shop-page">
+          <div class="featured-products">
+            
+            <div class="featured-product background-grey product--has-hover">
+              <a href="product.html">
+                <img class="featured-product__image" src="images/products/bi-fold-wallet-black-front.png" />
+                <img class="featured-product__image-alt" src="images/products/bi-fold-wallet-black-open.png">
+                <h3 class="product-info">
+                  <span class="product-text">
+                    Bi-Fold Wallet -
+                  </span>
+                  <span class="price">
+                    $99.00
+                  </span>
+                </h3>
+              </a>
+            </div>
+            <div class="featured-product background-grey product--has-hover">
+              <a href="product.html">
+                <img class="featured-product__image" src="images/products/accordian-wallet-tan-front.png" />
+                <img class="featured-product__image-alt" src="images/products/accordian-wallet-tan-open.png">
+                <h3 class="product-info">
+                  <span class="product-text">
+                    Snap Wallet -
+                  </span>
+                  <span class="price">
+                    $99.00
+                  </span>
+                </h3>
+              </a>
+            </div>
+            <div class="featured-product background-grey">
+              <a href="product.html">
+                <img class="featured-product__image" src="images/products/bi-fold-wallet-tan-front.png" />
+                <h3 class="product-info">
+                  <span class="product-text">
+                    Bi-Fold Wallet -
+                  </span>
+                  <span class="price">
+                    $99.00
+                  </span>
+                </h3>
+              </a>
+            </div>
+            <div class="featured-product background-grey">
+              <a href="product.html">
+                <img class="featured-product__image js-lazy" src="images/products/carry-all-navy-front.png" />
+                <h3 class="product-info">
+                  <span class="product-text">
+                    Carry All Bag -
+                  </span>
+                  <span class="price">
+                    $299.00
+                  </span>
+                </h3>
+              </a>
+            </div>
+
+            <div class="featured-product background-grey">
+              <a href="product.html">
+                <img class="featured-product__image js-lazy" src="images/black-roll-top-bag.png" />
+                <h3 class="product-info">
+                  <span class="product-text">
+                    Roll Top Bag -
+                  </span>
+                  <span class="price">
+                    $299.00
+                  </span>
+                </h3>
+              </a>
+            </div>
+
+            <div class="featured-product background-grey">
+              <a href="product.html">
+                <img class="featured-product__image js-lazy" src="images/products/keyholder-tan-front.png" />
+                <h3 class="product-info">
+                  <span class="product-text">
+                    Keyholder -
+                  </span>
+                  <span class="price">
+                    $39.00
+                  </span>
+                </h3>
+              </a>
+            </div>
+
+          </div>
+        </section>
+      </div>
+    </div>
+    
+    @include('./includes/_contact-form.html')
+    @include('./includes/_footer.html')
+    @include('./includes/_js-block.html')
+
+  </body>
+</html>

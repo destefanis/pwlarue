@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+  @include('./includes/_head.html')
+
+  <body>
+    <section class="tease">
+      <div class="tease-background" style="background-image: url('https://s3.us-east-2.amazonaws.com/pwlarue/About/coming-soon-landing-page.jpg');">
+      </div>
+      <div class="tease-content">
+        <span class="tease-logo">
+          @include("./includes/svg/logo.svg")
+        </span>
+      </div>
+
+      <span class="coming-soon">
+        @include("./includes/svg/april-19th.svg")
+
+        <a class="sign-up-link popup-for-email" href="#mc_embed_signup">
+          Sign Up For Our Newsletter
+        </a>
+      </span>
+    </section>
+    @include('./includes/_email-form.html')
+    @include('./includes/_js-block.html')
+
+  </body>
+</html>

@@ -1,0 +1,38 @@
+ 
+{#
+{% for item in menu %}
+  {% if loop.first %}
+		<a href="{{item.get_link}}" class="{{item.classes | join(' ')}} nav-link nav-link--first">
+			{{item.title}}
+		</a>
+  {% endif %}
+{% endfor %}
+#}
+
+{% if menu %}
+  {% spaceless %}
+    <div class="logo">
+      <a href="https://pwlarue.com/">
+        {% include ["svg/logo.svg"] %}
+      </a>
+    </div>
+    <div class="nav-links-wrapper nav-links-wrapper--left">
+      <a href="/shop" class="{{item.classes | join(' ')}} nav-link nav-link--first">
+        Shop
+      </a>
+      <a href="/about" class="{{item.classes | join(' ')}} nav-link nav-link--first">
+        About
+      </a>
+    </div>
+    <div class="nav-links-wrapper nav-links-wrapper--right">
+      <a href="#contact-popup" class="{{item.classes | join(' ')}} nav-link nav-link--last popup-with-form">
+        Contact
+      </a>
+      <span id="site-header-cart">
+        <a class="{{item.classes | join(' ')}} cart-contents nav-link nav-link--last" href="{{ cart_url }}" title="View your shopping cart">
+          Cart <span>{{ cart_content_count }}</span>
+        </a>
+      </span>
+    </div>
+  {% endspaceless %}
+{% endif %}

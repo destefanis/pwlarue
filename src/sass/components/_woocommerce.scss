@@ -1,0 +1,91 @@
+/*
+ *  Override various woocommerce styles that they hardcoded.
+ */
+
+// Order received message.
+.woocommerce-thankyou-order-received {
+  margin-top: 2em;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 2rem;
+
+  @include min($tablet) {
+    font-size: 2.2rem;
+  }
+}
+
+button,
+input,
+select,
+textarea {
+  font-size: 100%; /* Corrects font size not being inherited in all browsers */
+  margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+  vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+  *vertical-align: middle; /* Improves appearance and consistency in all browsers */
+}
+
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea,
+.input-text {
+  background-color: $white;
+  color: $black;
+  padding: 12px 15px;
+  outline: none;
+  border: 0;
+  -webkit-appearance: none;
+  border-radius: 1px;
+  box-sizing: border-box;
+  font-weight: normal;
+  font-size: 1.6rem;
+  // box-shadow: 0 1px 3px rgba(0,0,0, 0.16);
+  border: 1px solid $grey;
+
+  &:focus {
+    background-color: darken( $white,10% );
+    color: darken( $black, 10% );
+  }
+}
+
+textarea {
+  overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+  padding-left: ms(-1);
+  vertical-align: top; /* Improves readability and alignment in all browsers */
+  width: 100%;
+  line-height: 1.6;
+}
+
+label {
+  padding: 15px 0 10px;
+  font-size: 1.6rem;
+  font-family: $mono;
+  font-weight: 400;
+}
+
+label.inline {
+  input {
+    width: auto;
+  }
+}
+
+fieldset {
+  padding: 0;
+  border: 0;
+  margin-bottom: ms(3);
+
+  legend {
+    font-weight: 700;
+  }
+}
+
+.woocommerce input.button {
+  padding: 1em 1.75em;
+  border-radius: 50px;
+  background: $black;
+  color: $white;
+  -webkit-appearance: none;
+}

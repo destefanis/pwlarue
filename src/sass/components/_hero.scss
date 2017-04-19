@@ -1,46 +1,184 @@
 /*
- *  Define the hero styles.
+ *  Define the product page styles.
  */
 
 .hero {
   position: relative;
-  height: 75vh;
-  max-height: 310px;
-  margin: 0 10px;
-  background-image: url('images/studio-image.jpg');
-  background-size: cover;
-  background-position: center;
-  background-position-y: -200px;
-  background-repeat: no-repeat;
-  transition: height 300ms ease;
-
-  @include min($iphone) {
-    height: 50vh;
-    min-height: 310px;
-  }
+  margin-top: 0;
+  text-align: center;
+  background: $light-grey;
 
   @include min($tablet) {
-    height: 85vh;
-    min-height: 520px;
-    margin: 0 50px;
-  }
-
-  @include min($desktop) {
-    height: 85vh;
-    min-height: 580px;
+    padding: 0; 
   }
 }
 
-.hero-header {
+.hero-video {
   position: relative;
+  width: 100%;
+  height: auto;
+
+  @include min($tablet) {
+    margin-top: -6.9%;
+    margin-bottom: -7.65%;
+  }
+
+  @include min($large) {
+    margin-top: -15%;
+  }
+}
+
+.hero-link {
   display: inline-block;
-  width: 56%;
-  margin-top: -2em;
+  margin: 0 auto;
+  padding: 35px 0 2px;
+  text-align: center;
+  z-index: 150;
+  font-family: $mono;
+  font-size: 1.6rem;
+  font-weight: 300;
+  background: $light-grey;
+  border-bottom: 2px solid $black;
+  transition: color 250ms ease;
+
+  &:hover {
+    color: $tan;
+  }
+
+  @include min($desktop) {
+    transform: translateX(-50%);
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    display: inline-block;
+    padding: 0;
+    border: none;
+    background: none;
+    color: $white;
+  }
+}
+
+.hero-link__title {
+  letter-spacing: 0;
+  font-family: $mono;
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+// Index 2s
+// .hero-alt {
+//   .hero-video {
+//     margin-top: -100px;
+//     width: 100%;
+//   }
+// }
+
+// .hero-video-alt {
+//   display: inline-block;
+//   margin: auto;
+
+//   @include min($tablet) {
+//     width: 90%;
+//     margin: 50px auto 0;
+//   }
+
+//   @include min($large) {
+//     width: 70%;
+//   }
+// }
+
+.hero-image {
+  display: inline-block;
+  height: 300px;
+  width: 100%;
+  vertical-align: top;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include min($tablet) {
+    height: 600px;
+  }
+
+  @include min($xxlarge) {
+    height: 700px;
+  }
+}
+
+.hero-image-wrapper {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.hero-image-wrapper--first {
+  width: 100%;
+  background-position: right;
+
+  @include min($tablet) {
+    width: 59.5%;
+    margin-right: 4px;
+  }
+
+  @include min($large) {
+    width: 60%;
+  }
+}
+
+.hero-image-wrapper--second {
+  display: none;
+  background-position: center;
+
+  @include min($tablet) {
+    display: inline-block;
+    width: 39.75%;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 100;
+  padding: 25px 0;
   text-align: left;
-  padding: 25px 50px;
+
+  @include min($tablet) {
+    margin-top: -130px;
+    padding: 50px 100px 0;
+    text-align: center;
+  }
+}
+
+.hero-title {
+  display: block;
+  margin-bottom: 2.5em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  width: 100%;
   background: $white;
   color: $black;
   line-height: 1.8;
-  font-weight: 400;
-  font-size: 2.8rem;
+  letter-spacing: 0.5px;
+  font-family: $sans;
+  font-size: 2rem;
+  font-weight: 300;
+  text-transform: none;
+
+  @include min($tablet) {
+    width: 69%;
+    padding: 35px 35px;
+    font-size: 2.4rem;
+  }
+
+  @include min($xlarge) {
+    width: 54%;
+  }
+
+  @include min($xxlarge) {
+    width: 50%;
+  }
 }

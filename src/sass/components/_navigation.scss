@@ -2,7 +2,6 @@
  *  Define the navigation styles.
  */
 
-
 .navigation {
   position: relative;
   top: 0;
@@ -10,50 +9,234 @@
   z-index: 999;
   width: 100%;
   height: auto;
-  padding: 20px 50px 20px;
+  padding: 15px 0 0;
+  background: $white;
+  border-bottom: 1px solid $grey-border;
   text-align: center;
+  
+  @include min($tablet) {
+    padding: 15px 25px;
+  }
+
+   @include min($desktop) {
+    padding: 20px 50px;
+  }
+
+  @include min($large) {
+    padding: 20px 100px;
+  }
+}
+
+.navigation--transparent {
+  background: $white;
+  transition: all 200ms ease;
+
+  @include min($large) {
+    background: rgba($white, 0);
+    border-bottom: none;
+
+    .logo svg {
+      * {
+        fill: $white;
+        stroke: $white;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        * {
+          fill: $tan;
+          stroke: $tan;
+        }
+      }
+    }
+
+    .nav-link {
+      color: $white;
+    }
+  }
 }
 
 .logo {
-  display: inline-block;
+  display: block;
   z-index: 100;
+  width: 100%;
   text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $grey-border;
+  vertical-align: top;
+
+  @include min($tablet) {
+    display: inline-block;
+    width: 33%;
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  @include min($large) {
+    width: 50%;
+  }
 
   svg {
-    width: 250px;
+    width: 200px;
     fill: $black;
     stroke: $black;
 
+    @include min($tablet) {
+      width: 210px;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      * {
+        fill: $grey;
+        stroke: $grey;
+      }
+    }
+
     * {
+      transition: all 200ms ease;
       fill: $black;
       stroke: $black;
     }
   }
 }
 
-.nav-list {
-  float: right;
-  padding-top: 34px;
-}
-
-.nav-list__item {
+.nav-links-wrapper {
   display: inline-block;
   vertical-align: top;
-  list-style: none;
+
+  @include min($tablet) {
+    padding-top: 2px;
+    width: 33%;
+  }
+
+  @include min($large) {
+    width: 25%;
+  }
+
+  &.nav-links-wrapper--left {
+
+    @include min($tablet) {
+      float: left;
+      text-align: left;
+    }
+
+    .nav-link {
+
+      @include min($tablet) {
+        margin-right: 50px;
+      }
+
+      @include min($xlarge) {
+        margin-right: 65px;
+      }
+    }
+  }
+
+  &.nav-links-wrapper--right {
+
+    @include min($tablet) {
+      float: right;
+      text-align: right;
+    }
+
+    .nav-link {
+
+      @include min($tablet) {
+        margin-left: 50px;
+      }
+
+      @include min($xlarge) {
+        margin-left: 65px;
+      }
+    }
+  }
 }
 
 .nav-link {
-  margin-top: 29px;
+  display: inline-block;
+  padding: 15px 12px;
+  vertical-align: top;
   color: $black;
-  font-family: $mono;
-  font-weight: 300;
-  font-size: 1.8rem;
+  letter-spacing: 1px;
+  font-family: $sans;
+  font-weight: 400;
+  font-size: 1.4rem;
+  webkit-font-smoothing: auto;
+  transition: color 250ms ease;
 
-  &.nav-link--first {
-    float: left;
+  @include min($phone) {
+    padding: 15px 20px;
   }
 
-  &.nav-link--last {
-    float: right;
+  @include min($tablet) {
+    height: auto;
+    width: auto;
+    margin-top: 18px;
+    padding: 0;
+    font-size: 1.6rem;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $tan;
+  }
+
+  // &.nav-link--first {
+  //   border-right: 1px solid $grey-border;
+  //   text-align: center;
+
+  //   @include min($tablet) {
+  //     // float: left;
+  //     border: 0;
+  //     text-align: left;
+  //   }
+  // }
+
+  // &.nav-link--last {
+  //   text-align: center;
+
+  //   @include min($tablet) {
+  //     float: right;
+  //     text-align: right;
+  //   }
+  // }
+}
+
+.cart-contents {
+
+  &:hover,
+  &:active,
+  &:focus {
+    span {
+      background: $tan;
+      color: $white;
+    }
+  }
+
+  span {
+    transition: all 250ms ease;
+    box-shadow: 0;
+    position: relative;
+    top: -1px;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+    border-radius: 100%;
+    background: $black;
+    color: $white;
+    text-align: center;
+    line-height: 1.95;
+    font-size: 1.3rem;
+
+    @include min($tablet) {
+      width: 26px;
+      height: 26px;
+      line-height: 1.95;
+    }
   }
 }

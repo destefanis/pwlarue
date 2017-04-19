@@ -1,0 +1,257 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  
+<div class="breadcrumbs">
+  {% if previous_product %}
+    <a class="breadcrumb-link breadcrumb-link--previous" href="{{ previous_product.guid }}">
+      Previous Product
+    </a>
+  {% else %}
+    <a class="breadcrumb-link breadcrumb-link--previous" href="/shop">
+      Back to Products
+    </a>
+  {% endif %}
+  <ul class="breadcrumbs-list">
+    <li class="breadcrumbs-list__item">
+      <a href="/shop" class="breadcrumbs-list__item-link">
+        Products
+      </a>
+      <span class="breadcrumb-divider">
+        >
+      </span>
+    </li>
+    <li class="breadcrumbs-list__item">
+      {% for category in product_categorys %}
+        <a href="/shop/{{ category.slug }}" class="breadcrumbs-list__item-link">
+          {{ category.name }}
+        </a>
+      {% endfor %}
+    </li>
+    <li class="breadcrumbs-list__item breadcrumb-link--current">
+    <span class="breadcrumb-divider">> </span>
+      {# Fix for long titles for breadcrumbs #}
+      {% if post.title|length > 35 %}
+        {{ post.title|slice(0, 17) }}
+      {% else %}
+        {{ post.title }}
+      {% endif %}
+    </li>
+  </ul>
+  {% if next_product.guid %}
+    <a class="breadcrumb-link breadcrumb-link--next" href="{{ next_product.guid }}">
+      Next Product
+    </a>
+  {% else %}
+    <a class="breadcrumb-link breadcrumb-link--next" href="/shop">
+      View All Products
+    </a>
+  {% endif %}
+</div>
+
+<div class="clear"></div>
+
+<div class="product type-product product-page-wrapper">
+  {% do action('woocommerce_before_single_product') %}
+
+  <section class="product-page">
+    
+    <div class="product-image-wrapper {% for category in product_categorys %} product-{{ category.name|lower }} {% endfor %}">
+
+      {# Display the main product image #}
+      <a href="{{ post.thumbnail.src('shop_single') }}" class="first product-image-link is-active" title=""data-id="{{ post.color }}">
+        <img class="product-image woocommerce-main-image" src="{{ post.thumbnail.src('shop_single') }}" alt="{{ post.thumbnail.alt }}" itemprop="image"/>
+      </a>
+      
+      {# Loop through color variants for a main image and hide it intially #}
+      {% for variant in product_variant_collection %}
+        {% set variant_post = TimberPost(variant) %}
+
+        <a href="{{ variant_post.thumbnail.src('shop_single') }}" class="first product-image-link is-hidden" title="" data-id="{{ variant.color }}">
+          <img class="product-image woocommerce-main-image zoom" src="{{ variant_post.thumbnail.src('shop_single') }}" alt="{{ variant_post.thumbnail.alt }}" itemprop="image"/>
+        </a>
+      {% endfor %}
+      
+      {# Display the Thumbnail Images #}
+      {% if post.get_field('additional_images') %}
+        <div class="product-thumbnails" data-id="{{ post.color }}">
+          {% for image in post.get_field('additional_images') %}
+            {% set image = TimberImage(image.id) %}
+              <img itemprop="image" data-id="{{ post.color }}" class="product-thumbnail zoom" src="{{ image.src }}" alt="{{ image.alt }}">
+          {% endfor %}
+        </div>
+      {% endif %}
+      
+      {# Loop through color variants if the exist #}
+      {% for variant in product_variant_collection %}
+        <div class="product-thumbnails is-hidden" data-id="{{ variant.color }}">
+          {# Color Variation Images for Gallery #}
+          {% for variant_image in variant.additional_images %}
+            {% set variant_image = TimberImage(variant_image) %}
+              <img itemprop="image" class="product-thumbnail zoom" src="{{ variant_image.src }}" alt="{{ variant_image.alt }}" data-id="{{ variant.color }}">
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <article itemscope itemtype="http://schema.org/Product" class="buy-section" single-product-details>
+      <h1 id="product-name" class="product-name">
+        {{ post.title }}
+      </h1>
+      
+      <p class="product-description">
+        {{ post.short_description }}
+      </p>
+      
+      {% if post.color_variants %}
+        <div class="control-group control-group--last">
+          <h5 class="control-group__header">Color Options</h5>
+          <div class="control-group-wrapper">
+            <label class="control control--radio" data-price="{{ product_price }}" data-title="{{ post.title }}" data-id="{{ post.color }}" data-value="{{ post.ID }}">
+              <span class="control__text">{{ post.color }}</span>
+              <input type="radio" name="radio" checked="checked"/>
+              <div class="control__indicator control__indicator--{{ post.color }}"></div>
+            </label>
+
+            {% for variant in product_variant_collection %}
+              <label class="control control--radio" data-price="{{ variant._price }}" data-title="{{ variant.post_title }}" data-id="{{ variant.color }}" data-value="{{ variant.ID }}">
+                <span class="control__text">
+                  {{ variant.color }}
+                </span>
+                <input type="radio" name="radio"/>
+                <div class="control__indicator control__indicator--{{ variant.color }}"></div>
+              </label>
+            {% endfor %}
+
+          </div>
+        </div>
+      {% endif %}
+      
+      <div class="product-status">
+        {# Set the product back to the intial product post #}
+        {{ fn('timber_set_product', post)}}
+
+        {# Use the WooCommerce action to pull in the add to cart form #}
+        {% do action('woocommerce_single_product_summary') %}
+
+        {% if post._stock_status == "outofstock" %}
+          <span class="button out-of-stock">
+            Out Of Stock
+          </span>
+        {% endif %}
+      </div>
+      
+      {# Product Share #}
+      <div class="product-share">
+        <span class="share-label">
+          Share
+        </span>
+        <a class="share-link" href="https://www.facebook.com/sharer/sharer.php?u={{ post.link }}" target="_blank">
+
+          {# Facebook Logo #}
+          {% include ["svg/facebook.svg"] %}
+
+        </a>
+        <a class="share-link" target="_blank" href="https://twitter.com/share?url={{ post.link }}&text={{ post.title }}">
+
+          {# Twitter Logo #}
+          {% include ["svg/twitter.svg"] %}
+
+        </a>
+      </div>
+      <meta itemprop="url" content="{{ post.link }}" />
+    </article>
+  </section>
+  
+  <!-- Product Additional Gallery -->
+  {% if post.lifestyle_gallery %}
+    <div class="product-gallery product-gallery--{{ post.lifestyle_gallery|length }}up">
+      {% for image in post.get_field('lifestyle_gallery') %}
+        {% set image = TimberImage(image.id) %}
+          <a href="{{ image.src }}" class="product-gallery__link">
+            <div class="product-gallery__image" style="background-image: url('{{ image.src }}');">
+            </div>
+          </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <section class="product-page-details">
+    <div class="details details--large">
+      <div class="product-spec">
+        <h5 class="product-spec-header">Description</h5>
+        <p class="product-full-description">
+          {{ post.content|striptags('<a><br><span><em><strong>') }}
+        </p>
+      </div>
+
+      {% if post.dimensions %}
+        <div class="product-spec">
+          <h5 class="product-spec-header">
+            Dimensions
+          </h5>
+          <p class="product-spec-detail">
+            {{ post.dimensions }}
+          </p>
+        </div>
+      {% endif %}
+
+      {% if post.materials %}
+        <div class="product-spec">
+          <h5 class="product-spec-header">
+            Materials
+          </h5>
+          <p class="product-spec-detail">
+            {{ post.materials|striptags('<em>,<a>,<span>,<br>')|raw }}
+          </p>
+        </div>
+      {% endif %}
+      
+      {% if post.construction %}
+        <div class="product-spec">
+          <h5 class="product-spec-header">
+            Construction
+          </h5>
+          <p class="product-spec-detail">
+            {{ post.construction|nl2br }}
+          </p>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+
+  {% if post.related_products %}
+    <section class="section section--featured text-center">
+      <h3 class="subheader text-center">
+        Related Products
+      </h3>
+      <div class="featured-products">
+        {% for related_product in TimberPost(post.get_field('related_products')) %}
+          <div class="featured-product background-grey {% if related_product.tile_hover_image %} product--has-hover {% endif %}">
+            <a href="{{ related_product.link }}">
+
+              <img class="featured-product__image" src="{{ related_product.thumbnail.src('shop_single') }}" alt="{{ related_product.thumbnail.alt }}" />
+              {% if related_product.tile_hover_image %}
+                {% set related_product_image = TimberImage(related_product.tile_hover_image) %}
+                <img class="featured-product__image-alt" src="{{ related_product_image.src('shop_single') }}" alt="{{ related_product_image.alt }}">
+              {% else %}
+                <img class="featured-product__image-alt" src="{{ related_product.thumbnail.src('shop_single') }}" alt="{{ related_product.thumbnail.alt }}">
+              {% endif %}
+
+              <h3 class="product-info">
+                <span class="product-text">
+                  {{ related_product.title }}
+                </span>
+                <span class="price">
+                  ${{ related_product.custom._price }}
+                </span>
+              </h3>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+</div>
+
+{% endblock  %}

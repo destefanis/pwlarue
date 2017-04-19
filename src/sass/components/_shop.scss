@@ -1,0 +1,176 @@
+/*
+ *  Define the shop styles.
+ */
+
+.filters {
+  padding: 0 0 0 15px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  animation: fadeIn 1000ms 1;
+
+  @include min($tablet) {
+    padding: 0 25px;
+  }
+
+  @include min($desktop) {
+    padding: 0 50px;
+  }
+
+  @include min($large) {
+    padding: 0 100px;
+  }
+
+  .woocommerce-error {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 300;
+    width: 80%;
+    animation: fadeOut 800ms;
+    animation-delay: 3s;
+
+    @include min($tablet) {
+      width: 60%;
+    }
+
+    @include min($desktop) {
+      width: 40%;
+    }
+  }
+}
+
+.filter-label {
+  display: inline-block;
+  margin-top: 25px;
+  margin-right: 25px;
+  letter-spacing: 1px;
+  color: $grey;
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-family: $mono;
+
+  @include min($tablet) {
+    margin-top: 0;
+  }
+
+  @include min($desktop) {
+    margin-right: 50px;
+  }
+}
+
+.filter-list {
+  display: inline-block;
+  margin: 0;
+  padding: 25px 0;
+
+  @include min($desktop) {
+    padding: 35px 0;
+  }
+}
+
+.filter-list-item {
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 4px;
+  padding: 5px 0px 4px;
+  color: $light-black;
+  list-style: none;
+  border-bottom: 2px solid transparent;
+  transition: all 300ms ease;
+  transition-property: border-color, color;
+
+  @include min($desktop) {
+    margin-right: 30px
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $tan;
+    border-color: $tan;
+  }
+
+  &.filter-list-item--active {
+    color: $grey;
+    border-color: $grey;
+  }
+}
+
+.filter-list-item--active {
+  border-bottom: 2px solid $black;
+}
+
+// Style selectize markup structure.
+.filter-sort {
+  padding: 0 0 16px;
+
+  @include min($large) {
+    padding: 34px 0 16px;
+    float: right;
+  }
+
+  .filter-label {
+    margin-top: 5px;
+    margin-right: 25px;
+  }
+
+  .selectize-control {
+    width: 210px;
+  }
+
+  form {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 0;
+    border: 1px solid $grey-border;
+    transition: border-color 300ms ease;
+
+    @include min($tablet) {
+      margin-top: -8px;
+    }
+
+    &:hover,
+    &:active {
+      border-color: $grey;
+    }
+  }
+  
+  // Hide the search input for filters only.
+  .selectize-input {
+    input {
+      display: none;
+    }
+  }
+}
+
+.selectize-input {
+  padding: 8px 15px;
+}
+
+.selectize-dropdown {
+  position: absolute;
+  left: -1px !important;
+  width: 100% !important;
+  z-index: 100;
+}
+
+.selectize-dropdown-content {
+  max-height: 200px;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  .option {
+    transition: all 200ms ease;
+    padding: 10px 15px 10px 16px;
+    background: $black;
+    color: $light-grey;
+    cursor: pointer;
+    font-size: 1.6rem;
+
+    &:hover {
+      background: $grey;
+      color: $white;
+    }
+  }
+}

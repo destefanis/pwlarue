@@ -1,206 +1,153 @@
 <!DOCTYPE html>
 
 <html lang="en-US">
-  <head>
-    <title>P.W. LaRue Co. | Authentic Leather Makers</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+  @include('./includes/_head.html')
 
-<!--     <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Charter:400,700"> -->
-
-    <link rel="stylesheet" href="style.css">
-  </head>
   <body>
     
-  <nav class="navigation">
-      <a href="/shop" class="nav-link nav-link--first">
-        Shop  
-      </a>
-      <div class="logo">
-        <a href="/">
-          @include("svg/logo.svg")
-        </a>
-      </div>
-      <a href="/cart" class="nav-link nav-link--last">
-        Cart 
-      </a>
-    </nav>
-    <section class="hero">
-    </section>
-    <h1 class="hero-header">Handcrafted leather goods using the highest 
-      quality materials from the USA and Japan.</h1>
+    @include('./includes/_navigation-home.html')
 
-    <section class="section section--cta">
-      <h2 class="cta-header">Featured Products</h2>
-      <a href="/shop" class="cta-link">Shop All</a>
-    </section>
+    <div>
+      <div>
 
-    <section class="section section--featured">
-      <div class="featured-products">
-
-        <div class="grid">
-          <div class="product-tile col">
-            <a href="#" class="product-tile-link">
-              <img class="product-tile__image" src="images/bi-fold-wallet-tan-front.jpg">
-              <img class="product-tile__image--alt" src="images/bi-fold-wallet-black-open.jpg">
-              <div class="product-tile__info">
-                <h3 class="info-product-name">Bi-Fold Wallet (Tan)</h3>
-                <span class="info-product-price">
-                  $99
-                </span>
-              </div>
-            </a>
+        <section class="hero">
+          <div id="hero-video">
+            <video class="hero-video" loop="" autoplay="" muted="" preload="auto" width="auto" height="auto" poster="https://s3.us-east-2.amazonaws.com/pwlarue/video-hero-placeholder-min.jpg"> <!--#t=14.4-->
+              <source src="https://s3.us-east-2.amazonaws.com/pwlarue/P.W.+LARUE+HERO+LOOP2.mp4" type="video/mp4">
+            </video>
           </div>
-          <div class="product-tile col">
-            <a href="#" class="product-tile-link">
-              <img class="product-tile__image" src="images/bi-fold-wallet-black-front.jpg">
-              <img class="product-tile__image--alt" src="images/bi-fold-wallet-black-open.jpg">
-              <div class="product-tile__info">
-                <h3 class="info-product-name">Bi-Fold Wallet (Black)</h3>
-                <span class="info-product-price">
-                  $99
+          <a class="hero-link" href="about.html">
+            <h1 class="hero-link__title">About P.W. LaRue Co.</h1>
+          </a>
+        </section>
+
+        <div class="product-feature product-feature--left product-feature--first">
+          <div class="row">
+
+            <div id="js-feature-product-1" class="feature-image-wrapper">
+              <a href="product.html">
+                <img class="product-feature-image js-lazy" src="https://s3.us-east-2.amazonaws.com/pwlarue/navy-carry-all-feature-min.jpg" alt="Navy Carry All Bag Product Photo">
+                <span class="feature-cta">
+                  View Product
                 </span>
-              </div>
-            </a>
-          </div>
-          <div class="product-tile col">
-            <a href="#" class="product-tile-link">
-              <img class="product-tile__image" src="images/bi-fold-wallet-black-front.jpg">
-              <img class="product-tile__image--alt" src="images/bi-fold-wallet-black-open.jpg">
-              <div class="product-tile__info">
-                <h3 class="info-product-name">Bi-Fold Wallet (Black)</h3>
-                <span class="info-product-price">
-                  $99
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <div class="grid">
-          <div class="product-tile col">
-            <a href="#" class="product-tile-link">
-              <img class="product-tile__image" src="images/accordian-wallet-tan-front.jpg">
-              <img class="product-tile__image--alt" src="images/accordian-wallet-tan-open.jpg">
-              <div class="product-tile__info">
-                <h3 class="info-product-name">Accordian Wallet (Tan)</h3>
-                <span class="info-product-price">
-                  $99
-                </span>
-              </div>
-            </a>
-          </div>
-          <div class="product-tile col">
-            <a href="#" class="product-tile-link">
-              <img class="product-tile__image" src="images/accordian-wallet-black-front.jpg">
-              <img class="product-tile__image--alt" src="images/accordian-wallet-black-open.jpg">
-              <div class="product-tile__info">
-                <h3 class="info-product-name">Accordian Wallet (Black)</h3>
-                <span class="info-product-price">
-                  $99
-                </span>
-              </div>
-            </a>
-          </div>
-          <div class="product-tile col">
-            <a href="#" class="product-tile-link">
-              <img class="product-tile__image" src="images/keyholder-black-front.jpg">
-              <img class="product-tile__image--alt" src="images/keyholder-black-open.jpg">
-              <div class="product-tile__info">
-                <h3 class="info-product-name">Keyholder (Black)</h3>
-                <span class="info-product-price">
-                  $29
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="section section--about">
-      <img class="about-image about-image--first" src="images/shop-sewing-machines.jpg">
-      <div class="section-content section-content--about">
-        <h2>
-          All of our products are made here in our studio in Chicago, 
-          located in the industrial corridor of the city’s southwest side.
-        </h2>
-        <a href="/shop" class="cta-link">Learn More</a>
-      </div>
-      <!-- <img class="about-image" src="images/shop-machines-dark.jpg"> -->
-    </section>
-
-    <section class="section section--instagram">
-      <div class="section-content section-content--instagram">
-        <h2>
-          Follow our shop on Instagram
-        </h2>
-        <a href="#" target="_blank" class="cta-link">Follow @p.w.larue</a>
-      </div>
-      <video src="https://instagram.ford1-1.fna.fbcdn.net/t50.2886-16/14586328_1108032359273149_3779834119723155456_n.mp4" loop autoplay muted></video>
-      <video src="https://instagram.ford1-1.fna.fbcdn.net/t50.2886-16/14576856_1215374158483583_8744518565291360256_n.mp4" loop autoplay muted></video>
-      <!-- <img class="about-image" src="images/shop-machines-dark.jpg"> -->
-    </section>
-
-
-   <!--  <section class="notify-me">
-      <div class="container">
-
-        <div id="mc_embed_signup">
-          <form action="//pwlarue.us13.list-manage.com/subscribe/post?u=97bb7956ddd6e8c4ba53b6ea3&amp;id=560d436540" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-            <div id="mc_embed_signup_scroll">
-              <div class="col col-sm-offset-2 col-sm-6">
-                <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-                 real people should not fill this in and expect good things - do not remove this or risk form bot signups
-                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_97bb7956ddd6e8c4ba53b6ea3_560d436540" tabindex="-1" value=""></div>
-              </div>
-              <div class="col col-xs-6 col-sm-2">
-                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="submit-button">
-              </div>
+              </a>
             </div>
-          </form>
-        </div>
 
-      </div>
-    </section> -->
-
-    <footer class="footer">
-      <div class="grid">
-        <div class="col text-left">
-          <span class="footer__label">
-            © 2016 P.W. LaRue Co.
-          </span>
-        </div>
-        <div class="col">
-          <div class="footer__email">
-            <a class="footer__link" href="mailto:info@pwlarue.com">info@pwlarue.com</a>
+            <div class="product-callout product-callout--right">
+              <h2 class="product-callout__title">Carry All Bag</h2>
+              <p class="product-callout__body">
+                A water-resistant open top tote designed for 
+                versatility and durability.
+              </p>
+              <a class="product-callout__link" href="product.html">
+                Shop Now
+              </a>
+            </div>
           </div>
         </div>
-        <div class="col text-right">
-          <div class="footer__social">
-            <span class="footer__label">Follow Us:</span>
-            <a class="footer__link social-link" href="https://www.facebook.com/PWLaRueCo/">Facebook</a>
-            <a class="footer__link social-link" href="https://www.instagram.com/p.w.larue/">Instagram</a>
+
+        <div class="product-feature product-feature--right">
+          <div class="row">
+
+            <div id="js-feature-product-2" class="feature-image-wrapper">
+              <a href="product.html">
+                <img class="product-feature-image js-lazy" alt="Olive Roll Top Bag Image" src="https://s3.us-east-2.amazonaws.com/pwlarue/olive-roll-top-feature-min.jpg">
+                <span class="feature-cta">
+                  View Product
+                </span>
+              </a>
+            </div>
+
+            <div class="product-callout product-callout--left">
+              <h2 class="product-callout__title">Roll Top Bag</h2>
+              <p class="product-callout__body">
+                A water-resistant tote with a secure roll-top closure. 
+                Great for work, class, or a weekend trip.
+              </p>
+              <a class="product-callout__link" href="product.html">
+                Shop Now
+              </a>
+            </div>
           </div>
         </div>
+
+        <div class="product-feature product-feature--left">
+          <div class="row">
+            <div id="js-feature-product-3" class="feature-image-wrapper">
+              <a href="product.html">
+                <img class="product-feature-image js-lazy" src="https://s3.us-east-2.amazonaws.com/pwlarue/bifold-environmental.jpg">
+                <span class="feature-cta">
+                  View Product
+                </span>
+              </a>
+            </div>
+            <div class="product-callout product-callout--right">
+              <h2 class="product-callout__title">Bi-Fold Wallet</h2>
+              <p class="product-callout__body">
+                Our take on a traditional bi-fold with added room and 
+                easy access to the essentials.
+              </p>
+              <a class="product-callout__link" href="/product.html">
+                Shop Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-feature product-feature--right">
+          <div class="row">
+
+            <div id="js-feature-product-4" class="feature-image-wrapper">
+              <a href="shop.html">
+                <img class="product-feature-image" alt="Olive Roll Top Bag Image" src="https://s3.us-east-2.amazonaws.com/pwlarue/shop-all-callout-image.jpg">
+                <span class="feature-cta">
+                  Shop All Products
+                </span>
+              </a>
+            </div>
+
+            <div class="product-callout product-callout--left">
+              <h2 class="product-callout__title">All Products</h2>
+              <p class="product-callout__body">
+                Our newest wallets, pouches, bags, and accessories
+                are now available.
+              </p>
+              <a class="product-callout__link" href="product.html">
+                Shop Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <section class="page-callouts">
+          <div class="page-callout">
+            <a class="page-callout__link" href="/about.html">
+              <video class="about-hero__video" loop="" autoplay="" muted="" preload="auto" width="auto" height="auto" poster="https://s3.us-east-2.amazonaws.com/pwlarue/about-video-placeholder.jpg">
+                <source src="https://s3.us-east-2.amazonaws.com/pwlarue/about-page-loop.mp4">
+              </video>
+              <span class="page-callout__link-text">
+                About Our Shop
+              </span>
+            </a>
+          </div>
+
+          <div class="page-callout">
+            <a class="page-callout__link" href="/about.html">
+              <video class="about-hero__video" loop="" autoplay="" muted="" preload="auto" width="auto" height="auto" poster="https://s3.us-east-2.amazonaws.com/pwlarue/about-video-placeholder.jpg">
+                <source src="https://instagram.ford1-1.fna.fbcdn.net/t50.2886-16/14586328_1108032359273149_3779834119723155456_n.mp4">
+              </video>
+              <span class="page-callout__link-text">
+                Follow Us On Instagram
+              </span>
+            </a>
+          </div>
+        </section>
       </div>
-    </footer>
+    </div>
 
-    <!-- <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    @include('./includes/_contact-form.html')
+    @include('./includes/_footer.html')
+    @include('./includes/_js-block.html')
 
-      ga('create', 'UA-80883953-1', 'auto');
-      ga('send', 'pageview');
-
-    </script>  -->
-
-    <script src="bundle.js"></script>
   </body>
 </html>

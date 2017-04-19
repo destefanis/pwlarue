@@ -1,17 +1,31 @@
 @import "mixins";
 @import "reset";
-// @import "bootstrap";
 
 // PARTIALS
 @import "vars";
 @import "base";
-@import "z-index";
+
+// Third Party
+@import "library/magnific_settings";
+@import "library/magnific_popup";
+@import "components/selectize";
 
 // COMPONENTS
 @import "components/about";
 @import "components/featured-products";
 @import "components/footer";
 @import "components/hero";
+@import "components/instagram";
 @import "components/navigation";
+@import "components/notice";
+@import "components/page-callout";
+@import "components/popup";
+@import "components/product";
+@import "components/reveal";
+@import "components/shop";
+@import "components/shop-callout";
+@import "components/tease";
+@import "components/woocommerce";
+@import "components/woocommerce_cart";
 
 // SECTIONS

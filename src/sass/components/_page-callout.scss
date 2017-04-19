@@ -1,0 +1,46 @@
+
+.page-callouts {
+  margin: 100px 0 75px;
+  padding: 0 100px;
+  text-align: left;
+}
+
+.page-callout {
+  position: relative;
+  display: inline-block;
+  height: 600px;
+  width: calc(49% - 25px);
+  overflow: hidden;
+  text-align: center;
+
+  &:last-of-type {
+    float: right;
+  }
+
+  video {
+    transform: translateX(-50%);
+    position: absolute;
+    top: -18%;
+    left: 50%;
+    height: 135%;
+    width: auto;
+  }
+}
+
+.page-callout__link {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.page-callout__link-text {
+  transform: translateX(-50%);
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  font-family: $mono;
+  font-size: 2rem;
+  font-weight: 300;
+  color: $white;
+}

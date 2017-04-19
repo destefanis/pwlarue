@@ -2,73 +2,215 @@
  *  Define the about section styles.
  */
 
-.section {
+.about {
   position: relative;
+  padding: 4px 4px 25px;
+  background: $white;
+  text-align: center;
+  z-index: 50;
+
+   @include min($tablet) {
+    padding: 0 50px 25px;
+  }
+
+  @include min($desktop) {
+    padding: 0 50px 50px;
+  }
+
+  @include min($large) {
+    padding: 0 100px 50px;
+  }
+
+  .details {
+    padding: 0 10px 25px;
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: 400;
+
+    @include min($tablet) {
+      padding: 0 25px;
+      padding-bottom: 0;
+      font-size: 1.8rem;
+      font-weight: 300;
+    }
+
+    @include min($desktop) {
+      padding: 0 75px 25px;
+    }
+  }
+
+  .product-spec {
+    padding-bottom: 0;
+
+    @include min($tablet) {
+      padding-bottom: 55px;
+    }
+  }
 }
 
-.section--about {
-  padding: 50px 50px 100px;
-  overflow: hidden;
-  text-align: left;
-  background: #fcfcfc;
+.about-description,
+.about-description p {
+  letter-spacing: 1px;
+  line-height: 1.8;
+  font-size: 1.8rem;
+  font-weight: 300;
+
+  @include min($tablet) {
+    font-size: 2rem;
+  }
+
+  // Minor bullet point styling.
+  span {
+    display: list-item;
+    margin-top: 1em;
+    margin-left: 20px;
+  }
+}
+
+.about-hero {
+  position: relative;
+  top: 0;
+  display: inline-block;
+  width: 100%;
+  z-index: 10;
+  margin-bottom: 50px;
+
+  @include min($tablet) {
+    margin: 0;
+  }
+
+  &::after,
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 12.25%;
+    width: 100%;
+    background: $white;
+    z-index: 10;
+
+    @include min($tablet) {
+      content: '';
+    }
+  }
+
+  &::after {
+    top: auto;
+    bottom: 0;
+    height: 13.75%;
+  }
+}
+
+.about-hero__video {
+  display: inline-block;
+  width: 100%;
+}
+
+.about-hero-content {
+
+  @include min($tablet) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.about-hero__link {
+  display: block;
+
+  @include min($tablet) {
+    position: absolute;
+    left: 50%;
+    bottom: 18%;
+    transform: translateX(-50%);
+    display: inline-block;
+  }
+}
+
+.about-hero__title {
   margin-top: 25px;
+  color: $black;
+
+  @include min($tablet) {
+    margin-top: 0;
+    color: $white;
+  }
+}
+
+.about-hero__link {
+  font-family: $mono;
+  color: $black;
+
+  @include min($tablet) {
+    color: $white;
+  }
+}
+
+.about-image-wrapper {
+  display: block;
+  text-align: left;
+  margin-bottom: 4px;
+  
+  &.about-image-wrapper--right {
+    text-align: right;
+  }
 }
 
 .about-image {
   display: inline-block;
-  max-width: 60%;
-}
+  width: 100%;
+  margin-bottom: 4px;
+  vertical-align: top;
 
-.section-content {
-  position: absolute;
-  padding: 25px 28px 28px;
-  background: $white;
-  backface-visibility: hidden;
-
-  .cta-link {
-    margin-top: 25px;
-    float: none;
-    display: inline-block;
-    font-size: 1.6rem;
-  }
-
-  h2 {
-    color: $black;
-    line-height: 1.8;
-    letter-spacing: 1px;
-    font-size: 2.4rem;
-    font-family: $sans;
-    font-weight: 400;
+  @include min($tablet) {
+    width: 64.75%;
+    margin-bottom: 0;
   }
 }
 
-.section--instagram {
-  padding: 50px;
+.about-image--2 {
+  width: 100%;
+
+  @include min($tablet) {
+    width: 34.7%;
+  }
+
+  @include min($large) {
+    width: 34.8%;
+  }
+
+  @include min($large) {
+    width: 34.85%;
+  }
+}
+
+.about-image--full {
+  width: 100%;
+}
+
+.section {
   position: relative;
-  background: #fcfcfc;
-  text-align: center;
+}
 
-  video {
-    width: 50%;
+.section--featured {
+  padding: 25px 2px 0;
+
+  @include min($tablet) {
+    padding: 75px 2px 0;
   }
 }
 
-.section-content--about {
-  right: 8%;
-  bottom: 25%;
-  width: 38%;
+.section-header {
+  color: $black;
+  line-height: 1.8;
+  letter-spacing: 1px;
+  font-family: $sans;
+  font-size: 2rem;
+  font-weight: 300;
+  text-transform: none;
 
-  .cta-link {
-    margin-top: 50px;
+  @include min($tablet) {
+    font-size: 2.4rem;
   }
-
-}
-
-.section-content--instagram {
-  transform: translate(-50%, -50%);
-  text-align: center;
-  left: 50%;
-  top: 50%;
-  z-index: 100;
-  padding: 30px 35px 35px;
 }
