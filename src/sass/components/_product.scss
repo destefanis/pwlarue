@@ -20,6 +20,18 @@
   }
 }
 
+@keyframes productFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .product-image-wrapper {
   display: inline-block;
   width: 100%;
@@ -27,6 +39,7 @@
 
   @include min($tablet) {
     width: 55%;
+    animation: productFadeIn 1s;
   }
 
   @include min($large) {
@@ -59,14 +72,15 @@
   text-align: center;
   max-width: 600px;
 
-  h1 {
+  .product-name {
     display: inline-block;
   }
 
   @include min($tablet) {
     width: 44%;
     padding: 60px 25px 25px;
-    text-align: left; 
+    text-align: left;
+    animation: productFadeIn 1s;
   }
 
   @include min($desktop) {
