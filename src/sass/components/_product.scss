@@ -215,6 +215,7 @@
 }
 
 .breadcrumb-link {
+  position: relative;
   display: inline-block;
   color: $grey;
   letter-spacing: 1px;
@@ -232,6 +233,12 @@
   &:active,
   &:focus {
     color: $tan;
+
+    .breadcrumb__product {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
   }
 }
 
@@ -255,6 +262,39 @@
   @include min($tablet) {
     display: inline-block;
   }
+}
+
+.breadcrumb__product {
+  position: absolute;
+  top: 45px;
+  display: none;
+  width: 180px;
+  opacity: 0;
+  z-index: 200;
+  border: 1px solid $grey-border;
+  color: $black;
+  text-align: center;
+  transform: translateY(4px);
+  transition: all 300ms ease;
+  transition-property: transform, opacity;
+  pointer-events: none;
+
+  @include min($tablet) {
+    display: block;
+  }
+
+  &.breadcrumb__product--next {
+    right: 0;
+  }
+
+  &.breadcrumb__product--previous {
+    left: 0;
+  }
+}
+
+.breadcrumb__product-image {
+  width: 100%;
+  max-width: 140px;
 }
 
 .breadcrumb-link--current {
