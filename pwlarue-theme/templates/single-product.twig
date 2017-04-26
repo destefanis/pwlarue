@@ -6,6 +6,10 @@
   {% if previous_product %}
     <a class="breadcrumb-link breadcrumb-link--previous" href="{{ previous_product.guid }}">
       Previous Product
+      <div class="breadcrumb__product breadcrumb__product--previous">
+        {% set previous_product = TimberPost(previous_product) %}
+        <img class="breadcrumb__product-image" src="{{ previous_product.get_thumbnail.src }}" alt="{{ previous_product.thumbnail.alt }}" />
+      </div>
     </a>
   {% else %}
     <a class="breadcrumb-link breadcrumb-link--previous" href="/shop">
@@ -41,6 +45,11 @@
   {% if next_product.guid %}
     <a class="breadcrumb-link breadcrumb-link--next" href="{{ next_product.guid }}">
       Next Product
+
+      <div class="breadcrumb__product breadcrumb__product--next">
+        {% set next_product = TimberPost(next_product) %}
+        <img class="breadcrumb__product-image" src="{{ next_product.get_thumbnail.src }}" alt="{{ next_product.thumbnail.alt }}" />
+      </div>
     </a>
   {% else %}
     <a class="breadcrumb-link breadcrumb-link--next" href="/shop">
